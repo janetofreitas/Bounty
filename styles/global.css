@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html{
+    /* settando 1 rem em 10px */
+    font-size: 62.5%; 
+}
+
+body{
+    display: flex;
+    height: 100vh;
+}
+
+button{
+    cursor: pointer;
+}
