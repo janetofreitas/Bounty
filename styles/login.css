@@ -19,13 +19,12 @@ body {
     /* background: url(/assets/logoMT.png) no-repeat center/contain; */
     /* margin-left: 1rem; */
     /* margin-right: 1rem; */
-    display: flex;
-    justify-content: space-evenly;
 }
 
 .o-logo #logo{
     position:  relative;
     top: 17rem;
+    left: 14rem;
 }
   
 .o-form {
