@@ -22,8 +22,10 @@
     </aside>
     <main class="o-form">
         <div class="container">
-            <section>
+            <div class="h2log">
                 <h2>Login</h2>
+            </div>
+            <div class="formLog">
                 <form action="POST">
                     <label class="sr-only" for="username">Digite seu usuario</label>
                     <input type="text" id="username" placeholder="Digite seu usuario"> 
@@ -31,14 +33,19 @@
                     <label class="sr-only" for="password">Digite sua senha</label>
                     <input type="password" id="password" placeholder="Digite sua senha"> 
                     <br>
-                    <input type="checkbox" name="lembrar-user?" id="lembrar-user">
-                    <label for="lembrar-user"> Lembrar usuario? </label>
+                    
+                    <div class="checkelembrar">
+                        <input type="checkbox" name="lembrar-user?" id="lembrar-user">
+                        <label for="lembrar-user"> Lembrar usuario? </label>
+                        <a href="" id="esqueceu">Esqueceu sua senha?</a>
+                    </div>
+                    
                     <br>
-                    <a href="">Esqueceu sua senha?</a>
-
+    
                     <button>Login</button>
                 </form>
-            </section>
+            </div>
+            
         </div>
     </main>
 
