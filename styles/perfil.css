@@ -1,0 +1,51 @@
+body {
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    'logo logo logo'
+    "footer footer footer";
+    /* gap: 1rem; */
+    grid-template-columns: 30% 30% 40%;
+    grid-template-rows: auto 100vh auto;
+}
+
+.o-header {
+    grid-area: header;
+    padding: 0 rem;
+    background: red;
+    
+} 
+
+ .o-logo { 
+    grid-area: logo;
+    color: #FDFDFD;
+    background: blue;
+    border: 1px solid black;
+    display: flex;
+    
+   
+}
+ .container{
+     border: 1px solid black;
+     margin-top: 5rem;
+    background: gray;
+    height: 80rem;
+    width: 200rem;
+    position: relative;
+    right: 29rem;
+ }
+
+
+
+
+.o-form {
+    grid-area: form;
+    background:blue;
+    color: #ababab;
+}
+
+ .o-footer {
+    grid-area: footer;
+    padding: 1rem; 
+    background: purple ;
+}
