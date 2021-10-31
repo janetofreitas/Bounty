@@ -19,7 +19,7 @@ body {
  .o-logo { 
     grid-area: logo;
     color: #FDFDFD;
-    background: blue;
+    background: #2d2d2d;
     border: 1px solid black;
 }
 .fotoPerfil {
@@ -32,7 +32,7 @@ body {
 
 .o-form {
     grid-area: form;
-    background:blue;
+    background: #2d2d2d;
     color: #ababab;
     
 }
