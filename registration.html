@@ -30,46 +30,48 @@
                 <form action="POST">
                     <label class="sr-only" for="name">Digite seu nome completo</label>
                     <input type="text" id="name" class="input-forms" placeholder="Digite seu nome completo"> 
-                    <br>
+                    
                     <label class="sr-only" for="name">Digite seu e-mail</label>
                     <input type="email" id="name" class="input-forms" placeholder="Digite seu e-mail">    
-                    <br>
+                    
                     <label class="sr-only" for="tel">Digite seu telefone</label>
                     <input type="tel" id="tel" class="input-forms" placeholder="Digite seu telefone">
-                    <br>
+                    
                     <label class="sr-only" for="data">Digite sua data de nascimento</label>
                     <input type="date" id="data" class="input-forms">
                     
                     <label class="sr-only" for="cep">Digite seu CEP</label>
                     <input type="number" id="cep" class="input-forms" placeholder="Digite seu CEP">
-                    <br>
+                    
                     <label class="sr-only" for="nac">Digite sua nacionalidade</label>
                     <input type="text" id="nac" class="input-forms" placeholder="Digite sua nacionalidade">
                     
                     <label class="sr-only" for="endereco">Digite seu endereço</label>
                     <input type="text" id="endereco" class="input-forms" placeholder="Digite seu endereço">
-                    <br>
+                    
                     <label class="sr-only" for="cep">Informe seu gênero</label>
-                    <select name="gênero" class="input-forms">
+                    <select name="gênero" id="genero" class="input-forms">
                         <option value="masculino">masculino</option>
                         <option value="feminino">feminino</option>
                         <option value="não-bínario">não-bínario</option>
                         <option value="não informado">não informado</option>
                     </select>
-                    <br>
+                    
                     <label class="sr-only" for="password">Digite sua senha</label>
-                    <input type="password" id="password" class="input-forms" placeholder="Digite sua senha"> 
-                    <br>
+                    <input type="password" id="password" class="input-forms" placeholder="Digite sua senha">
+                    
+                    <label class="sr-only" for="repassword">Digite sua senha novamente</label>
+                    <input type="password" id="repassword" class="input-forms" placeholder="Digite sua senha novamente">
+                    
                     
                     <div class="checkelembrar">
                         <input type="checkbox" name="lembrar-user?" id="lembrar-user">
-                        <label for="lembrar-user"> Lembrar usuario? </label>
+                        <label for="lembrar-user" id="label-lembrar-user"> Lembrar usuario? </label>
                         <a href="" id="esqueceu">Esqueceu sua senha?</a>
                     </div>
                     
-                    <br>
-    
-                    <button>Login</button>
+                    <button class="regButton">Login</button>
+                    
                 </form>
             </div>
             
