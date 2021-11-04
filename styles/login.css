@@ -22,9 +22,15 @@ body {
 }
 
 .o-logo #logo{
+    display: flex;
     position:  relative;
     top: 25%;
     left: 15%;
+}
+
+#responsive{
+    width: 75%;
+    height: auto;
 }
   
 .o-form {
