@@ -5,6 +5,7 @@ body {
     /* gap: 1rem; */
     grid-template-columns: 30% 30% 40%;
     grid-template-rows: 100vh;
+    
 }
 
 /* .o-header {
@@ -15,28 +16,33 @@ body {
 .o-logo {
     grid-area: logo;
     color: #FDFDFD;
-    background: #2d2d2d;
-    /* background: url(/assets/logoMT.png) no-repeat center/contain; */
-    /* margin-left: 1rem; */
-    /* margin-right: 1rem; */
+    
+    /* background: url(/assets/logoMT.png) no-repeat center/contain; /
+    / margin-left: 1rem; /
+    / margin-right: 1rem; */
+    display: flex;
 }
 
 .o-logo #logo{
-    display: flex;
-    position:  relative;
-    top: 25vh;
-    left: 10vw;
+    display: grid;
+    background: #2d2d2d;
+    width: 100%;
+
+
 }
 
 #responsive{
-    width: 75%;
+    width: 80%;
     height: auto;
+    justify-self: center;
+    align-self: center;
 }
   
 .o-form {
     grid-area: form;
     background: #2d2d2d;
     color: #ababab;
+    
 }
 
 .container{
