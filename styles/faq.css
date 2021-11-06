@@ -1,0 +1,49 @@
+body {
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    "form form form"
+    "rodape rodape rodape";
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 10% 80% 10%;
+    
+}
+
+.o-header {
+    grid-area: header;
+    padding: 0 rem;
+    background: red;
+    display: grid;
+} 
+.o-form {
+    grid-area: form;
+    padding: 0 rem;
+    background: rgb(173, 173, 173);
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    display: flex;
+    
+} 
+.container{
+    width: 50rem;
+    height: 50rem;
+    background: rgb(193, 212, 541);
+    border-style: double;
+    width: 80%;
+    height: 80%;
+    border-radius: 50px;
+    display: grid;
+}
+.o-rodape {
+    grid-area: rodape;
+    padding: 0 rem;
+    background: blue;
+    
+} 
+
+.faq{
+    justify-self: center;
+    margin-top: 2%;
+
+}
