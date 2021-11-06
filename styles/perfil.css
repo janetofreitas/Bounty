@@ -5,14 +5,13 @@ body {
     'logo logo form'
     "footer footer footer";
     /* gap: 1rem; */
-    grid-template-columns: 16% 0% 84%;
-    grid-template-rows: 7% 88% 5%;
+    grid-template-columns: 15% 0% 85%;
+    grid-template-rows: 10% 85% 5%;
 }
 
 .o-header {
     grid-area: header;
-    padding: 0 rem;
-    background: red;
+    background: #2d2d2d ;
     
 } 
 
