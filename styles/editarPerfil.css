@@ -2,7 +2,7 @@ body {
     display: grid;
     grid-template-areas:
     "header header header"
-    'logo logo form'
+    'logo logo logo'
     "footer footer footer";
     /* gap: 1rem; */
     grid-template-columns: 15% 0% 85%;
