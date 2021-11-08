@@ -1,5 +1,5 @@
 body {
-    display: grid;
+    display: inherit;
     grid-template-areas:
     "header header header"
     "form form form"
@@ -13,27 +13,24 @@ body {
     grid-area: header;
     padding: 0 rem;
     background: red;
-    display: grid;
+    display: flex;
 } 
 .o-form {
     grid-area: form;
-    padding: 0 rem;
+    padding-top: 5%;
+    padding-bottom: 5%;
     background: rgb(173, 173, 173);
-    align-items: center;
-    justify-items: center;
-    align-content: center;
-    display: flex;
-    
+    align-items: center;   
 } 
 .container{
-    width: 50rem;
-    height: 50rem;
     background: rgb(193, 212, 541);
     border-style: double;
     width: 80%;
     height: 80%;
     border-radius: 50px;
     display: grid;
+    padding-bottom: 2%;
+    padding-left: 2%;
 }
 .o-rodape {
     grid-area: rodape;
