@@ -54,6 +54,12 @@ app.post('/registration', async (req, res) => {
         id: Date.now().toString(),
         name: req.body.name,
         email: req.body.email,
+        telefone: req.body.telefone,
+        dataN: req.body.dataN,
+        cep: req.body.cep,
+        nacionalidade: req.body.nacionalidade,
+        endereço: req.body.end,
+        genero: req.body.genero,
         password: hashedPassword
       })
       res.redirect('/login')
