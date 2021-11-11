@@ -33,6 +33,8 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride('_method'))
 
+// Rotas
+
 app.get('/', (req,res) => {
     res.render ('perfil.ejs', { name: req.user.name })
 })
@@ -73,8 +75,12 @@ app.get('/registration', (req,res) => {
     res.render('registration.ejs')
 })
 
-app.post('/registration', (req,res) => {
+app.get('/forgotPassword', (req,res) => {
+  res.render('forgotPassword.ejs')
+})
 
+app.post('/forgotPassword', async (req, res) => {
+  
 })
 
 app.delete('/logout', (req, res) => {
@@ -96,5 +102,12 @@ function checkNotAuthenticated(req, res, next) {
     }
     next()
   }
+
+
+const mongoose = require('mongoose')
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
+const db = mongoose.connection
+db.on('error', error => console.error(error))
+db.once('open', () => console.log('Connected to Mongoose'))
 
 app.listen(3000)
