@@ -6,12 +6,12 @@ body {
     "footer footer footer";
     /* gap: 1rem; */
     grid-template-columns: 15% 0% 85%;
-    grid-template-rows: 10% 85% auto;
+    grid-template-rows: auto 85% auto;
 }
 
 .o-header {
     grid-area: header;
-    background: #2d2d2d ;
+    background: #2d2d2d  ;
     
 } 
 
@@ -21,11 +21,6 @@ body {
     background: #2d2d2d;
     border: 1px solid black;
 }
-.fotoPerfil {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-}
-
 a {
     display: block;
     width: 113px;
@@ -62,4 +57,14 @@ a {
     grid-area: footer;
     padding: 1rem; 
     /* background: purple ; */
+}
+.fcontainer {
+width: 150rem;
+height: 80rem;
+background: #6C7A89;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin: auto;
 }
