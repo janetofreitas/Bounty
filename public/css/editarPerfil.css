@@ -21,6 +21,8 @@ body {
     background: #2d2d2d;
     border: 1px solid black;
     display: flex;
+    min-width: 800px;
+    max-width: auto;
 }
 a {
     display: block;
@@ -37,6 +39,13 @@ a {
     color: #ababab;
     
 }
+
+/* .formLog{
+    background-color: blue;
+    display: flex;
+    max-width: auto;
+    min-width: 40rem;
+} */
 
 
  .o-footer {
@@ -59,6 +68,12 @@ a {
     flex-wrap: wrap;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    max-width: auto;
+    min-width: 20rem;
+    /* background-color: blue; */
+    padding: 10rem;
+    align-self: center;
+
 
 
 }
@@ -80,12 +95,12 @@ h2{
     background-color: #ababab;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
-    font-size: large;
+    /* font-size: large; */
     text-align: center;
     position: relative;
-    left: 40%;
-    margin-bottom: 1%
-    
+    left: 34%;
+    margin-bottom: -.1rem;
+    width: 15rem;
     
 }
 .aBotao{
@@ -102,6 +117,6 @@ input{
 .fotoPerfil {
     display:flex;
     justify-content: center;
-    margin-bottom: 1%;
+    margin-bottom: .5rem;
     
 }
