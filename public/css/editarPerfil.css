@@ -61,10 +61,10 @@ a {
 .input-forms{
     border: .2rem solid black;
     padding: 0 1.6rem;
-    width: 40rem;
+    width: 60rem;
     position: relative;
-    left: 20rem;
-    top: 1.5rem;
+    left: 10rem;
+    top: 1rem;
 }
 h2{
     position: relative;
@@ -79,13 +79,13 @@ h2{
     font-size: large;
     text-align: center;
     position: relative;
-    left: 30rem;
+    left: 30.2rem;
     bottom: 9rem;
     
 }
 .aBotao, input{
     border-radius: .8rem;
-    height: 5rem;
+    height: 7rem;
     font-size: large;
 }
 .fotoPerfil {
