@@ -37,24 +37,68 @@ form.example::after {
   display: table;
 }
 /* Centralizar caixa de pesquisa*/
-.form{ 
-    justify-content:center;
-    
-}
+
 
 
 /*<---------------/main_content_home----------------------------->*/
 
-.main_content_home{
+.main_content_home{ /*Area que abrange o botão de criar e o restante da pagina */
     width: 100vw;
     height: 100vh;
     background: #6C7A89;
-    display: flex;
-    flex-direction: row;
+    display:flex;
     justify-content:center;
-    align-items:initial;
+    /* flex-direction:row; */
+    /* justify-content:center; */
+    /* align-items:center; */
+    
 }
 
+button#create{
+  /* margin: 10px;
+  /* padding: 10px; */
+    justify-content:center;
+    position:absolute; 
+    top:15%;
+    left:50%;
+    transform: translate(-50%, -50%);
+
+}
+.create_bounty{
+  display: flex;
+  align-items: center;
+
+}
+
+.area_bounty{ /*Area do retangulo */
+  width:900px;
+  height:200px;
+  background:rgba(0, 0, 255, 0.473);
+  border-color: black, ;
+  border: 1px solid;
+  /* display: flex; */
+  justify-content:center;
+  flex-direction:row;
+  padding: 10px;
+  margin: 10px;
+  
+}
+
+.index_bounty{ /*Scroll da pagina inicial */
+  /* overflow: auto; */
+  align-items:center;
+  margin: 120px;
+}
+
+.vl{
+  border-left: 2px solid green;
+  height: 200px;
+  position: static;
+  left: 57%;
+  margin-left: -3px;
+  top: 1;
+  
+}
 
 
 
@@ -123,3 +167,12 @@ form.example::after {
     opacity: 1;
     right: 0;
   }
+
+
+
+
+  .o-footer {
+    grid-area: footer;
+    padding: 1rem; 
+    /* background: purple ; */
+}
