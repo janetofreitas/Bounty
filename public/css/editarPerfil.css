@@ -64,7 +64,7 @@ a {
 }
 .input-forms{
     border: .2rem solid black;
-    padding: 0 1.6rem;
+    padding: 1%;
     width: 75%;
     position: relative;
     left: 12%;
@@ -84,7 +84,7 @@ h2{
     text-align: center;
     position: relative;
     left: 38.5%;
-    margin-bottom: 10%
+    /* margin-bottom: 10% */
     
     
 }
