@@ -20,6 +20,7 @@ body {
     color: #FDFDFD;
     background: #2d2d2d;
     border: 1px solid black;
+    display: flex;
 }
 a {
     display: block;
