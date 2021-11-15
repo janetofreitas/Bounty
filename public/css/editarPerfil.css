@@ -73,6 +73,7 @@ a {
     /* background-color: blue; */
     padding: 10rem;
     align-self: center;
+    /* justify-content: space-around; */
 
 
 
@@ -98,11 +99,21 @@ h2{
     /* font-size: large; */
     text-align: center;
     position: relative;
-    left: 16.4rem;
+    /* left: 16.4rem; */
     margin-bottom: -.1rem;
     width: 15rem;
     
 }
+.carrodoovo{
+    display: flex;
+    justify-content: space-around;
+}
+
+.carrodoleite{
+    display: flex;
+    justify-content: space-around;
+}
+
 .aBotao{
     border-radius: .8rem;
     height: 6rem;
