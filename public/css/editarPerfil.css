@@ -76,22 +76,28 @@ h2{
 }
 
   .aBotao{
-    width: 23%;
+    width: 20%;
     background-color: #ababab;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
     font-size: large;
     text-align: center;
     position: relative;
-    left: 38.5%;
+    left: 40%;
     margin-bottom: 3%
     
     
 }
-.aBotao, input{
+.aBotao{
     border-radius: .8rem;
-    height: 7rem;
+    height: 6rem;
     font-size: large;
+}
+input{
+    border-radius: .8rem;
+    height: 5rem;
+    font-size: large;
+
 }
 .fotoPerfil {
     display:flex;
