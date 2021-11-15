@@ -69,7 +69,6 @@ a {
     position: relative;
     left: 12%;
     top: 1%;
-    display: flex;
 }
 h2{
     position: relative;
@@ -93,13 +92,11 @@ h2{
     border-radius: .8rem;
     height: 6rem;
     font-size: large;
-    display: flex;
 }
 input{
     border-radius: .8rem;
     height: 5rem;
     font-size: large;
-    display: flex;
 
 }
 .fotoPerfil {
