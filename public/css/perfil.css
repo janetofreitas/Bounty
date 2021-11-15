@@ -35,7 +35,7 @@ a {
 
 .aBotao:hover {
     background-color: rgba(20, 20, 20, 0.747);
-    box-shadow: 0px 15px 20px rgba(29, 69, 199, 0.219);
+    box-shadow: 0px 15px 20px rgba(245, 246, 247, 0.219);
     color: #fff;
     transform: translateY(-10px);
   }
@@ -52,7 +52,6 @@ a {
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
-    margin-top: 2rem;
     color: #FDFDFD;
     border: 1px solid black;
      
