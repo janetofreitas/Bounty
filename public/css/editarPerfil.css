@@ -65,10 +65,10 @@ a {
 .input-forms{
     border: .2rem solid black;
     padding: 0 1.6rem;
-    width: 60rem;
+    width: 75%;
     position: relative;
-    left: 10rem;
-    top: 1rem;
+    left: 12%;
+    top: 10%;
 }
 h2{
     position: relative;
@@ -76,15 +76,16 @@ h2{
 }
 
   .aBotao{
-    width: 19rem;
+    width: 23%;
     background-color: #ababab;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
     font-size: large;
     text-align: center;
     position: relative;
-    left: 30.2rem;
-    bottom: 9rem;
+    left: 38.5%;
+    margin-bottom: 10%
+    
     
 }
 .aBotao, input{
@@ -95,6 +96,6 @@ h2{
 .fotoPerfil {
     display:flex;
     justify-content: center;
-    margin-bottom: 10rem;
+    margin-bottom: 2%;
     
 }
