@@ -46,7 +46,7 @@ a {
 .fcontainer {
     width: 80rem;
     height: 80rem;
-    margin: 0 auto;
+    margin:  auto;
     position: relative;
     right: 3.5rem;
     border: .3rem solid #ababab;
@@ -57,6 +57,9 @@ a {
     flex-direction:column;
     flex-wrap: wrap;
     margin-top: 1rem;
+    margin-bottom: 1rem;
+
+
 }
 .input-forms{
     border: .2rem solid black;
