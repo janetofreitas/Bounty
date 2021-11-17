@@ -77,12 +77,10 @@ a {
     margin: 1rem;
     background-color: rgb(72, 75, 75);
     display: flex;
-    /* margin-left: 20%; */
 }
 
 
  .o-footer {
     grid-area: footer;
     padding: 1rem; 
-    /* background: purple ; */
 }
