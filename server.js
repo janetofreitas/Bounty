@@ -83,6 +83,10 @@ app.post('/forgotPassword', async (req, res) => {
   
 })
 
+app.get('/editarPerfil', (req,res) => {
+  res.render('editarPerfil.ejs', { name: req.user.name })
+})
+
 app.delete('/logout', (req, res) => {
     req.logOut()
     res.redirect('/login')
