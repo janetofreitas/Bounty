@@ -61,6 +61,25 @@ a {
     
      
 }
+.boxBounty{
+    width: 61.8%;
+    border-radius: .8rem;
+    padding: 5%;
+    margin: 1rem;
+    background-color: rgb(72, 75, 75);
+    display: flex;
+    margin-left: 20%;
+}
+.boxBio{
+    width: 90%;
+    border-radius: .8rem;
+    padding: 20%;
+    margin: 1rem;
+    background-color: rgb(72, 75, 75);
+    display: flex;
+    /* margin-left: 20%; */
+}
+
 
  .o-footer {
     grid-area: footer;
