@@ -68,63 +68,42 @@ a {
 
 
 }
-.input-forms{
-    border: .2rem solid black;
-    padding: 1%;
-    width: 70rem;
-    position: relative;
-    left: 0%;
-    top: 1%;
-}
 h2{
     position: relative;
-    top: 1rem;
+    top: .5rem;
     display: flex;
     justify-content: center;
 }
 h1{
     position: relative;
-    top: 1rem;
     display: flex;
     justify-content: center;
-    margin-bottom: 6.2rem;
 }
 
-  .aBotao{
-    width: 20%;
-    background-color: #ababab;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: black;
-    text-align: center;
-    position: relative;
-    margin-bottom: -.1rem;
-    width: 15rem;
-    
-}
-.carrodoovo{
-    display: flex;
-    justify-content: space-around;
-}
-
-.carrodoleite{
-    display: flex;
-    justify-content: space-around;
-}
-
-.aBotao{
-    border-radius: .8rem;
-    height: 6rem;
-    font-size: large;
-}
-input{
-    border-radius: .8rem;
-    height: 5rem;
-    font-size: large;
-
-}
 .fotoPerfil {
     display:flex;
-    justify-content: center;
-    margin-bottom: 5rem;
-    
+    justify-content: center;   
+}
+.boxBounty{
+        width: 60rem;
+        border-radius: .8rem;
+        padding: 5rem;
+        margin: 1rem;
+        background-color: aqua;
+}
+.boxBounty2{
+    width: 20rem;
+    border-radius: .8rem;
+    padding: 2rem;
+    margin: 1rem;
+    background-color: aqua;
+    display: flex;
+    margin-left: 33%;
+}
+.boxBounty3{
+    width: 60rem;
+    border-radius: .8rem;
+    padding: 4rem;
+    margin: 1rem;
+    background-color: aqua;
 }
