@@ -45,6 +45,9 @@ a {
     color: #fff;
     transform: translateY(-10px);
   }
+.aBotao{
+    margin-bottom: 10%;
+}
 
 
 .o-form {
@@ -77,6 +80,7 @@ a {
     margin: 1rem;
     background-color: rgb(72, 75, 75);
     display: flex;
+    margin-bottom: 10%;
 }
 
 
