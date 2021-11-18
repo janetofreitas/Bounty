@@ -26,9 +26,6 @@
                 <h2>Login</h2>
             </div>
             <div class="formLog">
-                <% if (messages.error) { %>
-                    <%= messages.error %>
-                  <% } %>
                 <form action="/login" method="POST">
                     <label class="sr-only" for="email">Digite seu email registrado</label>
                     <input type="email" id="email" placeholder="Digite seu email registrado" name="email"> 
