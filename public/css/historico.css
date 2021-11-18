@@ -1,0 +1,72 @@
+body {
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    'form form form'
+    "footer footer footer";
+    /* gap: 1rem; */
+    grid-template-columns: 0% 100% 0%;
+    grid-template-rows: auto 85% auto;
+}
+
+.o-header {
+    grid-area: header;
+    background: #2d2d2d ;
+    
+} 
+
+ .o-logo { 
+    grid-area: logo;
+    color: #FDFDFD;
+    background: #2d2d2d;
+    border: 1px solid black;
+}
+h2{
+    position: relative;
+    top: 1rem;
+    margin-left: 1rem;
+}
+
+a {
+    display: block;
+    width: 113px;
+    margin: auto; 
+    font-size: large;
+    }
+
+.aBotao:hover {
+    background-color: rgba(20, 20, 20, 0.747);
+    box-shadow: 0px 15px 20px rgba(245, 246, 247, 0.219);
+    color: #fff;
+    transform: translateY(-10px);
+  }
+
+
+.o-form {
+    grid-area: form;
+    background: #2d2d2d;
+    color: #ababab;
+    
+}
+.tituloMBT{
+    
+    display: flex;
+    justify-content: center;
+    color: #FDFDFD;
+    
+     
+}
+.boxBounty{
+    width: 61.8%;
+    border-radius: .8rem;
+    padding: 4%;
+    margin: 1rem;
+    background-color: rgb(72, 75, 75);
+    display: flex;
+    margin-left: 20%;
+}
+
+ .o-footer {
+    grid-area: footer;
+    padding: 1rem; 
+}
