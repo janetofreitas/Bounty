@@ -6,7 +6,7 @@ body {
     "footer footer footer";
     /* gap: 1rem; */
     grid-template-columns: 15% 0% 85%;
-    grid-template-rows: 10% 85% auto;
+    grid-template-rows: auto 85% auto;
 }
 
 .o-header {
