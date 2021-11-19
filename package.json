@@ -12,13 +12,17 @@
     "express-flash": "0.0.2",
     "express-openid-connect": "^2.5.1",
     "express-session": "^1.17.2",
+    "fs": "0.0.1-security",
     "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
     "mongodb": "^4.1.4",
     "mongoose": "^6.0.12",
+    "nodemailer": "^6.7.1",
+    "nodemailer-express-handlebars": "^4.0.0",
     "nodemon": "^2.0.14",
     "passport": "^0.5.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {},
   "scripts": {
