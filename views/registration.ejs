@@ -25,7 +25,7 @@
                 <h2>Cadastro</h2>
             </div>
             <div class="formLog">
-                <form action="/registration" method="POST">
+                <form action="/auth/register" method="POST">
                     <label class="sr-only" for="name">Digite seu nome completo</label>
                     <input type="text" id="name" class="input-forms" placeholder="Digite seu nome completo" name="name" required> 
                     
@@ -36,7 +36,7 @@
                     <input type="tel" id="tel" class="input-forms" placeholder="Digite seu telefone" name="telefone" required>
                     
                     <label class="sr-only" for="data">Digite sua data de nascimento</label>
-                    <input type="date" id="data" class="input-forms" name="dataN" required>
+                    <input type="date" id="data" class="input-forms" name="dataNascimento" required>
                     
                     <label class="sr-only" for="cep">Digite seu CEP</label>
                     <input type="number" id="cep" class="input-forms" placeholder="Digite seu CEP" name="cep" required>
@@ -45,7 +45,7 @@
                     <input type="text" id="nac" class="input-forms" placeholder="Digite sua nacionalidade" name="nacionalidade" required>
                     
                     <label class="sr-only" for="endereco">Digite seu endereço</label>
-                    <input type="text" id="endereco" class="input-forms" placeholder="Digite seu endereço" name="end" required>
+                    <input type="text" id="endereco" class="input-forms" placeholder="Digite seu endereço" name="endereco" required>
                     
                     <label class="sr-only" for="cep">Informe seu gênero</label>
                     <select name="genero" id="genero" class="input-forms" required>

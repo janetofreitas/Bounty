@@ -26,12 +26,10 @@ router.post('/register', async (req,res) => {
 
         user.password = undefined;
 
-        return res.send({
-            user,
-            token: generateToken({ id:user.id }),
-        });
+        return res.redirect('/perfil');
         
     }catch(err){
+        console.log(err);
         return res.status(400).send({ error: 'Registration failed' });
     }
 });
@@ -51,9 +49,20 @@ router.post('/authenticate', async (req,res) => {
 
     user.password = undefined;
 
-    res.send({
-         user,
-         token: generateToken({ id:user.id }),
+    // return res.redirect('/perfil',);
+
+    router.get('/', function(req, res, next) {
+      
+        userModel.find((err, docs) => {
+            if (!err) {
+                res.render("list", {
+                    data: docs
+                });
+            } else {
+                console.log('Failed to retrieve the Course List: ' + err);
+            }
+        });
+     
     });
 })
 
