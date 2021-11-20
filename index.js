@@ -17,17 +17,24 @@ app.get('/', (req,res) => {
 })
 
 app.get('/registration', (req,res) => {
-  res.render('perfil.ejs');
+  res.render('registration.ejs');
 })
 
 app.get('/perfil', async (req,res) => {
-  console.log(`${usermail} aiai`);
+  // console.log(`${usermail} aiai`);
   const  email  = usermail;
-  console.log(email)
+  // console.log(email)
   const user = await User.findOne({ email: email });
-  res.render('perfil.ejs', {name: user.name, genero: user.genero});
-  console.log(user.name)
+  // user.bio = 'ola ola ola ola';
+  res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio});
+  // console.log(user.name)
   // console.log(user)
+})
+
+app.get('/editarPerfil', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  res.render('editarPerfil.ejs', {name: user.name, genero: user.genero, bio: user.bio});
 })
 
 app.listen(3000);
