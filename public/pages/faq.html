@@ -3,91 +3,102 @@
 <html lang="pt-BR">
 
 <head>
+    <!DOCTYPE html>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/faq.css">
-    <title>FAQ Bounty</title>
-
-</head>
-
-<body>
-
-    <header class="o-header">
-        <nav> 
-            <div class="logo"><a href="" class="logoHeader"><img src="../assets/logoP.png" alt=""></a></div>
-      
-            <form action="#">
-              <input type="search" class="search-data" placeholder="Pesquisar" required>
-              <button type="submit" ><img src="../assets/searchIcon.png" alt=""></button>
-            </form>
-            
-            <div class="mangue"><h4 class="h1nav">Olá Pelé! <br> <a href="" id="navlogout">Logout</a></h4></div>
+    <html lang="pt-BR">
     
-            <div class="userarea">
-                <a href="" class="logoHeader"><img src="https://source.unsplash.com/90x60/?face" alt=""></a>  
-            </div>
-          </nav> 
-    </header>
-
-    <div class="o-form">
-        <div class="container">
-            <h1 class="faq">FAQ</h1>
-            <h3>1. Estou com X problema, o que devo fazer?</h3>
-            <h3>2. Estou com Y problema, o que devo fazer?</h3>
-            <h3>3. Estou com Z problema, o que devo fazer?</h3>
-            <h3>4. Estou com W problema, o que devo fazer?</h3>
-            <h3 class="faq">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ainda não encontrou o que procurava?<br>Entre em contato através do chat ao lado ou nos envie um e-mail.</h3>
-            <h3 class="faq">Email para contato: contato@bounties.com.br</h3>
+    <head>
+    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/9ff781d0d0.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/global.css">
+        <link rel="stylesheet" href="../css/faq.css">
+        <title>Bounty</title>
+    
+    </head>
+    
+    <body>
+        <header class="o-header">
+            <nav> 
+                <div class="logo"><a href="" class="logoHeader"><img src="../assets/logoP.png" alt=""></a></div>
+          
+                <form action="#">
+                  <input type="search" class="search-data" placeholder="Pesquisar" required>
+                  <button type="submit" ><img src="../assets/searchIcon.png" alt=""></button>
+                </form>
+                
+                <div class="mangue"><h4 class="h1nav">Olá  <%= name %>! <br>
+                    <form action="/logout?_method=DELETE" method="POST">
+                        <button type="submit">Log Out</button>
+                      </form></div>
+        
+                <div class="userarea">
+                    <a href="" class="logoHeader"><img src="https://source.unsplash.com/90x60/?face" alt=""></a>  
+                </div>
+              </nav> 
+        </header>
+        <aside class="o-logo">
             
+        
+        </aside>
+    
+        <main class="o-form">
+            <h1 class="h1faq">FAQ</h1>
+        
+             <div class="h2faq">
+            <h2>1. Estou com X problema, o que devo fazer?</h2>
+            <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum nisi voluptate saepe nemo doloribus laboriosam perferendis fuga? Autem, deleniti ex! Obcaecati numquam totam possimus nihil veniam sapiente repellat modi voluptatibus.</h3>
+            <h2>2. Estou com Y problema, o que devo fazer?</h2>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores distinctio amet atque quis error commodi nesciunt ducimus neque illo magnam saepe a similique omnis illum, aliquid totam corrupti. Debitis, recusandae.</h3>
+            <h2>3. Estou com Z problema, o que devo fazer?</h2>
+            <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus eos distinctio dolor similique minus possimus provident harum, earum unde dolorum?</h3>
+            <h2>4. Estou com W problema, o que devo fazer?</h2>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptate deserunt possimus consequatur? Eum hic officia unde vero quia non.</h3>
         </div>
-
+        <h2 class="contato">Ainda não encontrou o que procurava?<br>Entre em contato através do chat ao lado ou nos envie um e-mail.</h2>
+            <h2 class="contato">Email para contato: contato@bounties.com.br</h2>
+            
+        </main>
         
-    </div>
+    <footer class="o-footer footer-dark">
     
+            <div class="container">
+                <div class="row">
+                    <!-- <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div> -->
+                    <div class="col-sm-6 col-md-3 item">
+                        <!-- <h3></h3> -->
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Meu perfil</a></li>
+                            <li><a href="#">F.A.Q</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Bounty</h3>
+                        <p>Faz uma bounty você tambem! ಠ_ಠ</p>
+                    </div>
+                    <div class="col item social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="copyright">Bounty © 2021</p>
+            </div> 
     
-
-    <div class="o-rodape">
-        <div class="container">
-            <div class="row">
-                <!-- <div class="col-sm-6 col-md-3 item">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Web design</a></li>
-                        <li><a href="#">Development</a></li>
-                        <li><a href="#">Hosting</a></li>
-                    </ul>
-                </div> -->
-                <div class="col-sm-6 col-md-3 item">
-                    <!-- <h3></h3> -->
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Meu perfil</a></li>
-                        <li><a href="#">F.A.Q</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-6 item text">
-                    <h3>Bounty</h3>
-                    <p>Faz uma bounty você tambem! ಠ_ಠ</p>
-                </div>
-                <div class="col item social">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-            <p class="copyright">Bounty © 2021</p>
-        </div> 
-
-        
-
-        
-    </div>
-
-</body>
-
-</html>
-
+    </footer>
+    
+    </body>
+    
+    </html> 
+    
