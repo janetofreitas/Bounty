@@ -20,6 +20,10 @@ app.get('/registration', (req,res) => {
   res.render('registration.ejs');
 });
 
+app.get('/forgotPassword', (req,res) => {
+  res.render('forgotPassword.ejs');
+})
+
 app.get('/perfil', async (req,res) => {
   // console.log(`${usermail} aiai`);
   const  email  = usermail;
