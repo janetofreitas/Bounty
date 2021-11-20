@@ -1,44 +1,71 @@
 body {
-    display: inherit;
+    display: grid;
     grid-template-areas:
     "header header header"
-    "form form form"
-    "rodape rodape rodape";
-    grid-template-columns: 30% 40% 30%;
-    grid-template-rows: 10% 80% 10%;
-    
+    'form form form'
+    "footer footer footer";
+    /* gap: 1rem; */
+    grid-template-columns: 20% 80% 0%;
+    grid-template-rows: auto 85% auto;
 }
 
 .o-header {
     grid-area: header;
-    background: #2d2d2d ;
-}
-.o-form {
-    grid-area: form;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    background: rgb(173, 173, 173);
-    align-items: center;   
-} 
-.container{
-    background: rgb(193, 212, 541);
-    border-style: double;
-    width: 80%;
-    height: 80%;
-    border-radius: 50px;
-    display: grid;
-    padding-bottom: 2%;
-    padding-left: 2%;
-}
-.o-rodape {
-    grid-area: footer;
-    padding: 1rem; 
-    
+    background: #2d2d2d  ;
     
 } 
 
-.faq{
-    justify-self: center;
-    margin-top: 2%;
+ .o-logo { 
+    grid-area: logo;
+    color: #FDFDFD;
+    background: #2d2d2d;
+    border: 1px solid black;
+    display: flex;
+    min-width: 800px;
+    max-width: auto;
+}
+a {
+    display: block;
+    width: 113px;
+    margin: auto; 
+    font-size: large;
+    }
+
+
+
+.o-form {
+    grid-area: form;
+    background: #2d2d2d;
+    color: #ababab;
+    
+}
+ .o-footer {
+    grid-area: footer;
+    padding: 1rem; 
+}
+.h1faq{
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    width: 2.6%;
+    
+}
+
+h2{
+    position: relative;
+    top: 1rem;
+}
+.h2faq{
+   
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    width: 25%;
+    height: 65%;
+}
+.contato{
+    display: flex;
+justify-content: center;
 
 }
