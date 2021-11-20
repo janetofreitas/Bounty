@@ -61,4 +61,10 @@ app.get('/historico', async (req,res) => {
   res.render('historico.ejs', {name: user.name, genero: user.genero, bio: user.bio});
 });
 
+app.get('/favoritos', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  res.render('favoritos.ejs', {name: user.name, genero: user.genero, bio: user.bio});
+});
+
 app.listen(3000);
