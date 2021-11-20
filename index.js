@@ -17,50 +17,17 @@ app.get('/', (req,res) => {
 })
 
 app.get('/registration', (req,res) => {
-  res.render('registration.ejs');
-})
-
-app.get('/perfil', (req,res) => {
   res.render('perfil.ejs');
 })
 
-// app.delete('/logout', (req, res) => {
-//   req.logOut()
-//   res.redirect('/')
-// })
-
-// app.get('/logout', function(req,res){
-//   req.logOut();
-//   req.session.destroy(function (err) {
-//          res.redirect('/'); //Inside a callback… bulletproof!
-//      });
-//  });
-
-// app.post('/registration', async (req, res) => {
-
-//     console.log('pre try');
-//     try {
-//         console.log('entrou no try');
-//       var user = new User({
-//         name: req.body.name,
-//         email: req.body.email,
-//         telefone: req.body.telefone,
-//         dataN: req.body.dataN,
-//         cep: req.body.cep,
-//         nacionalidade: req.body.nacionalidade,
-//         endereço: req.body.end,
-//         genero: req.body.genero,
-//         password: req.body.password
-//       })
-//       console.log(user);
-//       res.redirect('/auth/register')
-//     } catch {
-//         console.log('caiu no catch')
-//       res.redirect('/registration')
-//     }
-//     // console.log(users)
-//   })
-
-
+app.get('/perfil', async (req,res) => {
+  console.log(`${usermail} aiai`);
+  const  email  = usermail;
+  console.log(email)
+  const user = await User.findOne({ email: email });
+  res.render('perfil.ejs', {name: user.name, genero: user.genero});
+  console.log(user.name)
+  // console.log(user)
+})
 
 app.listen(3000);
