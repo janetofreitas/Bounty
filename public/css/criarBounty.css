@@ -90,20 +90,20 @@ a {
 .input-forms3{
     border: .2rem solid black;
     padding: 1%;
-    width: 50%;
+    width: 75%;
     height: 20%;
     position: relative;
-    left: 22%;
+    left: 12%;
     top: 1%;  
     display: inline-block; 
 }
 .input-forms4{
     border: .2rem solid black;
     padding: 1%;
-    width: 50%;
-    height: 50%;
+    width: 75%;
+    height: 30%;
     position: relative;
-    left: 22%;
+    left: 12%;
     top: 1%;  
     display: inline-block; 
 }
@@ -120,6 +120,7 @@ h2{
     color: black;
     text-align: center;
     position: relative;
+    margin-top: 1%;
     margin-bottom: -.1rem;
     width: 15rem;
     
@@ -149,5 +150,6 @@ input{
     display:flex;
     justify-content: center;
     margin-bottom: .5rem;
+   
     
 }
