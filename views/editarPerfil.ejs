@@ -38,7 +38,7 @@
         </header>
         <aside class="o-logo">
          <div class="fcontainer">
-                <form action="POST">
+                <form action="/editarPerfil" method="POST">
 
                     <div class="fotoPerfil" >
            
@@ -50,24 +50,24 @@
 
 
                     <label class="sr-only" for="name">Nome</label>
-                    <input type="text" id="name" class="input-forms" placeholder="Nome" name="name"> 
+                    <input type="text" id="name" class="input-forms" placeholder="Nome" name="name" required> 
                     
-                    <label class="sr-only" for="name">Email</label>
-                    <input type="email" id="e-mail" class="input-forms" placeholder="E-mail"name="e-mail" >    
+                    <label class="sr-only" for="email">Email</label>
+                    <input type="email" id="e-mail" class="input-forms" placeholder="E-mail"name="e-mail" required>    
                     
-                    <label class="sr-only" for="tel">Bio</label>
-                    <input type="text" id="bio" class="input-forms" placeholder="Bio"name="bio" >
+                    <label class="sr-only" for="bio">Bio</label>
+                    <input type="text" id="bio" class="input-forms" placeholder="Bio"name="bio" required>
                     
                     
                     <label class="sr-only" for="cep">CEP</label>
-                    <input type="cep" id="cep" class="input-forms" placeholder="CEP"name="cep">
+                    <input type="cep" id="cep" class="input-forms" placeholder="CEP"name="cep" required>
                     
                     <label class="sr-only" for="endereco">Endereço</label>
-                    <input type="text" id="endereco" class="input-forms" placeholder="Endereço" name="endereco">
+                    <input type="text" id="endereco" class="input-forms" placeholder="Endereço" name="endereco" required>
                     <br><br>
                     
                     <div class="carrodoleite">
-                        <button class="aBotao">Salvar</button>
+                        <button class="aBotao" type="submit">Salvar</button>
                     </div>
                     
                     

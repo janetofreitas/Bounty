@@ -14,11 +14,11 @@ require('./controllers/index')(app);
 app.set('view-engine', 'ejs')
 app.get('/', (req,res) => {
     res.render ('login.ejs');
-})
+});
 
 app.get('/registration', (req,res) => {
   res.render('registration.ejs');
-})
+});
 
 app.get('/perfil', async (req,res) => {
   // console.log(`${usermail} aiai`);
@@ -29,12 +29,32 @@ app.get('/perfil', async (req,res) => {
   res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio});
   // console.log(user.name)
   // console.log(user)
-})
+});
 
 app.get('/editarPerfil', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
   res.render('editarPerfil.ejs', {name: user.name, genero: user.genero, bio: user.bio});
-})
+});
+
+app.post('/editarPerfil', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  await User.updateOne({ email: email }, {
+      bio: req.body.bio,
+      cep: req.body.cep,
+      endereco: req.body.endereco,
+      name: req.body.name,
+      email: req.body.email 
+  });
+
+  res.redirect('/perfil')
+});
+
+app.get('/historico', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  res.render('historico.ejs', {name: user.name, genero: user.genero, bio: user.bio});
+});
 
 app.listen(3000);
