@@ -38,7 +38,7 @@
         </header>
         <aside class="o-logo">
          <div class="fcontainer">
-                <form action="POST">
+                <form action="/editarPerfil" method="POST">
 
                     <div class="fotoPerfil" >
            
@@ -50,24 +50,24 @@
 
 
                     <label class="sr-only" for="name">Nome</label>
-                    <input type="text" id="name" class="input-forms" placeholder="Nome" name="name"> 
+                    <input type="text" id="name" class="input-forms" placeholder="Nome" name="name" required> 
                     
-                    <label class="sr-only" for="name">Email</label>
-                    <input type="email" id="e-mail" class="input-forms" placeholder="E-mail"name="e-mail" >    
+                    <label class="sr-only" for="email">Email</label>
+                    <input type="email" id="e-mail" class="input-forms" placeholder="E-mail"name="e-mail" required>    
                     
-                    <label class="sr-only" for="tel">Bio</label>
-                    <input type="text" id="bio" class="input-forms" placeholder="Bio"name="bio" >
+                    <label class="sr-only" for="bio">Bio</label>
+                    <input type="text" id="bio" class="input-forms" placeholder="Bio"name="bio" required>
                     
                     
                     <label class="sr-only" for="cep">CEP</label>
-                    <input type="cep" id="cep" class="input-forms" placeholder="CEP"name="cep">
+                    <input type="cep" id="cep" class="input-forms" placeholder="CEP"name="cep" required>
                     
                     <label class="sr-only" for="endereco">Endereço</label>
-                    <input type="text" id="endereco" class="input-forms" placeholder="Endereço" name="endereco">
+                    <input type="text" id="endereco" class="input-forms" placeholder="Endereço" name="endereco" required>
                     <br><br>
                     
                     <div class="carrodoleite">
-                        <button class="aBotao">Salvar</button>
+                        <button class="aBotao" type="submit">Salvar</button>
                     </div>
                     
                     
@@ -83,16 +83,7 @@
     
             <div class="container">
                 <div class="row">
-                    <!-- <div class="col-sm-6 col-md-3 item">
-                        <h3>Services</h3>
-                        <ul>
-                            <li><a href="#">Web design</a></li>
-                            <li><a href="#">Development</a></li>
-                            <li><a href="#">Hosting</a></li>
-                        </ul>
-                    </div> -->
                     <div class="col-sm-6 col-md-3 item">
-                        <!-- <h3></h3> -->
                         <ul>
                             <li><a href="#">Home</a></li>
                             <li><a href="/perfil">Meu perfil</a></li>
@@ -117,4 +108,4 @@
     
     </body>
     
-    </html> 
+    </html>
