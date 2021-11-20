@@ -75,6 +75,7 @@ a {
     position: relative;
     left: 12%;
     top: 1%;
+    height: 10%;
 }
 .input-forms2{
     border: .2rem solid black;
@@ -83,16 +84,30 @@ a {
     position: relative;
     left: 22%;
     top: 1%;
+    height: 10%;
     display: inline-block;
 }
 .input-forms3{
     border: .2rem solid black;
     padding: 1%;
-    width: 75%;
+    width: 50%;
+    height: 20%;
     position: relative;
-    left: 12%;
-    top: 1%;
+    left: 22%;
+    top: 1%;  
+    display: inline-block; 
 }
+.input-forms4{
+    border: .2rem solid black;
+    padding: 1%;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    left: 22%;
+    top: 1%;  
+    display: inline-block; 
+}
+
 h2{
     position: relative;
     top: 1rem;
@@ -121,12 +136,12 @@ h2{
 
 .aBotao{
     border-radius: .8rem;
-    height: 6rem;
+    height: 5%;
     font-size: large;
 }
 input{
     border-radius: .8rem;
-    height: 5rem;
+    /* height: 5rem; */
     font-size: large;
 
 }
