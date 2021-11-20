@@ -26,7 +26,7 @@ router.post('/register', async (req,res) => {
 
         user.password = undefined;
 
-        return res.redirect('/perfil');
+        return res.redirect('/');
         
     }catch(err){
         console.log(err);
@@ -48,22 +48,8 @@ router.post('/authenticate', async (req,res) => {
     }
 
     user.password = undefined;
-
-    // return res.redirect('/perfil',);
-
-    router.get('/', function(req, res, next) {
-      
-        userModel.find((err, docs) => {
-            if (!err) {
-                res.render("list", {
-                    data: docs
-                });
-            } else {
-                console.log('Failed to retrieve the Course List: ' + err);
-            }
-        });
-     
-    });
+    usermail = user.email;
+    return res.redirect('/perfil');
 })
 
 router.post('/forgotPassword', async (req,res) => {

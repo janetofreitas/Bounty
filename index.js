@@ -20,47 +20,21 @@ app.get('/registration', (req,res) => {
   res.render('registration.ejs');
 })
 
-app.get('/perfil', (req,res) => {
-  res.render('perfil.ejs');
+app.get('/perfil', async (req,res) => {
+  // console.log(`${usermail} aiai`);
+  const  email  = usermail;
+  // console.log(email)
+  const user = await User.findOne({ email: email });
+  // user.bio = 'ola ola ola ola';
+  res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio});
+  // console.log(user.name)
+  // console.log(user)
 })
 
-// app.delete('/logout', (req, res) => {
-//   req.logOut()
-//   res.redirect('/')
-// })
-
-// app.get('/logout', function(req,res){
-//   req.logOut();
-//   req.session.destroy(function (err) {
-//          res.redirect('/'); //Inside a callback… bulletproof!
-//      });
-//  });
-
-// app.post('/registration', async (req, res) => {
-
-//     console.log('pre try');
-//     try {
-//         console.log('entrou no try');
-//       var user = new User({
-//         name: req.body.name,
-//         email: req.body.email,
-//         telefone: req.body.telefone,
-//         dataN: req.body.dataN,
-//         cep: req.body.cep,
-//         nacionalidade: req.body.nacionalidade,
-//         endereço: req.body.end,
-//         genero: req.body.genero,
-//         password: req.body.password
-//       })
-//       console.log(user);
-//       res.redirect('/auth/register')
-//     } catch {
-//         console.log('caiu no catch')
-//       res.redirect('/registration')
-//     }
-//     // console.log(users)
-//   })
-
-
+app.get('/editarPerfil', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  res.render('editarPerfil.ejs', {name: user.name, genero: user.genero, bio: user.bio});
+})
 
 app.listen(3000);
