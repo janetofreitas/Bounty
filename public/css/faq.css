@@ -52,20 +52,24 @@ a {
     
 }
 
-h2{
-    position: relative;
-    top: 1rem;
-}
+
 .h2faq{
    
     margin-left: auto;
     margin-right: auto;
     margin-top: 3%;
-    width: 25%;
+    width: 40%;
     height: 65%;
+    text-align:justify;
 }
 .contato{
     display: flex;
 justify-content: center;
 
+}
+h2{
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-weight: bolder;
 }
