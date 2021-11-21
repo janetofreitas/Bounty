@@ -75,10 +75,14 @@ app.get('/faq', async (req,res) => {
 app.get('/home', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  // const bounty = await Bounty.find({ creator: email });
+  const bounty = await Bounty.find();
   // const homeBounty = await Bounty.find();
   // console.log(bounty.map(bounty => bounty.name).sort());
-  res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio});
+  console.log(bounty)
+  res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+     bountyName: bounty[0].name,bountyDescription: bounty[0].description,
+     bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,
+     bountyName3: bounty[2].name,bountyDescription3: bounty[2].description,});
 });
 
 app.get('/criarBounty', async (req,res) => {
