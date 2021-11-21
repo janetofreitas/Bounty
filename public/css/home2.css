@@ -52,7 +52,7 @@ body {
     grid-area: form;
     background: #2d2d2d;
     color: #ababab;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .rectangleInfo{
