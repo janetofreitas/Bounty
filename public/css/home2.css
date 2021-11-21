@@ -53,8 +53,6 @@ body {
     background: #2d2d2d;
     color: #ababab;
     justify-content: center;
-    
-    
 }
 
 .rectangleInfo{
@@ -66,7 +64,6 @@ body {
     display: flex;
     margin-left: 20%;
     border-radius: .8rem;
-    
 }
 
 
@@ -78,8 +75,6 @@ body {
     /* text-align: left; */
     margin-left: 58%;
     justify-content: last baseline;
-    
-
 }
 
 .imgBounty{
@@ -89,7 +84,6 @@ body {
     /* margin: 1px; */
     margin-top: -6.8%;
     margin-left: 8%;
-    
 }
 /* -------------------------------------------------FOOTER CSS------------------------------------------*/
 
