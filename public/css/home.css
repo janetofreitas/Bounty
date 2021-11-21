@@ -1,178 +1,99 @@
-* {
-  box-sizing: border-box;
-}
-
-/* Style the search field */
-form.example input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 80%;
-  background: #f1f1f1;
-  
-}
-
-/* Style the submit button */
-form.example button {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: #2196F3;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none; /* Prevent double borders */
-  cursor: pointer;
-}
-
-form.example button:hover {
-  background: #0b7dda;
-}
-
-/* Clear floats */
-form.example::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-/* Centralizar caixa de pesquisa*/
-
-
-
-/*<---------------/main_content_home----------------------------->*/
-
-.main_content_home{ /*Area que abrange o botão de criar e o restante da pagina */
-    width: 100vw;
-    height: 100vh;
-    background: #6C7A89;
-    display:flex;
-    justify-content:center;
-    /* flex-direction:row; */
-    /* justify-content:center; */
-    /* align-items:center; */
+/* ------------------------------------------------HEADER CSS-------------------------------------------*/
+.o-header {
+    grid-area: header;
+    background: #2d2d2d;
     
+} 
+
+.o-logo { 
+    grid-area: logo;
+    color: #FDFDFD;
+    background: #2d2d2d;
+    border: 1px solid black;
 }
 
-button#create{
-  /* margin: 10px;
-  /* padding: 10px; */
-    justify-content:center;
-    position:absolute; 
-    top:15%;
-    left:50%;
-    transform: translate(-50%, -50%);
-
-}
-.create_bounty{
-  display: flex;
-  align-items: center;
-
+a {
+    display: block;
+    width: 113px;
+    margin: auto; 
+    font-size: large;
 }
 
-.area_bounty{ /*Area do retangulo */
-  width:900px;
-  height:200px;
-  background:rgba(0, 0, 255, 0.473);
-  border-color: black, ;
-  border: 1px solid;
-  display: flex;
-  justify-content:center;
-  /* flex-direction:row; */
-  padding: 10px;
-  margin: 10px;
-
+/* -------------------------------------------------BODY CSS--------------------------------------------*/
+body {
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    'form form form'
+    "footer footer footer";
+    /* gap: 1rem; */
+    grid-template-columns: 0% 100% 0%;
+    grid-template-rows: auto 85% auto;
 }
 
-.index_bounty{ /*Scroll da pagina inicial */
-  /* overflow: auto; */
-  align-items:center;
-  margin: 120px;
-}
-
-.vl{
-  border-left: 2px solid green;
-  height: 200px;
-  position: fixed;
-  left: 57%;
-  margin-left: 550px;
-  top: 0;
-  
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*<---------------!button_css----------------------------->*/
-
-.button {
-    border-radius: 4px;
-    background-color: #f4511e;
+.createBounty{
+    background-color: #4CAF50;
     border: none;
-    color: #FFFFFF;
+    color: white;
+    padding: 15px 32px;
     text-align: center;
-    font-size: 28px;
-    padding: 20px;
-    width: 200px;
-    transition: all 0.5s;
+    font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
-    margin: 5px;
-  }
-  
-  .button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .button:hover span {
-    padding-right: 25px;
-  }
-  
-  .button:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
+    display: flex;
+    right: 30px;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1%;
+
+}
 
 
+.o-form {
+    grid-area: form;
+    background: #2d2d2d;
+    color: #ababab;
+    /* justify-content: center; */
+}
+
+.rectangleInfo{
+    width: 61.8%;
+    padding: 4%;
+    /* height: 25%; */
+    margin: 2rem;
+    background-color: rgb(111, 114, 114);
+    display: flex;
+    margin-left: 20%;
+    border-radius: .8rem;
+}
 
 
-  .o-footer {
+.linha_vertical{
+    transform: rotate(270deg);
+    width: 170px;
+    border-color: black;
+    border: solid 1px;
+    /* text-align: left; */
+    margin-left: 58%;
+    justify-content: last baseline;
+}
+
+.imgBounty{
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    /* margin: 1px; */
+    margin-top: -6.8%;
+    margin-left: 8%;
+}
+/* -------------------------------------------------FOOTER CSS------------------------------------------*/
+
+.o-footer {
     grid-area: footer;
     padding: 1rem; 
-    /* background: purple ; */
+}
+.h1titulo{
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
 }
