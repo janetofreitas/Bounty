@@ -31,8 +31,6 @@ app.get('/perfil', async (req,res) => {
   const user = await User.findOne({ email: email });
   // user.bio = 'ola ola ola ola';
   res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio});
-  // console.log(user.name)
-  // console.log(user)
 });
 
 app.get('/editarPerfil', async (req,res) => {
@@ -71,6 +69,12 @@ app.get('/faq', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
   res.render('faq.ejs', {name: user.name, genero: user.genero, bio: user.bio});
+});
+
+app.get('/home', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio});
 });
 
 app.listen(3000);

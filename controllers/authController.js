@@ -49,7 +49,7 @@ router.post('/authenticate', async (req,res) => {
 
     user.password = undefined;
     usermail = user.email;
-    return res.redirect('/perfil');
+    return res.redirect('/home');
 })
 
 router.post('/forgotPassword', async (req,res) => {
