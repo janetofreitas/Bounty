@@ -76,12 +76,12 @@ button#create{
   background:rgba(0, 0, 255, 0.473);
   border-color: black, ;
   border: 1px solid;
-  /* display: flex; */
+  display: flex;
   justify-content:center;
-  flex-direction:row;
+  /* flex-direction:row; */
   padding: 10px;
   margin: 10px;
-  
+
 }
 
 .index_bounty{ /*Scroll da pagina inicial */
@@ -93,10 +93,10 @@ button#create{
 .vl{
   border-left: 2px solid green;
   height: 200px;
-  position: static;
+  position: fixed;
   left: 57%;
-  margin-left: -3px;
-  top: 1;
+  margin-left: 550px;
+  top: 0;
   
 }
 

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/global.css">
+        <link rel="stylesheet" href="../css/home2.css">
+        <script src="https://kit.fontawesome.com/27c00932fa.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>Página Inicial</title>
+    </head>
+    
+    <body>
+        <!-------------------------------------HEADER AREA-------------------------------------------> 
+        <header class="o-header">
+            <nav> 
+                <div class="logo"><a href="" class="logoHeader"><img src="../assets/logoP.png" alt=""></a></div>
+                    <form action="#">
+                        <input type="search" class="search-data" placeholder="Pesquisar" required>
+                        <button type="submit" ><img src="../assets/searchIcon.png" alt=""></button>
+                    </form>
+                
+                <div class="mangue"><h4 class="h1nav">Olá  <%= name %>! <br>
+                    <form action="/logout?_method=DELETE" method="POST">
+                        <button type="submit">Log Out</button>
+                    </form></div>
+        
+                <div class="userarea">
+                    <a href="" class="logoHeader"><img src="https://source.unsplash.com/90x60/?face" alt=""></a>  
+                </div>
+            </nav> 
+        </header>
+
+        <!-----------------------------------------BODY AREA-----------------------------------------> 
+        <aside class="o-logo"></aside>
+
+        <main class="o-form">
+            
+                <button class="createBounty">Criar Bounty</button>
+            
+                <div class="rectangleInfo">
+                    <hr class="linha_vertical"/>
+                    <img class="imgBounty"  src="/public/assets/Bounty_home_img.jpg">
+                </div>
+
+                <div class="rectangleInfo">
+                    <hr class="linha_vertical"/>
+                    <img class="imgBounty"  src="/public/assets/Bounty_home_img.jpg">
+                </div>
+
+                <div class="rectangleInfo">
+                    <hr class="linha_vertical"/>
+                    <img class="imgBounty"  src="/public/assets/Bounty_home_img.jpg">
+                </div>
+
+
+
+        </div>
+
+    
+
+
+
+
+        <!----------------------------------------FOOTER AREA----------------------------------------> 
+
+        <footer class="o-footer footer-dark">
+
+            <div class="container">
+                <div class="row">
+                    <!-- <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div> -->
+                    <div class="col-sm-6 col-md-3 item">
+                        <!-- <h3></h3> -->
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Meu perfil</a></li>
+                            <li><a href="#">F.A.Q</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Bounty</h3>
+                        <p>Faz uma bounty você tambem! ಠ_ಠ</p>
+                    </div>
+                    <div class="col item social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="copyright">Bounty © 2021</p>
+            </div> 
+    
+    </footer>
+
+        
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
