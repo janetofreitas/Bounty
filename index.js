@@ -26,11 +26,8 @@ app.get('/forgotPassword', (req,res) => {
 })
 
 app.get('/perfil', async (req,res) => {
-  // console.log(`${usermail} aiai`);
   const  email  = usermail;
-  // console.log(email)
   const user = await User.findOne({ email: email });
-  // user.bio = 'ola ola ola ola';
   res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio});
 });
 
@@ -80,9 +77,9 @@ app.get('/home', async (req,res) => {
   // console.log(bounty.map(bounty => bounty.name).sort());
   console.log(bounty)
   res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio,
-     bountyName: bounty[0].name,bountyDescription: bounty[0].description,
-     bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,
-     bountyName3: bounty[2].name,bountyDescription3: bounty[2].description,});
+     bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions,
+     bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,bountyRestrictions2: bounty[1].restrictions,
+     bountyName3: bounty[2].name,bountyDescription3: bounty[2].description,bountyRestrictions3: bounty[2].restrictions});
 });
 
 app.get('/criarBounty', async (req,res) => {
