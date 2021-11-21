@@ -119,3 +119,14 @@ input{
     margin-bottom: .5rem;
     
 }
+.alterarFoto{
+    width: 25%;
+    background-color: #ababab;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    text-align: center;
+    position: relative;
+    margin-bottom: -.1rem;
+    height: auto;
+    
+}
