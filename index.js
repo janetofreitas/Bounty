@@ -77,4 +77,10 @@ app.get('/home', async (req,res) => {
   res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio});
 });
 
+app.get('/criarBounty', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  res.render('criarBounty.ejs', {name: user.name, genero: user.genero, bio: user.bio});
+});
+
 app.listen(3000);
