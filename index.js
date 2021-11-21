@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const User = require('./models/User');
+const Bounty = require('./models/Bounty');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -74,13 +75,22 @@ app.get('/faq', async (req,res) => {
 app.get('/home', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
+  // const bounty = await Bounty.find({ creator: email });
+  // const homeBounty = await Bounty.find();
+  // console.log(bounty.map(bounty => bounty.name).sort());
   res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio});
 });
 
 app.get('/criarBounty', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  res.render('criarBounty.ejs', {name: user.name, genero: user.genero, bio: user.bio});
+  res.render('criarBounty.ejs', {name: user.name, genero: user.genero, bio: user.bio, email: user.email});
+});
+
+app.post('/createBounty', async (req,res) => {
+  // const  email  = usermail;
+  const bounty = await Bounty.create(req.body);
+  res.redirect('/home');
 });
 
 app.listen(3000);
