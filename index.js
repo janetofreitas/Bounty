@@ -93,10 +93,19 @@ app.get('/home', async (req,res) => {
   // const homeBounty = await Bounty.find();
   // console.log(bounty.map(bounty => bounty.name).sort());
   console.log(bounty)
-  res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio,
-     bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions,
-     bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,bountyRestrictions2: bounty[1].restrictions,
-     bountyName3: bounty[2].name,bountyDescription3: bounty[2].description,bountyRestrictions3: bounty[2].restrictions});
+
+     try{
+      res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions,
+        bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,bountyRestrictions2: bounty[1].restrictions,
+        bountyName3: bounty[2].name,bountyDescription3: bounty[2].description,bountyRestrictions3: bounty[2].restrictions});
+    }catch(err){
+      res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName:'',bountyDescription: '',bountyRestrictions: '',
+        bountyName2: '',bountyDescription2: '',bountyRestrictions2: '',
+        bountyName3: '',bountyDescription3: '',bountyRestrictions3: ''});
+    }
+     
 });
 
 app.get('/criarBounty', async (req,res) => {
