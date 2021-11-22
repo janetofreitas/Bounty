@@ -91,3 +91,14 @@ a {
     grid-area: footer;
     padding: 1rem; 
 }
+.linha_vertical{
+    transform: rotate(270deg);
+    width: 20%;
+    justify-content: last baseline;
+    margin-top: 4%;
+}
+.imgBounty{
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+}
