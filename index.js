@@ -26,7 +26,26 @@ app.get('/forgotPassword', (req,res) => {
 app.get('/perfil', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio});
+  const user2 = await User.findOne({ email: email });
+  const bountyP = await Bounty.find({ creator: email });
+  console.log(bountyP)
+  
+  // if(bountyP !== []){
+    try{
+      res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions,bountyCreator: bountyP[0].creator,
+        bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions});
+    }catch(err){
+        res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+          bountyName: '',bountyDescription:'',bountyRestrictions: '',bountyCreator: '',
+          bountyName2: '',bountyDescription2: '',bountyRestrictions2: ''});
+    }
+    
+  // }
+  console.log(user);
+
+  
+  
 });
 
 app.get('/editarPerfil', async (req,res) => {
