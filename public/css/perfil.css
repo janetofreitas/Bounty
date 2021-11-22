@@ -66,8 +66,9 @@ a {
 }
 .boxBounty{
     width: 61.8%;
+    height: 20%;
     border-radius: .8rem;
-    padding: 5%;
+    padding: 2%;
     margin: 1rem;
     background-color: rgb(72, 75, 75);
     display: flex;
@@ -75,12 +76,14 @@ a {
 }
 .boxBio{
     width: 90%;
+    height: 80%;
     border-radius: .8rem;
-    padding: 20%;
+    padding: 2%;
     margin: 1rem;
     background-color: rgb(72, 75, 75);
     display: flex;
     margin-bottom: 10%;
+    text-align: justify;
 }
 
 
