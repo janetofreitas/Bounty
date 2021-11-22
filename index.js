@@ -26,27 +26,68 @@ app.get('/forgotPassword', (req,res) => {
 app.get('/perfil', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  const user2 = await User.findOne({ email: email });
   const bountyP = await Bounty.find({ creator: email });
   console.log(bountyP)
   
   // if(bountyP !== []){
     try{
-      res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
-        bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions,bountyCreator: bountyP[0].creator,
-        bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions});
-    }catch(err){
+      try{
+       res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions,
+         bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions,
+         bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions,
+         bountyName4: bountyP[3].name,bountyDescription4: bountyP[3].description,bountyRestrictions4: bountyP[3].restrictions});
+      }catch(err){
+        console.log('primeiro try');
+      }
+
+      try{
         res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
-          bountyName: '',bountyDescription:'',bountyRestrictions: '',bountyCreator: '',
-          bountyName2: '',bountyDescription2: '',bountyRestrictions2: ''});
-    }
+          bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions,
+          bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions,
+          bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions,
+          bountyName4: '',bountyDescription4: '',bountyRestrictions4: ''});
+      }catch(err){
+       console.log('segundo try');
+      }
+
+      try{
+        res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+          bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions,
+          bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions,
+          bountyName3: '',bountyDescription3: '',bountyRestrictions3: '',
+          bountyName4: '',bountyDescription4: '',bountyRestrictions4: ''});
+      }catch(err){
+       console.log('terceiro try');
+      }
+
+      try{
+        res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+          bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions,
+          bountyName2: '',bountyDescription2: '',bountyRestrictions2: '',
+          bountyName3: '',bountyDescription3: '',bountyRestrictions3: '',
+          bountyName4: '',bountyDescription4: '',bountyRestrictions4: ''});
+      }catch(err){
+       console.log('quarto try');
+      }
+
+      try{
+        res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+          bountyName: '',bountyDescription: '',bountyRestrictions: '',
+          bountyName2: '',bountyDescription2: '',bountyRestrictions2: '',
+          bountyName3: '',bountyDescription3: '',bountyRestrictions3: '',
+          bountyName4: '',bountyDescription4: '',bountyRestrictions4: ''});
+      }catch(err){
+       console.log('quinto try');
+      }
+     
+   }catch(err){
+     console.log('finally')
+   }
+    
+});
     
   // }
-  console.log(user);
-
-  
-  
-});
 
 app.get('/editarPerfil', async (req,res) => {
   const  email  = usermail;
@@ -92,13 +133,34 @@ app.get('/home', async (req,res) => {
   const bounty = await Bounty.find();
   // const homeBounty = await Bounty.find();
   // console.log(bounty.map(bounty => bounty.name).sort());
-  console.log(bounty)
-
      try{
-      res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio,
-        bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions,
-        bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,bountyRestrictions2: bounty[1].restrictions,
-        bountyName3: bounty[2].name,bountyDescription3: bounty[2].description,bountyRestrictions3: bounty[2].restrictions});
+       try{
+        res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+          bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions,
+          bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,bountyRestrictions2: bounty[1].restrictions,
+          bountyName3: bounty[2].name,bountyDescription3: bounty[2].description,bountyRestrictions3: bounty[2].restrictions});
+       }catch(err){
+         console.log('primeiro try');
+       }
+
+       try{
+        res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+          bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions,
+          bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,bountyRestrictions2: bounty[1].restrictions,
+          bountyName3: '',bountyDescription3: '',bountyRestrictions3: ''});
+       }catch(err){
+        console.log('segundo try');
+       }
+
+       try{
+        res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+          bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions,
+          bountyName2: '',bountyDescription2: '',bountyRestrictions2: '',
+          bountyName3: '',bountyDescription3: '',bountyRestrictions3: ''});
+       }catch(err){
+        console.log('terceiro try');
+       }
+      
     }catch(err){
       res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio,
         bountyName:'',bountyDescription: '',bountyRestrictions: '',
