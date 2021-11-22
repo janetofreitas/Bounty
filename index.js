@@ -9,8 +9,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 require('./controllers/index')(app);
-// require('./controllers/authController')(app);
-// require('./controllers/projectController')(app);
 
 app.set('view-engine', 'ejs')
 app.get('/', (req,res) => {
