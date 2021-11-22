@@ -159,14 +159,20 @@ app.get('/home', async (req,res) => {
           bountyName3: '',bountyDescription3: '',bountyRestrictions3: ''});
        }catch(err){
         console.log('terceiro try');
+       } 
+
+       try{
+        res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+          bountyName:'',bountyDescription: '',bountyRestrictions: '',
+          bountyName2: '',bountyDescription2: '',bountyRestrictions2: '',
+          bountyName3: '',bountyDescription3: '',bountyRestrictions3: ''});
+       }catch(err){
+        console.log('terceiro try');
        }
       
     }catch(err){
-      res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio,
-        bountyName:'',bountyDescription: '',bountyRestrictions: '',
-        bountyName2: '',bountyDescription2: '',bountyRestrictions2: '',
-        bountyName3: '',bountyDescription3: '',bountyRestrictions3: ''});
-    }
+      console.log('quarto try');
+     }
      
 });
 
