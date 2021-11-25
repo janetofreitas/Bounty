@@ -24,8 +24,7 @@ const BountySchema = new mongoose.Schema({
     },
     creator:{
         type: String,
-        required: false,
-        default: 'coca@oi'
+        required: true,
     }
 });
 

@@ -29,7 +29,6 @@ app.get('/perfil', async (req,res) => {
   const bountyP = await Bounty.find({ creator: email });
   console.log(bountyP)
   
-  // if(bountyP !== []){
     try{
       try{
        res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
@@ -86,8 +85,6 @@ app.get('/perfil', async (req,res) => {
    }
     
 });
-    
-  // }
 
 app.get('/editarPerfil', async (req,res) => {
   const  email  = usermail;
@@ -131,8 +128,6 @@ app.get('/home', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
   const bounty = await Bounty.find();
-  // const homeBounty = await Bounty.find();
-  // console.log(bounty.map(bounty => bounty.name).sort());
      try{
        try{
         res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio,
