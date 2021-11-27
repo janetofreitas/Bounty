@@ -25,7 +25,14 @@ const BountySchema = new mongoose.Schema({
     creator:{
         type: String,
         required: true,
-    }
+    },
+    comments: [{
+        text: String,
+        postedBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    }]
 });
 
 const Bounty = mongoose.model('Bounty', BountySchema);
