@@ -29,10 +29,7 @@
                   <button type="submit" ><img src="../assets/searchIcon.png" alt=""></button>
                 </form>
                 
-                <div class="mangue"><h4 class="h1nav">Olá  <%= name %> <br>
-                    <form action="/logout?_method=DELETE" method="POST">
-                        <button type="submit">Log Out</button>
-                      </form></div>
+                <div class="mangue"><h4 class="h1nav">Olá <%= name %> <br> <a href="/" id="navlogout">Logout</a></h4></div>
         
                 <div class="userarea">
                     <a href="/perfil" class="logoHeader"><img src="https://source.unsplash.com/90x60/?face" alt=""></a>  
@@ -43,23 +40,26 @@
          <div class="fcontainer">
                  
                 <form action="POST">
-                    <h2>Nome da Bounty</h2>
+                    <h2> <%= bountyName %> </h2>
+                    <br>
                     <div class="fotoBounty" >
            
                         <img src="https://source.unsplash.com/150x155/?face" alt="">
                     </div>
                     <h2>PRAZO</h2>
+                    <br>
                     <div class="boxBounty2">
-                        <p>10/10/2010</p>
+                        <p> <%= bountyPrazoFinal %> </p>
                     </div>
                     <h2>RESTRIÇÕES</h2>
+                    <br>
                     <div class="boxBounty3">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit cumque, quibusdam ipsum porro exercitationem sunt maxime vel atque tempora quae cum autem molestiae, magnam reprehenderit unde fuga placeat ullam dicta.</p>
+                        <p> <%= bountyRestricoes %> </p>
                     </div>
                     <h2>DESCRIÇÃO</h2>
+                    <br>
                     <div class="boxBounty">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, in dolorem, sint fugit beatae quo libero blanditiis nihil facilis officiis odio maiores labore optio voluptatem autem cum dicta porro? Nulla at veritatis corrupti voluptatibus in, magnam minima distinctio iure inventore, aliquam quaerat velit consequuntur nemo similique tenetur ea. Minus rem dolor maxime dignissimos sint cumque mollitia adipisci architecto modi eum.
-                        </p>
+                        <p> <%= bountyDescricao %> </p>
                     </div>
   
                 </form>

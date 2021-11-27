@@ -27,6 +27,7 @@ app.get('/perfil', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
   const bountyP = await Bounty.find({ creator: email });
+
   console.log(bountyP)
   
     try{
@@ -110,6 +111,43 @@ app.get('/historico', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
   res.render('historico.ejs', {name: user.name, genero: user.genero, bio: user.bio});
+});
+
+app.get('/bounty1', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  
+  const bountyP = await Bounty.findOne({ _id: bounty1ID });
+  console.log(bountyP)
+  try{
+
+    try{
+      res.render('bounty.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description});
+    }catch(err){
+      console.log(err);
+    }
+  }catch(err){console.log('finally')}
+
+  
+});
+
+app.get('/bounty2', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  
+  const bountyP = await Bounty.findOne({ _id: bounty2ID });
+  console.log(bountyP)
+  try{
+
+    try{
+      
+      res.render('bounty.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description});
+    }catch(err){
+      console.log(err);
+    }
+  }catch(err){console.log('finally')}
+
+  
 });
 
 app.get('/favoritos', async (req,res) => {

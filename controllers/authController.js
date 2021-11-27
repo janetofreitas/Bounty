@@ -6,6 +6,7 @@ const mailer = require('../modules/mailer');
 const authConfig = require('../config/auth');
 
 const User = require('../models/User');
+const BountyG = require('../models/Bounty');
 
 const router = express.Router();
 
@@ -49,6 +50,14 @@ router.post('/authenticate', async (req,res) => {
 
     user.password = undefined;
     usermail = user.email;
+    try {
+        const bountyP = await BountyG.find({ creator: usermail });
+        bounty1ID = bountyP[0]._id.toHexString();
+        bounty2ID = bountyP[1]._id.toHexString();
+        bounty3ID = bountyP[2]._id.toHexString();
+        bounty4ID = bountyP[3]._id.toHexString();
+    }catch(error){error}
+    
     return res.redirect('/home');
 })
 
