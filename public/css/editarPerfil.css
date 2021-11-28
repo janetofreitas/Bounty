@@ -63,7 +63,7 @@ a {
     /* background-color: blue; */
     padding: 10rem;
     align-self: center;
-    /* justify-content: space-around; */
+    justify-content: space-around;
 
 
 
@@ -95,6 +95,7 @@ h2{
 .carrodoovo{
     display: flex;
     justify-content: space-around;
+    background-color: blue;
 }
 
 .carrodoleite{

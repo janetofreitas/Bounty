@@ -12,6 +12,8 @@
     "express-flash": "0.0.2",
     "express-openid-connect": "^2.5.1",
     "express-session": "^1.17.2",
+    "filepond": "^4.30.3",
+    "formidable": "^2.0.1",
     "fs": "0.0.1-security",
     "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
