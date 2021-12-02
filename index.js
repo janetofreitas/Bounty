@@ -47,7 +47,7 @@ app.get('/perfil', async (req,res) => {
     try{
       return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyPerfil1: '/bountyPerfil1',
-        bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bounty2Perfil: '/bountyPerfil2',
+        bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bountyPerfil2: '/bountyPerfil2',
         bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bountyPerfil3: '/bountyPerfil3',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: ''});
     }catch(err){

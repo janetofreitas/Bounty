@@ -2,11 +2,6 @@
 
 <html lang="pt-BR">
 
-<head>
-    <!DOCTYPE html>
-
-    <html lang="pt-BR">
-    
     <head>
     
         <meta charset="UTF-8">
@@ -22,7 +17,9 @@
     <body>
         <header class="o-header">
             <nav> 
-                <div class="logo"><a href="/home" class="logoHeader"><img src="../assets/logoP.png" alt=""></a></div>
+                <div class="logo">
+                    <a href="/home" class="logoHeader"><img src="../assets/logoP.png" alt=""></a>
+                </div>
           
                 <form action="#">
                   <input type="search" class="search-data" placeholder="Pesquisar" required>
@@ -32,56 +29,64 @@
                 <div class="mangue"><h4 class="h1nav">Olá  <%= name %>! <br>
                     <form action="/logout?_method=DELETE" method="POST">
                         <button type="submit">Log Out</button>
-                      </form></div>
+                    </form>
+                </div>
         
                 <div class="userarea">
                     <a href="/perfil" class="logoHeader"><img src="https://source.unsplash.com/90x60/?face" alt=""></a>  
                 </div>
-              </nav> 
+            </nav> 
         </header>
+        
         <aside class="o-logo">
-         <div class="fcontainer">
+            <div class="fcontainer">
                 <form action="/createBounty" method="POST">
 
                     <div class="fotoBounty" >
                         <img src="https://source.unsplash.com/150x155/?face" alt="">
                     </div>
+                    
                     <div class="carrodoovo">
-                    <input class="alterarFoto" type="file" name="myImage" accept="image/*" /> 
+                        <input class="alterarFoto" type="file" name="myImage" accept="image/*" /> 
                     </div>
 
-
                     <label class="sr-only" for="name">Nome da Bounty</label>
+                    
                     <input type="text" id="name" class="input-forms" placeholder="Nome da Bounty" name="name"> 
                     
                     <label class="sr-only" for="name">Prazo</label>
+                    
                     <input type="date" id="name" class="input-forms2" placeholder="" name="dataInicial">   
+                    
                     <label class="sr-only" for="name">Prazo</label>
+                    
                     <input type="date" id="name" class="input-forms2" placeholder="" name="dataFinal"> 
                     
                     <label class="sr-only" for="tel">Restrições</label>
+                    
                     <input type="tel" id="tel" class="input-forms3" placeholder="Restrições" name="restrictions">
                     
-                    
                     <label class="sr-only" for="Descrição">Descrição</label>
+                    
                     <input type="cep" id="descricao" class="input-forms4" placeholder="Descrição" name="description">
 
                     <input type="hidden" name="creator" value= <%= email %>>
                     
+                    <input type="hidden" name="status" value='andamento'>>
+
                     <div class="carrodoleite">
                         <button class="aBotao">Salvar</button>
                     </div>
                     
-                    
                 </form>
-          </div>
+            </div>
         </aside>
     
         <main class="o-form">
             
         </main>
         
-    <footer class="o-footer footer-dark">
+        <footer class="o-footer footer-dark">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-md-3 item">
@@ -104,8 +109,7 @@
                 </div>
                 <p class="copyright">Bounty © 2021</p>
             </div> 
-    
-    </footer>
+        </footer>
     
     </body>
     
