@@ -32,62 +32,61 @@ app.get('/perfil', async (req,res) => {
   const user = await User.findOne({ email: email });
   const bountyP = await Bounty.find({ creator: email });
 
-  console.log(bountyP)
   
+  try{
     try{
-      try{
-        return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
-         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions,
-         bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions,
-         bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions,
-         bountyName4: bountyP[3].name,bountyDescription4: bountyP[3].description,bountyRestrictions4: bountyP[3].restrictions});
-      }catch(err){
-        console.log('primeiro try');
-      }
+      return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bounty1: '/bounty1',
+        bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bounty2: '/bounty2',
+        bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bounty3: '/bounty3',
+        bountyName4: bountyP[3].name,bountyDescription4: bountyP[3].description,bountyRestrictions4: bountyP[3].restrictions, bounty4: '/bounty4'});
+    }catch(err){
+      console.log('primeiro try');
+    }
 
-      try{
-        return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
-          bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions,
-          bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions,
-          bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions,
-          bountyName4: '',bountyDescription4: '',bountyRestrictions4: ''});
-      }catch(err){
-       console.log('segundo try');
-      }
+    try{
+      return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bounty1: '/bounty1',
+        bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bounty2: '/bounty2',
+        bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bounty3: '/bounty3',
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: ''});
+    }catch(err){
+      console.log('segundo try');
+    }
 
-      try{
-        return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
-          bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions,
-          bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions,
-          bountyName3: '',bountyDescription3: '',bountyRestrictions3: '',
-          bountyName4: '',bountyDescription4: '',bountyRestrictions4: ''});
-      }catch(err){
-       console.log('terceiro try');
-      }
+    try{
+      return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bounty1: '/bounty1',
+        bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bounty2: '/bounty2',
+        bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bounty3: '',
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: ''});
+    }catch(err){
+      console.log('terceiro try');
+    }
 
-      try{
-        return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
-          bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions,
-          bountyName2: '',bountyDescription2: '',bountyRestrictions2: '',
-          bountyName3: '',bountyDescription3: '',bountyRestrictions3: '',
-          bountyName4: '',bountyDescription4: '',bountyRestrictions4: ''});
-      }catch(err){
-       console.log('quarto try');
-      }
+    try{
+      return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bounty1: '/bounty1',
+        bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bounty2: '',
+        bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bounty3: '',
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: ''});
+    }catch(err){
+      console.log('quarto try');
+    }
 
-      try{
-        return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
-          bountyName: '',bountyDescription: '',bountyRestrictions: '',
-          bountyName2: '',bountyDescription2: '',bountyRestrictions2: '',
-          bountyName3: '',bountyDescription3: '',bountyRestrictions3: '',
-          bountyName4: '',bountyDescription4: '',bountyRestrictions4: ''});
-      }catch(err){
-       console.log('quinto try');
-      }
+    try{
+      return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: '',bountyDescription: '',bountyRestrictions: '', bounty1: '',
+        bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bounty2: '',
+        bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bounty3: '',
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: ''});
+    }catch(err){
+      console.log('quinto try');
+    }
      
-   }catch(err){
-     console.log('finally')
-   }
+  }catch(err){
+    console.log('finally')
+  }
     
 });
 
