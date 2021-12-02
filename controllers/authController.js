@@ -57,7 +57,17 @@ router.post('/authenticate', async (req,res) => {
         bounty3ID = bountyP[2]._id.toHexString();
         bounty4ID = bountyP[3]._id.toHexString();
     }catch(error){error}
+
     
+    try {
+        let bounty = await BountyG.find();
+        bountyHOME = [];
+        bounty.forEach((el)=>{
+            bountyHOME.push(el._id.toHexString());
+        });
+        console.log(bountyHOME)
+    }catch(error){console.log(error);}
+
     return res.redirect('/home');
 })
 

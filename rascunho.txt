@@ -1,0 +1,56 @@
+<div class="dependentes">
+                <div class="container" id="dependentesContainer">
+                </div>
+            </div>
+            
+            
+            <script>
+
+                var quantidade = [
+                    {
+                        _id: new ObjectId("619ee6ba4d3637feed156e10"),
+                        name: 'Sua mae',
+                        restrictions: 'adwa',
+                        description: 'adaw',
+                        creator: 'ihri@tt.com',
+                        __v: 0,
+                        comments: []
+                    },
+                    {
+                        _id: new ObjectId("619eedc6fda9d9a55196df03"),
+                        name: 'essa é nova',
+                        restrictions: 'raq',
+                        description: 'eq2',
+                        creator: 'ihri@tt.com',
+                        __v: 0,
+                        comments: []
+                    }
+                ];
+                    
+                function carregarDependentes(){
+                    let dependentes_container = document.querySelector("#dependentesContainer");
+                    dependentes_container.innerHTML = "";
+                
+                    quantidade.forEach((el)=>{
+                        let nome = el.name;
+                        let descricao = el.description;
+                        let restricao = el.restrictions;
+                        let dependente_container = `<div class="rectangleInfo">
+                                                        <h2>Nome: <br> ${nome}</h2>
+                                                        <hr class="linha_vertical"/>
+                                                        <h4>Descrição: <br> ${descricao}</h4>
+                                                        <hr class="linha_vertical"/>
+                                                        <h4>Restrições: <br>${restricao}</h4>
+                                                        <hr class="linha_vertical"/>
+                                                        <img class="imgBounty"  src="/public/assets/Bounty_home_img.jpg">
+                                                    </div>`;
+                        dependentes_container.innerHTML += dependente_container;
+                    });
+                }
+
+                carregarDependentes();
+                
+            </script>
+
+
+https://velhobit.com.br/programacao/como-adicionar-e-remover-dinamicamente-um-elemento-html-a-partir-de-um-input-javascript-puro.html#

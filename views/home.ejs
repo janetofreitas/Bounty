@@ -12,20 +12,27 @@
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
         <title>Página Inicial</title>
+        
+        
+               
     </head>
     
     <body>
-    
+        
         <header class="o-header">
             <nav> 
-                <div class="logo"><a href="/home" class="logoHeader"><img src="../assets/logoP.png" alt=""></a></div>
-          
+                <div class="logo">
+                    <a href="/home" class="logoHeader"><img src="../assets/logoP.png"         alt=""></a>
+                </div>
+                
                 <form action="#">
                   <input type="search" class="search-data" placeholder="Pesquisar" required>
                   <button type="submit" ><img src="../assets/searchIcon.png" alt=""></button>
                 </form>
                 
-                <div class="mangue"><h4 class="h1nav">Olá <%= name %> <br> <a href="/" id="navlogout">Logout</a></h4></div>
+                <div class="mangue">
+                    <h4 class="h1nav">Olá <%= name %> <br> <a href="/" id="navlogout">Logout</a></h4>
+                </div>
         
                 <div class="userarea">
                     <a href="/perfil" class="logoHeader"><img src="https://source.unsplash.com/90x60/?face" alt=""></a>  
@@ -35,46 +42,68 @@
 
         <main class="o-form">
             <h1 class="h1titulo">Home</h1>
+            <!-- <button class="createBounty">Criar Bounty</button> -->
+            <a href="/criarBounty" class="createBounty"> Criar Bounty</a>
             
-                <!-- <button class="createBounty">Criar Bounty</button> -->
-                <a href="/criarBounty" class="createBounty"> Criar Bounty</a>
-            
-                <div class="rectangleInfo"> 
-
-            <h2>Nome: <br> <%= bountyName %></h2>
-           <hr class="linha_vertical"/>
-            <h4>Descrição: <br> <%= bountyDescription %></h4>
-            <hr class="linha_vertical"/>
-            <h4>Restrições: <br><%= bountyRestrictions %></h4>
-            <hr class="linha_vertical"/>
-            <img class="imgBounty"  src="/public/assets/Bounty_home_img.jpg">
-                </div>
-
-                <div class="rectangleInfo">
-                    
-                    <h2>Nome: <br> <%= bountyName2 %></h2>
-                    <hr class="linha_vertical"/>
-                    <h4>Descrição: <br> <%= bountyDescription2 %></h4>
-                    <hr class="linha_vertical"/>
-                    <h4>Restrições: <br><%= bountyRestrictions2 %></h4>
-                    <hr class="linha_vertical"/>
-                    <img class="imgBounty"  src="/public/assets/Bounty_home_img.jpg">
-                </div>
-
-            <div class="rectangleInfo">
-                <h2>Nome: <br> <%= bountyName3 %></h2>
+            <div class="rectangleInfo"> 
+                <h2>Nome: <br> <%= bountyName %></h2>
                 <hr class="linha_vertical"/>
-                <h4>Descrição: <br> <%= bountyDescription3 %></h4>
+                <h4>Descrição: <br> <%= bountyDescription %></h4>
                 <hr class="linha_vertical"/>
-                <h4>Restrições: <br><%= bountyRestrictions3 %></h4>
+                <h4>Restrições: <br><%= bountyRestrictions %></h4>
                 <hr class="linha_vertical"/>
                 <img class="imgBounty"  src="/public/assets/Bounty_home_img.jpg">
+                <hr class="linha_vertical"/>
+                <div class="bBotao">
+                    <a href=<%= home1 %>>Acessar</a>
+                </div>
             </div>
-           
-           
-        </main>
 
-        </div>
+            <div class="rectangleInfo">
+                <h2>Nome: <br> <%= bountyName2 %></h2>
+                <hr class="linha_vertical"/>
+                <h4>Descrição: <br> <%= bountyDescription2 %></h4>
+                <hr class="linha_vertical"/>
+                <h4>Restrições: <br><%= bountyRestrictions2 %></h4>
+                <hr class="linha_vertical"/>
+                <img class="imgBounty"  src="/public/assets/Bounty_home_img.jpg">
+                <hr class="linha_vertical"/>
+                <div class="bBotao">
+                    <a href=<%= home2 %>>Acessar</a>
+                </div>
+            </div>
+
+            <div class="rectangleInfo">
+                <h2>Nome: <br> <%= bountyName3 %> </h2>
+                <hr class="linha_vertical"/>
+                <h4>Descrição: <br> <%= bountyDescription3 %> </h4>
+                <hr class="linha_vertical"/>
+                <h4>Restrições: <br><%= bountyRestrictions3 %> </h4>
+                <hr class="linha_vertical"/>
+                <img class="imgBounty"  src="/public/assets/Bounty_home_img.jpg">
+                <hr class="linha_vertical"/>
+                <div class="bBotao">
+                    <a href=<%= home3 %>>Acessar</a>
+                </div>
+            </div>
+
+            <div class="rectangleInfo">
+                <h2>Nome: <br> <%= bountyName4 %> </h2>
+                <hr class="linha_vertical"/>
+                <h4>Descrição: <br> <%= bountyDescription4 %> </h4>
+                <hr class="linha_vertical"/>
+                <h4>Restrições: <br> <%= bountyRestrictions4 %> </h4>
+                <hr class="linha_vertical"/>
+                <img class="imgBounty"  src="/public/assets/Bounty_home_img.jpg">
+                <hr class="linha_vertical"/>
+                <div class="bBotao">
+                    <a href= <%= home4 %> >Acessar</a>
+                </div>
+            </div>
+            
+        </main>
+        
+        <!-- </div> -->
 
         <footer class="o-footer footer-dark">
 
@@ -101,7 +130,7 @@
                 <p class="copyright">Bounty © 2021</p>
             </div> 
     
-    </footer>
+        </footer>
  
     </body>
 </html>
