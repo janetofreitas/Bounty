@@ -63,7 +63,8 @@ body {
     padding: 2%;
     /* height: 25%; */
     margin: 2rem;
-    background-color: rgb(111, 114, 114);
+    background-color: rgb(72, 75, 75);
+    /* rgb(111, 114, 114); */
     display: flex;
     margin-left: 20%;
     border-radius: .8rem;
