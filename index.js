@@ -114,7 +114,7 @@ app.get('/perfil', async (req,res) => {
 app.get('/editarPerfil', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  res.render('editarPerfil.ejs', {name: user.name, genero: user.genero, bio: user.bio});
+  res.render('editarPerfil.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio});
 });
 
 app.post('/editarPerfil', async (req,res) => {
