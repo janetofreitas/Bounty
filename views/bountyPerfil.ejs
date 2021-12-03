@@ -58,16 +58,18 @@
                     </div>
   
                     <div class="eBotao">
-                        <a href= '' %> >Editar</a>
+                        <a href=''>Editar</a>
                     </div>
                     
                     <div class="xBotao">
-                        <a href= '' %> >Excluir</a>
+                        <a href=''>Excluir</a>
                     </div>
                     
-                    <div class="fBotao">
-                        <a href= '' %> >Finalizar</a>
-                    </div>
+                    <form action="/finalizaBounty" method="POST">
+                        <input type="hidden" name="ID" value=<%= ID %>>
+                        <button type="submit" class="fBotao">Finaliza</button>
+                    </form>
+                    
                     
 
                 </form>

@@ -32,7 +32,11 @@ const BountySchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User'
         }
-    }]
+    }],
+    status: {
+        type: String,
+        required: true,
+    }
 });
 
 const Bounty = mongoose.model('Bounty', BountySchema);

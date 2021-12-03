@@ -50,13 +50,13 @@ router.post('/authenticate', async (req,res) => {
 
     user.password = undefined;
     usermail = user.email;
-    try {
-        const bountyP = await BountyG.find({ creator: usermail });
-        bounty1ID = bountyP[0]._id.toHexString();
-        bounty2ID = bountyP[1]._id.toHexString();
-        bounty3ID = bountyP[2]._id.toHexString();
-        bounty4ID = bountyP[3]._id.toHexString();
-    }catch(error){error}
+    // try {
+    //     const bountyP = await BountyG.find({ creator: usermail, status: 'andamento' });
+    //     bounty1ID = bountyP[0]._id.toHexString();
+    //     bounty2ID = bountyP[1]._id.toHexString();
+    //     bounty3ID = bountyP[2]._id.toHexString();
+    //     bounty4ID = bountyP[3]._id.toHexString();
+    // }catch(error){error}
 
     
     try {

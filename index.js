@@ -39,7 +39,7 @@ app.get('/forgotPassword', (req,res) => {
 app.get('/perfil', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  const bountyP = await Bounty.find({ creator: email });
+  const bountyP = await Bounty.find({ creator: email, status: 'andamento' });
 
   
   try{
@@ -75,7 +75,7 @@ app.get('/perfil', async (req,res) => {
 
     try{
       return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
-        bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyPerfil1: '/bounty1',
+        bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyPerfil1: '/bountyPerfil1',
         bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bountyPerfil2: '',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyPerfil3: '',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: ''});
@@ -129,13 +129,13 @@ app.get('/historico', async (req,res) => {
 app.get('/bountyPerfil1', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  
-  const bountyP = await Bounty.findOne({ _id: bounty1ID });
+  const bountyC = await Bounty.find({ creator: email, status: 'andamento' });
+  const bountyP = await Bounty.findOne({ _id: bountyC[0]._id.toHexString()});
   
   try{
 
     try{
-      return res.render('bountyPerfil.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description});
+      return res.render('bountyPerfil.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, ID: bountyC[0]._id.toHexString()});
     }catch(err){
       console.log(err);
     }
@@ -147,14 +147,13 @@ app.get('/bountyPerfil1', async (req,res) => {
 app.get('/bountyPerfil2', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  
-  const bountyP = await Bounty.findOne({ _id: bounty2ID });
-  
+  const bountyC = await Bounty.find({ creator: email, status: 'andamento' });
+  const bountyP = await Bounty.findOne({ _id: bountyC[1]._id.toHexString()});
   try{
 
     try{
       
-      return res.render('bountyPerfil.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description});
+      return res.render('bountyPerfil.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, ID: bountyC[1]._id.toHexString()});
     }catch(err){
       console.log(err);
     }
@@ -166,14 +165,13 @@ app.get('/bountyPerfil2', async (req,res) => {
 app.get('/bountyPerfil3', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  
-  const bountyP = await Bounty.findOne({ _id: bounty3ID });
-  
+  const bountyC = await Bounty.find({ creator: email, status: 'andamento' });
+  const bountyP = await Bounty.findOne({ _id: bountyC[2]._id.toHexString()});
   try{
 
     try{
       
-      return res.render('bountyPerfil.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description});
+      return res.render('bountyPerfil.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, ID: bountyC[2]._id.toHexString()});
     }catch(err){
       console.log(err);
     }
@@ -185,14 +183,13 @@ app.get('/bountyPerfil3', async (req,res) => {
 app.get('/bountyPerfil4', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  
-  const bountyP = await Bounty.findOne({ _id: bounty4ID });
-  
+  const bountyC = await Bounty.find({ creator: email, status: 'andamento' });
+  const bountyP = await Bounty.findOne({ _id: bountyC[3]._id.toHexString()});
   try{
 
     try{
       
-      return res.render('bountyPerfil.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description});
+      return res.render('bountyPerfil.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, ID: bountyC[3]._id.toHexString()});
     }catch(err){
       console.log(err);
     }
@@ -215,8 +212,9 @@ app.get('/faq', async (req,res) => {
 
 app.get('/home', async (req,res) => {
   const  email  = usermail;
+  var status;
   const user = await User.findOne({ email: email });
-  var bounty = await Bounty.find();
+  var bounty = await Bounty.find({status: 'andamento'});
   // var bountyC = [];
   // try {
     
@@ -236,10 +234,10 @@ app.get('/home', async (req,res) => {
   try{
       try{
         return res.render('home.ejs', {name: user.name, genero: user.genero, bio: user.bio,
-          bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions, home1: '/home1',
-          bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,bountyRestrictions2: bounty[1].restrictions, home2: '/home2',
-          bountyName3: bounty[2].name,bountyDescription3: bounty[2].description,bountyRestrictions3: bounty[2].restrictions, home3: '/home3',
-          bountyName4: bounty[3].name,bountyDescription4: bounty[3].description,bountyRestrictions4: bounty[3].restrictions, home4: '/home4'});
+          bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions, bounty1: '/bounty1',
+          bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,bountyRestrictions2: bounty[1].restrictions, bounty2: '/bounty2',
+          bountyName3: bounty[2].name,bountyDescription3: bounty[2].description,bountyRestrictions3: bounty[2].restrictions, bounty3: '/bounty3',
+          bountyName4: bounty[3].name,bountyDescription4: bounty[3].description,bountyRestrictions4: bounty[3].restrictions, bounty4: '/bounty4'});
       }catch(err){
         console.log('primeiro try');
       }
@@ -294,7 +292,7 @@ app.get('/bounty1', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
   
-  const bountyP = await Bounty.find();
+  const bountyP = await Bounty.find({status: 'andamento'});
   try{
 
     try{
@@ -310,7 +308,7 @@ app.get('/bounty2', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
   
-  const bountyP = await Bounty.find();
+  const bountyP = await Bounty.find({status: 'andamento'});
   try{
 
     try{
@@ -327,7 +325,7 @@ app.get('/bounty3', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
   
-  const bountyP = await Bounty.find();
+  const bountyP = await Bounty.find({status: 'andamento'});
   try{
 
     try{
@@ -344,7 +342,7 @@ app.get('/bounty4', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
   
-  const bountyP = await Bounty.find();
+  const bountyP = await Bounty.find({status: 'andamento'});
   try{
 
     try{
@@ -369,8 +367,23 @@ app.post('/createBounty', async (req,res) => {
   res.redirect('/home');
 });
 
+app.post('/finalizaBounty', async (req,res) => {
+  console.log(req.body.ID);
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  await User.updateOne({ email: email }, {
+      bio: req.body.bio,
+      cep: req.body.cep,
+      endereco: req.body.endereco,
+      name: req.body.name,
+      email: req.body.email 
+  });
+
+  res.redirect('/perfil')
+});
+
 app.post('/upload', upload.single('image'), (req, res) => {
-    res.send("Image uploaded");
+  res.redirect('/editarPerfil');
 });
 
 app.listen(3000);
