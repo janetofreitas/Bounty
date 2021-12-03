@@ -59,14 +59,14 @@ router.post('/authenticate', async (req,res) => {
     // }catch(error){error}
 
     
-    try {
-        let bounty = await BountyG.find();
-        bountyHOME = [];
-        bounty.forEach((el)=>{
-            bountyHOME.push(el._id.toHexString());
-        });
-        console.log(bountyHOME)
-    }catch(error){console.log(error);}
+    // try {
+    //     let bounty = await BountyG.find();
+    //     bountyHOME = [];
+    //     bounty.forEach((el)=>{
+    //         bountyHOME.push(el._id.toHexString());
+    //     });
+    //     console.log(bountyHOME)
+    // }catch(error){console.log(error);}
 
     return res.redirect('/home');
 })

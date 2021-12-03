@@ -26,13 +26,17 @@ const BountySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    comments: [{
-        text: String,
-        postedBy: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
-        }
+    comments:[{
+        type: String,
+        required: false
     }],
+    // comments: [{
+    //     text: String,
+    //     postedBy: {
+    //         type: mongoose.Schema.Types.ObjectId,
+    //         ref: 'User'
+    //     }
+    // }],
     status: {
         type: String,
         required: true,

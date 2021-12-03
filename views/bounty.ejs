@@ -43,7 +43,6 @@
                     <h2> <%= bountyName %> </h2>
                     <br>
                     <div class="fotoBounty" >
-           
                         <img src="https://source.unsplash.com/150x155/?face" alt="">
                     </div>
                     <h2>PRAZO</h2>
@@ -62,6 +61,19 @@
                         <p> <%= bountyDescricao %> </p>
                     </div>
   
+                </form>
+
+
+                <h2>COMENTÁRIOS</h2>
+                <label class="sr-only" for="comments">Comentário</label>
+                <div class="boxBounty">
+                    <p> <%= comentarios %></p>
+                </div>
+                
+                <form action="/comentarBounty" method="POST">
+                    <input type="hidden" name="ID" value=<%= ID %>>
+                    <input type="text" id="comments" class="input-forms" placeholder="Comentário" name="comments">
+                    <button type="submit" class="fBotao">Enviar</button>
                 </form>
           </div>
         </aside>
