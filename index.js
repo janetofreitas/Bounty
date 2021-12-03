@@ -8,10 +8,22 @@ const storage = multer.diskStorage({
   },
   filename: (req, file, cb) => {
     console.log(file);
-    cb(null, 'avatar' + path.extname(file.originalname))
+    cb(null, usermail + path.extname(file.originalname))
   }
 })
+
+const storageBounty = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'public/Images');
+  },
+  filename: (req, file, cb) => {
+    console.log(file);
+    cb(null, 'bountyImg' + usermail + path.extname(file.originalname))
+  }
+})
+
 const upload = multer({storage: storage});
+const uploadBounty = multer({storage: storageBounty});
 const app = express();
 const User = require('./models/User');
 const Bounty = require('./models/Bounty');
@@ -44,7 +56,7 @@ app.get('/perfil', async (req,res) => {
   
   try{
     try{
-      return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+      return res.render('perfil.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyPerfil1: '/bountyPerfil1',
         bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bountyPerfil2: '/bountyPerfil2',
         bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bountyPerfil3: '/bountyPerfil3',
@@ -54,7 +66,7 @@ app.get('/perfil', async (req,res) => {
     }
 
     try{
-      return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+      return res.render('perfil.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyPerfil1: '/bountyPerfil1',
         bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bountyPerfil2: '/bountyPerfil2',
         bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bountyPerfil3: '/bountyPerfil3',
@@ -64,7 +76,7 @@ app.get('/perfil', async (req,res) => {
     }
 
     try{
-      return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+      return res.render('perfil.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyPerfil1: '/bountyPerfil1',
         bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bountyPerfil2: '/bountyPerfil2',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyPerfil3: '',
@@ -74,7 +86,7 @@ app.get('/perfil', async (req,res) => {
     }
 
     try{
-      return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+      return res.render('perfil.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyPerfil1: '/bountyPerfil1',
         bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bountyPerfil2: '',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyPerfil3: '',
@@ -84,7 +96,7 @@ app.get('/perfil', async (req,res) => {
     }
 
     try{
-      return res.render('perfil.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+      return res.render('perfil.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: '',bountyDescription: '',bountyRestrictions: '', bountyPerfil1: '',
         bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bountyPerfil2: '',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyPerfil3: '',
@@ -536,6 +548,10 @@ app.post('/comentarBounty', async (req,res) => {
 
 app.post('/upload', upload.single('image'), (req, res) => {
   res.redirect('/editarPerfil');
+});
+
+app.post('/uploadBountyImg', uploadBounty.single('image'), (req, res) => {
+  res.redirect('/editarBounty');
 });
 
 app.listen(3000);
