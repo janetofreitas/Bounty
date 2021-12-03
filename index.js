@@ -120,12 +120,6 @@ app.post('/editarPerfil', async (req,res) => {
   res.redirect('/perfil')
 });
 
-app.get('/historico', async (req,res) => {
-  const  email  = usermail;
-  const user = await User.findOne({ email: email });
-  res.render('historico.ejs', {name: user.name, genero: user.genero, bio: user.bio});
-});
-
 app.get('/bountyPerfil1', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
@@ -196,6 +190,137 @@ app.get('/bountyPerfil4', async (req,res) => {
   }catch(err){console.log('finally')}
 
   
+});
+
+app.get('/historico', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  const bountyP = await Bounty.find({ creator: email, status: 'finalizada' });
+
+  
+  try{
+    try{
+      return res.render('historico.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyHistorico1: '/bountyHistorico1',
+        bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bountyHistorico2: '/bountyHistorico2',
+        bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bountyHistorico3: '/bountyHistorico3',
+        bountyName4: bountyP[3].name,bountyDescription4: bountyP[3].description,bountyRestrictions4: bountyP[3].restrictions, bountyHistorico4: '/bountyHistorico4'});
+    }catch(err){
+      console.log('primeiro try');
+    }
+
+    try{
+      return res.render('historico.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyHistorico1: '/bountyHistorico1',
+        bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bountyHistorico2: '/bountyHistorico2',
+        bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bountyHistorico3: '/bountyHistorico3',
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: ''});
+    }catch(err){
+      console.log('segundo try');
+    }
+
+    try{
+      return res.render('historico.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyHistorico1: '/bountyHistorico1',
+        bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bountyHistorico2: '/bountyHistorico2',
+        bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyHistorico3: '',
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: ''});
+    }catch(err){
+      console.log('terceiro try');
+    }
+
+    try{
+      return res.render('historico.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyHistorico1: '/bountyHistorico1',
+        bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bountyHistorico2: '',
+        bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyHistorico3: '',
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: ''});
+    }catch(err){
+      console.log('quarto try');
+    }
+
+    try{
+      return res.render('historico.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: '',bountyDescription: '',bountyRestrictions: '', bountyHistorico1: '',
+        bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bountyHistorico2: '',
+        bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyHistorico3: '',
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: ''});
+    }catch(err){
+      console.log('quinto try');
+    }
+     
+  }catch(err){
+    console.log('finally')
+  }
+
+});
+
+app.get('/bountyHistorico1', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  const bountyC = await Bounty.find({ creator: email, status: 'finalizada' });
+  const bountyP = await Bounty.findOne({ _id: bountyC[0]._id.toHexString()});
+  try{
+
+    try{
+      
+      return res.render('bountyHistorico.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description});
+    }catch(err){
+      console.log(err);
+    }
+  }catch(err){console.log('finally')}
+
+});
+
+app.get('/bountyHistorico2', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  const bountyC = await Bounty.find({ creator: email, status: 'finalizada' });
+  const bountyP = await Bounty.findOne({ _id: bountyC[1]._id.toHexString()});
+  try{
+
+    try{
+      
+      return res.render('bountyHistorico.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description});
+    }catch(err){
+      console.log(err);
+    }
+  }catch(err){console.log('finally')}
+
+});
+
+app.get('/bountyHistorico3', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  const bountyC = await Bounty.find({ creator: email, status: 'finalizada' });
+  const bountyP = await Bounty.findOne({ _id: bountyC[2]._id.toHexString()});
+  try{
+
+    try{
+      
+      return res.render('bountyHistorico.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description});
+    }catch(err){
+      console.log(err);
+    }
+  }catch(err){console.log('finally')}
+
+});
+
+app.get('/bountyHistorico4', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  const bountyC = await Bounty.find({ creator: email, status: 'finalizada' });
+  const bountyP = await Bounty.findOne({ _id: bountyC[3]._id.toHexString()});
+  try{
+
+    try{
+      
+      return res.render('bountyHistorico.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description});
+    }catch(err){
+      console.log(err);
+    }
+  }catch(err){console.log('finally')}
+
 });
 
 app.get('/favoritos', async (req,res) => {
@@ -368,18 +493,23 @@ app.post('/createBounty', async (req,res) => {
 });
 
 app.post('/finalizaBounty', async (req,res) => {
-  console.log(req.body.ID);
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  await User.updateOne({ email: email }, {
-      bio: req.body.bio,
-      cep: req.body.cep,
-      endereco: req.body.endereco,
-      name: req.body.name,
-      email: req.body.email 
+  await Bounty.updateOne({_id: req.body.ID }, {
+    status: 'finalizada'
   });
 
-  res.redirect('/perfil')
+  res.redirect('/perfil');
+});
+
+app.post('/excluiBounty', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  await Bounty.updateOne({_id: req.body.ID }, {
+    status: 'excluida'
+  });
+
+  res.redirect('/perfil');
 });
 
 app.post('/upload', upload.single('image'), (req, res) => {

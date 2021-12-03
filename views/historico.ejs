@@ -2,75 +2,137 @@
 
 <html lang="pt-BR">
 
-<head>
+    <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/9ff781d0d0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/historico.css">
-    <title>Bounty</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/9ff781d0d0.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/global.css">
+        <link rel="stylesheet" href="../css/historico.css">
+        <title>Histórico</title>
 
-</head>
+    </head>
 
-<body>
-<header class="o-header">
-    <nav> 
-        <div class="logo"><a href="/home" class="logoHeader"><img src="../assets/logoP.png" alt=""></a></div>
-  
-        <form action="#">
-          <input type="search" class="search-data" placeholder="Pesquisar" required>
-          <button type="submit" ><img src="../assets/searchIcon.png" alt=""></button>
-        </form>
+    <body>
+        <header class="o-header">
+            <nav> 
+                <div class="logo">
+                    <a href="/home" class="logoHeader"><img src="../assets/logoP.png" alt=""></a>
+                </div>
         
-        <div class="mangue"><h4 class="h1nav">Olá <%= name %> <br> <a href="/" id="navlogout">Logout</a></h4></div>
+                <form action="#">
+                    <input type="search" class="search-data" placeholder="Pesquisar" required>
+                    <button type="submit" ><img src="../assets/searchIcon.png" alt=""></button>
+                </form>
+                
+                <div class="mangue">
+                    <h4 class="h1nav">Olá <%= name %> <br> <a href="/" id="navlogout">Logout</a></h4>
+                </div>
 
-        <div class="userarea">
-            <a href="/perfil" class="logoHeader"><img src="https://source.unsplash.com/90x60/?face" alt=""></a>  
-        </div>
-      </nav> 
-</header>
-    <aside class="o-logo">
-    </aside>
+                <div class="userarea">
+                    <a href="/perfil" class="logoHeader"><img src="https://source.unsplash.com/90x60/?face" alt=""></a>  
+                </div>
+            </nav> 
+        </header>
+        
+        <aside class="o-logo">
+        
+        </aside>
 
-    <main class="o-form">
-        <div class="tituloMBT">
-            <h1>Histórico</h1>
+        <main class="o-form">
             
-        </div>
-        <div class="boxHistorico"></div>
-        <div class="boxHistorico"></div>
-        <div class="boxHistorico"></div>
-        <div class="boxHistorico"></div>
-    </main>
-    
-<footer class="o-footer footer-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-3 item">
-                    <ul>
-                        <li><a href="/home">Home</a></li>
-                        <li><a href="/perfil">Meu perfil</a></li>
-                        <li><a href="/faq">F.A.Q</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-6 item text">
-                    <h3>Bounty</h3>
-                    <p>Faz uma bounty você tambem! ಠ_ಠ</p>
-                </div>
-                <div class="col item social">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="https://github.com/janetofreitas/Bounty"><i class="fab fa-github"></i></a>
+            <div class="tituloMBT">
+                <h1>Histórico</h1>
+            </div>
+            
+            <div class="boxHistorico">
+                <h2>Nome: <br> <%= bountyName %></h2>
+                <hr class="linha_vertical"/>
+                <h4>Descrição: <br> <%= bountyDescription %></h4>
+                <hr class="linha_vertical"/>
+                <h4>Restrições: <br><%= bountyRestrictions %></h4>
+                <hr class="linha_vertical"/>
+                <img class="imgBounty"  src="/public/assets/Bounty_home_img.jpg">
+                <hr class="linha_vertical"/>
+                <div class="bBotao">
+                    <a href= <%= bountyHistorico1 %> >Acessar</a>
                 </div>
             </div>
-            <p class="copyright">Bounty © 2021</p>
-        </div> 
+            
+            <div class="boxHistorico">
+                <h2>Nome: <br> <%= bountyName2 %></h2>
+                <hr class="linha_vertical"/>
+                <h4>Descrição: <br> <%= bountyDescription2 %></h4>
+                <hr class="linha_vertical"/>
+                <h4>Restrições: <br><%= bountyRestrictions2 %></h4>
+                <hr class="linha_vertical"/>
+                <img class="imgBounty"  src="/public/assets/Bounty_home_img.jpg">
+                <hr class="linha_vertical"/>
+                <div class="bBotao">
+                    <a href= <%= bountyHistorico2 %> >Acessar</a>
+                </div>
+            </div>
+            
+            <div class="boxHistorico">
+                <h2>Nome: <br> <%= bountyName3 %></h2>
+                <hr class="linha_vertical"/>
+                <h4>Descrição: <br> <%= bountyDescription3 %></h4>
+                <hr class="linha_vertical"/>
+                <h4>Restrições: <br><%= bountyRestrictions3 %></h4>
+                <hr class="linha_vertical"/>
+                <img class="imgBounty"  src="/public/assets/Bounty_home_img.jpg">
+                <hr class="linha_vertical"/>
+                <div class="bBotao">
+                    <a href= <%= bountyHistorico3 %> >Acessar</a>
+                </div>
+            </div>
+            
+            <div class="boxHistorico">
+                <h2>Nome: <br> <%= bountyName4 %></h2>
+                <hr class="linha_vertical"/>
+                <h4>Descrição: <br> <%= bountyDescription4 %></h4>
+                <hr class="linha_vertical"/>
+                <h4>Restrições: <br><%= bountyRestrictions4 %></h4>
+                <hr class="linha_vertical"/>
+                <img class="imgBounty"  src="/public/assets/Bounty_home_img.jpg">
+                <hr class="linha_vertical"/>
+                <div class="bBotao">
+                    <a href= <%= bountyHistorico4 %> >Acessar</a>
+                </div>
+            </div>
 
-</footer>
+        </main>
+        
+        <footer class="o-footer footer-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <ul>
+                            <li><a href="/home">Home</a></li>
+                            <li><a href="/perfil">Meu perfil</a></li>
+                            <li><a href="/faq">F.A.Q</a></li>
+                        </ul>
+                        
+                    </div>
+                    
+                    <div class="col-md-6 item text">
+                        <h3>Bounty</h3>
+                        <p>Faz uma bounty você tambem! ಠ_ಠ</p>
+                    </div>
 
-</body>
+                    <div class="col item social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/janetofreitas/Bounty"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="copyright">Bounty © 2021</p>
+            </div> 
+
+        </footer>
+
+    </body>
 
 </html>
