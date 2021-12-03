@@ -46,29 +46,17 @@
         </header>
         <aside class="o-logo">
          <div class="fcontainer">
-                <form action="/editarPerfil" method="POST">
-                    
-                    <input type="file" class="filepond" name="filepond" />   
+                <img src="Images/avatar.png" alt="aBoatao">
+               <form action="/upload" method="POST" enctype="multipart/form-data">
+                <input class="form-control-file" type="file"  name="image"/> 
+                <button  type="submit">Salvar</button>
+               </form>
 
-                    <script>
-                        FilePond.registerPlugin(FilePondPluginImagePreview,FilePondPluginImageCrop,FilePondPluginImageResize);
-                    </script>
-
-                    <script>
-                        const inputElement = document.querySelector('input[type="file"]');
+                <form action="/editarPerfil" method="POST" >
                     
-                        const pond = FilePond.create(inputElement);
-                        
-                        pond.setOptions({
-                            server: "/upload",
-                            imagePreviewHeight: 200,
-                            imageCropAspectRatio: '1:1',
-                            imageResizeTargetWidth: 200,
-                            imageResizeTargetHeight: 200,
-                            imageResizeMode: cover,
-                            labelIdle: 'Upload foto <span class="filepond--label-action"> Browse </span>',  
-                        })
-                    </script>
+                       
+
+                    
                     
                   
 

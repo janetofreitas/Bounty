@@ -1,8 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const filepond = require('filepond');
-const formidable = require('formidable');
-const fs = require('fs');
+const path = require('path');
+const multer = require('multer');
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'public/Images');
+  },
+  filename: (req, file, cb) => {
+    console.log(file);
+    cb(null, 'avatar' + path.extname(file.originalname))
+  }
+})
+const upload = multer({storage: storage});
 const app = express();
 const User = require('./models/User');
 const Bounty = require('./models/Bounty');
@@ -10,7 +19,7 @@ const Bounty = require('./models/Bounty');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true }));
+
 
 require('./controllers/index')(app);
 
@@ -106,7 +115,8 @@ app.post('/editarPerfil', async (req,res) => {
       name: req.body.name,
       email: req.body.email 
   });
-
+  
+  console.log(`req: ${JSON.stringify(req.body)}`);
   res.redirect('/perfil')
 });
 
@@ -359,23 +369,8 @@ app.post('/createBounty', async (req,res) => {
   res.redirect('/home');
 });
 
-app.post("/upload", function(req, res){
-  console.log("BEGIN /upload");
-  const form = formidable({ multiples: false });
-
-  form.parse(req, (err, fields, files) => {
-    if (err) {
-      next(err);
-      return;
-    }
-    let theFile = files.filepond.path;
-    console.log("theFile: " + theFile);
-
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end(theFile);
-  });
-  console.log('save');
-  console.log(`req: ${JSON.stringify(req.body)}`);
-})
+app.post('/upload', upload.single('image'), (req, res) => {
+    res.send("Image uploaded");
+});
 
 app.listen(3000);
