@@ -32,52 +32,67 @@
               </nav> 
         </header>
         <aside class="o-logo">
-         <div class="fcontainer">
-                 
-                
-            <h2> <%= bountyName %> </h2>
-            <br>
+            <div class="fcontainer">
             
-            <div class="fotoBounty" >
-                <img src="https://source.unsplash.com/150x155/?face" alt="">
-            </div>
-            
-            <h2>PRAZO</h2>
-            <br>
-            <div class="boxBounty2">
-                <p> <%= bountyPrazoFinal %> </p>
-            </div>
-                    
-            <h2>RESTRIÇÕES</h2>
-            <br>
-            <div class="boxBounty3">
-                <p> <%= bountyRestricoes %> </p>
-            </div>
-                    
-            <h2>DESCRIÇÃO</h2>
+                <h2> <%= bountyName %> </h2>
                 <br>
-            <div class="boxBounty">
-                <p> <%= bountyDescricao %> </p>
-            </div>
-  
-            <div class="eBotao">
-                <a href=''>Editar</a>
-            </div>
-                    
-            <form action="/excluiBounty" method="POST">
-                <input type="hidden" name="ID" value=<%= ID %>>
-                <button type="submit" class="xBotao">Excluir</button>
-            </form>
-                    
-            <form action="/finalizaBounty" method="POST">
-                <input type="hidden" name="ID" value=<%= ID %>>
-                <button type="submit" class="fBotao">Finalizar</button>
-            </form>
-                    
-                    
-
                 
-          </div>
+                <div class="fotoBounty" >
+                    <img src="https://source.unsplash.com/150x155/?face" alt="">
+                </div>
+                
+                <h2>PRAZO</h2>
+                <br>
+                <div class="boxBounty2">
+                    <p> <%= bountyPrazoFinal %> </p>
+                </div>
+                        
+                <h2>RESTRIÇÕES</h2>
+                <br>
+                <div class="boxBounty3">
+                    <p> <%= bountyRestricoes %> </p>
+                </div>
+                        
+                <h2>DESCRIÇÃO</h2>
+                    <br>
+                <div class="boxBounty">
+                    <p> <%= bountyDescricao %> </p>
+                </div>
+    
+                <div class="eBotao">
+                    <a href=''>Editar</a>
+                </div>
+                        
+                <form action="/excluiBounty" method="POST">
+                    <input type="hidden" name="ID" value=<%= ID %>>
+                    <button type="submit" class="xBotao">Excluir</button>
+                </form>
+                        
+                <form action="/finalizaBounty" method="POST">
+                    <input type="hidden" name="ID" value=<%= ID %>>
+                    <button type="submit" class="fBotao">Finalizar</button>
+                </form>
+            
+                <h2>COMENTÁRIOS</h2>
+                <label class="sr-only" for="comments">Comentário</label>
+                <div class="boxBounty">
+                    <ul>
+                        <% for(var i=0; i<comentarios.length; i++) { %>
+                            <li>
+                                <%= comentarios[i] %>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+                
+                <form action="/comentarBountyPerfil" method="POST">
+                    <input type="hidden" name="ID" value=<%= ID %>>
+                    <input type="text" id="comments" class="input-forms" placeholder="Comentário" name="comments">
+                    <button type="submit" class="fBotao">Enviar</button>
+                </form>
+
+            </div>
+        
         </aside>
     
         <main class="o-form">

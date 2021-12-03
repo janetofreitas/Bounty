@@ -63,6 +63,18 @@
                     </div>
   
                 </form>
+                
+                <h2>COMENTÁRIOS</h2>
+                <label class="sr-only" for="comments">Comentário</label>
+                <div class="boxBounty">
+                    <ul>
+                        <% for(var i=0; i<comentarios.length; i++) { %>
+                            <li>
+                                <%= comentarios[i] %>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
           </div>
         </aside>
     
