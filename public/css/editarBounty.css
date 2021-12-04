@@ -1,0 +1,168 @@
+body {
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    'logo logo logo'
+    "footer footer footer";
+    /* gap: 1rem; */
+    grid-template-columns: 15% 0% 85%;
+    grid-template-rows: auto 85% auto;
+}
+
+.o-header {
+    grid-area: header;
+    background: #2d2d2d  ;
+    
+} 
+
+ .o-logo { 
+    grid-area: logo;
+    color: #FDFDFD;
+    background: #2d2d2d;
+    border: 1px solid black;
+    display: flex;
+    min-width: 800px;
+    max-width: auto;
+}
+a {
+    display: block;
+    width: 113px;
+    margin: auto; 
+    font-size: large;
+    }
+
+
+
+.o-form {
+    grid-area: form;
+    background: #2d2d2d;
+    color: #ababab;
+    
+}
+ .o-footer {
+    grid-area: footer;
+    padding: 1rem; 
+}
+.fcontainer {
+    width: 45%;
+    height: 95%;
+    margin:  auto;
+    position: relative;
+    right: 3.5rem;
+    border: .3rem solid #ababab;
+    border-radius: .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    max-width: auto;
+    min-width: 20rem;
+    /* background-color: blue; */
+    padding: 10rem;
+    align-self: center;
+    /* justify-content: space-around; */
+
+
+
+}
+.input-forms{
+    border: .2rem solid black;
+    padding: 1%;
+    width: 75%;
+    position: relative;
+    left: 12%;
+    top: 1%;
+    height: 10%;
+}
+.input-forms2{
+    border: .2rem solid black;
+    padding: 1%;
+    width: 35%;
+    position: relative;
+    left: 15%;
+    top: 1%;
+    height: 10%;
+    display: inline-block;
+}
+.input-forms3{
+    border: .2rem solid black;
+    padding: 1%;
+    width: 75%;
+    height: 20%;
+    position: relative;
+    left: 12%;
+    top: 1%;  
+    display: inline-block; 
+}
+.input-forms4{
+    border: .2rem solid black;
+    padding: 1%;
+    width: 75%;
+    height: 25%;
+    position: relative;
+    left: 12%;
+    top: 1%;  
+    display: inline-block; 
+}
+
+h2{
+    position: relative;
+    top: 1rem;
+}
+
+.aBotao{
+    width: 20%;
+    background-color: #ababab;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    text-align: center;
+    position: relative;
+    margin-top: 1%;
+    margin-bottom: -.1rem;
+    width: 15rem;
+    
+}
+.carrodoovo{
+    display: flex;
+    justify-content: space-around;
+}
+
+.carrodoleite{
+    display: flex;
+    justify-content: space-around;
+}
+
+.aBotao{
+    border-radius: .8rem;
+    height: 5%;
+    font-size: large;
+}
+input{
+    border-radius: .8rem;
+    /* height: 5rem; */
+    font-size: large;
+
+}
+.fotoBounty {
+    display:flex;
+    justify-content: center;
+    margin-bottom: .5rem;
+   
+    
+}
+
+.alterarFoto{
+    width: 25%;
+    background-color: #ababab;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    text-align: center;
+    position: relative;
+    margin-bottom: -.1rem;
+    height: auto;
+    
+}
+

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <!DOCTYPE html>
+
+    <html lang="pt-BR">
+    
+    <head>
+    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/9ff781d0d0.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/global.css">
+        <link rel="stylesheet" href="../css/criarBounty.css">
+        <title>Bounty</title>
+    
+    </head>
+    
+    <body>
+        <header class="o-header">
+            <nav> 
+                <div class="logo"><a href="" class="logoHeader"><img src="../assets/logoP.png" alt=""></a></div>
+          
+                <form action="#">
+                  <input type="search" class="search-data" placeholder="Pesquisar" required>
+                  <button type="submit" ><img src="../assets/searchIcon.png" alt=""></button>
+                </form>
+                
+                <div class="mangue"><h4 class="h1nav">Olá  <%= name %>! <br>
+                    <form action="/logout?_method=DELETE" method="POST">
+                        <button type="submit">Log Out</button>
+                      </form></div>
+        
+                <div class="userarea">
+                    <a href="" class="logoHeader"><img src="https://source.unsplash.com/90x60/?face" alt=""></a>  
+                </div>
+              </nav> 
+        </header>
+        <aside class="o-logo">
+         <div class="fcontainer">
+                <form action="POST">
+
+                    <div class="fotoPerfil" >
+                        <img src="https://source.unsplash.com/150x155/?face" alt="">
+                    </div>
+                    <div class="carrodoovo">
+                    <input class="alterarFoto" type="file" name="myImage" accept="image/*" />   
+                    </div>
+
+
+                    <label class="sr-only" for="name">Nome da Bounty</label>
+                    <input type="text" id="name" class="input-forms" placeholder="Nome da Bounty"> 
+                    
+                    <label class="sr-only" for="name">Prazo</label>
+                    <input type="date" id="name" class="input-forms2" placeholder="">   
+                    <label class="sr-only" for="name">Prazo</label>
+                    <input type="date" id="name" class="input-forms2" placeholder=""> 
+                    
+                    <label class="sr-only" for="tel">Restrições</label>
+                    <input type="tel" id="tel" class="input-forms3" placeholder="Restrições">
+                    
+                    
+                    <label class="sr-only" for="Descrição">Descrição</label>
+                    <input type="cep" id="descricao" class="input-forms4" placeholder="Descrição">
+                    
+                    <div class="carrodoleite">
+                        <button class="aBotao">Salvar</button>
+                    </div>
+                    
+                    
+                </form>
+          </div>
+        </aside>
+    
+        <main class="o-form">
+            
+        </main>
+        
+    <footer class="o-footer footer-dark">
+    
+            <div class="container">
+                <div class="row">
+                    <!-- <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div> -->
+                    <div class="col-sm-6 col-md-3 item">
+                        <!-- <h3></h3> -->
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Meu perfil</a></li>
+                            <li><a href="#">F.A.Q</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Bounty</h3>
+                        <p>Faz uma bounty você tambem! ಠ_ಠ</p>
+                    </div>
+                    <div class="col item social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <p class="copyright">Bounty © 2021</p>
+            </div> 
+    
+    </footer>
+    
+    </body>
+    
+    </html> 
+    
