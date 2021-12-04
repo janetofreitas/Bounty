@@ -62,8 +62,13 @@
                     </div>
   
                 </form>
-                <button type="submit" class="aBotao">★</button>
-
+                
+                
+                <form action="/favoritarBounty" method="POST">
+                    <input type="hidden" name="ID" value=<%= ID %>>
+                    <input type="hidden" name="EMAIL" value=<%= EMAIL %>>
+                    <button type="submit" class="aBotao">★</button>
+                </form>
 
                 
         </aside>

@@ -30,6 +30,10 @@ const BountySchema = new mongoose.Schema({
         type: String,
         required: false
     }],
+    favoritos:[{
+        type: String,
+        required: false
+    }],
     // comments: [{
     //     text: String,
     //     postedBy: {
