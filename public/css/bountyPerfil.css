@@ -81,9 +81,10 @@ h1{
 }
 
 .fotoBounty {
-    display:flex;
-    justify-content: center;
-    margin-bottom: .5rem;   
+    height: auto; 
+    width: auto; 
+    max-width: 150px; 
+    max-height: 150px;  
 }
 .boxBounty{
         width: 100%;
