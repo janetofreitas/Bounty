@@ -504,7 +504,7 @@ app.get('/bounty2', async (req,res) => {
   
   var favorito = 'aBotaoVERMELHO';
   try {
-    bountyP[0].favoritos.forEach((el)=>{
+    bountyP[1].favoritos.forEach((el)=>{
       console.log(el);
       console.log(email);
       if(el == email){
@@ -535,7 +535,7 @@ app.get('/bounty3', async (req,res) => {
   
   var favorito = 'aBotaoVERMELHO';
   try {
-    bountyP[0].favoritos.forEach((el)=>{
+    bountyP[2].favoritos.forEach((el)=>{
       console.log(el);
       console.log(email);
       if(el == email){
@@ -566,7 +566,7 @@ app.get('/bounty4', async (req,res) => {
   
   var favorito = 'aBotaoVERMELHO';
   try {
-    bountyP[0].favoritos.forEach((el)=>{
+    bountyP[3].favoritos.forEach((el)=>{
       console.log(el);
       console.log(email);
       if(el == email){
@@ -646,7 +646,7 @@ app.post('/comentarBounty', async (req,res) => {
   
   var favorito = 'aBotaoVERMELHO';
   try {
-    bountyP[0].favoritos.forEach((el)=>{
+    bountyP.favoritos.forEach((el)=>{
       console.log(el);
       console.log(email);
       if(el == email){
