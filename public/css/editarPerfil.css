@@ -108,6 +108,23 @@ h2{
     height: 6rem;
     font-size: large;
 }
+.sBotao{
+    width: 10%;
+    height: 3rem;
+    background-color: #ababab;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    text-align: center;
+    position: relative;
+    margin-bottom: -.1rem;
+    width: 15rem;
+    margin-left: 30%;
+
+}
+.sBotao{
+    border-radius: .8rem;
+    font-size: large;
+}
 input{
     border-radius: .8rem;
     height: 5rem;

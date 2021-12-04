@@ -123,7 +123,7 @@ h1{
 .iBotao{
     width: 11.5rem;
     height: 2.5rem;
-    background-color: darkgreen;
+    background-color: rgb(72, 75, 75);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
     /* text-align: center; */
@@ -143,14 +143,14 @@ h1{
 .fBotao{
     width: 11.5rem;
     height: 2.5rem;
-    background-color: darkgreen;
+    background-color: rgb(72, 75, 75);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
     /* text-align: center; */
     justify-content: center;
     position: relative;
     margin-top: 1%;
-    margin-bottom: -.1rem;
+    margin-bottom: 1%;
     border-radius: .8rem;
     display: flex;
     align-items: center;
@@ -158,31 +158,33 @@ h1{
 }
 
 .eBotao{
-    /* width: 8.5%;
-    height: 25%; */
-    background-color: #0e0d0db0;
+    width: 11.5rem;
+    height: 2.5rem;
+    background-color: rgb(72, 75, 75);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
     text-align: center;
     position: relative;
     margin-top: 1%;
-    margin-bottom: -.1rem;
+    margin-bottom: 1%;
     border-radius: .8rem;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    font-size: large;
+    
 }
 
 .xBotao{
     width: 11.5rem;
     height: 2.5rem;
-    background-color: darkred;
+    background-color: rgb(72, 75, 75);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
     /* text-align: center; */
     justify-content: center;
     position: relative;
     margin-top: 1%;
-    margin-bottom: -.1rem;
+    margin-bottom: 1%;
     border-radius: .8rem;
     display: inline-block;
     align-items: center;
