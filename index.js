@@ -60,7 +60,8 @@ app.get('/perfil', async (req,res) => {
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyPerfil1: '/bountyPerfil1',
         bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bountyPerfil2: '/bountyPerfil2',
         bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bountyPerfil3: '/bountyPerfil3',
-        bountyName4: bountyP[3].name,bountyDescription4: bountyP[3].description,bountyRestrictions4: bountyP[3].restrictions, bountyPerfil4: '/bountyPerfil4'});
+        bountyName4: bountyP[3].name,bountyDescription4: bountyP[3].description,bountyRestrictions4: bountyP[3].restrictions, bountyPerfil4: '/bountyPerfil4',
+        ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: bountyP[2]._id.toHexString(), ID4: bountyP[3]._id.toHexString()});
     }catch(err){
       console.log('primeiro try');
     }
@@ -70,7 +71,8 @@ app.get('/perfil', async (req,res) => {
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyPerfil1: '/bountyPerfil1',
         bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bountyPerfil2: '/bountyPerfil2',
         bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bountyPerfil3: '/bountyPerfil3',
-        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: ''});
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: '',
+        ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: bountyP[2]._id.toHexString(), ID4: ''});
     }catch(err){
       console.log('segundo try');
     }
@@ -80,7 +82,8 @@ app.get('/perfil', async (req,res) => {
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyPerfil1: '/bountyPerfil1',
         bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bountyPerfil2: '/bountyPerfil2',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyPerfil3: '',
-        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: ''});
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: '',
+        ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: '', ID4: ''});
     }catch(err){
       console.log('terceiro try');
     }
@@ -90,7 +93,8 @@ app.get('/perfil', async (req,res) => {
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyPerfil1: '/bountyPerfil1',
         bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bountyPerfil2: '',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyPerfil3: '',
-        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: ''});
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: '',
+        ID1: bountyP[0]._id.toHexString(), ID2: '', ID3: '', ID4: ''});
     }catch(err){
       console.log('quarto try');
     }
@@ -100,7 +104,8 @@ app.get('/perfil', async (req,res) => {
         bountyName: '',bountyDescription: '',bountyRestrictions: '', bountyPerfil1: '',
         bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bountyPerfil2: '',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyPerfil3: '',
-        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: ''});
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: '',
+        ID1: '', ID2:'', ID3: '', ID4: ''});
     }catch(err){
       console.log('quinto try');
     }
