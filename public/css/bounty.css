@@ -140,7 +140,7 @@ h1{
     margin-left: -20px !important;
     margin-top: -120%;
     opacity: 0;
-    transition: all 0.8s
+    transition: all 1s
   }
   .aBotao:active:after {
     padding: 0;

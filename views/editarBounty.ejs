@@ -41,30 +41,31 @@
         </header>
         <aside class="o-logo">
          <div class="fcontainer">
-                <form action="POST">
+                <form action="/editarBountyF" method="post">
 
                     <div class="fotoPerfil" >
                         <img src="https://source.unsplash.com/150x155/?face" alt="">
                     </div>
                     <div class="carrodoovo">
-                    <input class="alterarFoto" type="file" name="myImage" accept="image/*" />   
+                        <input class="alterarFoto" type="file" name="myImage" accept="image/*" />   
                     </div>
-
-
+                    <h1>Nome da Bounty</h1>
                     <label class="sr-only" for="name">Nome da Bounty</label>
-                    <input type="text" id="name" class="input-forms" placeholder="Nome da Bounty"> 
+                    <input type="text" id="name" name="name" class="input-forms" placeholder="Nome da Bounty" value="<%= NOME %>">
                     
-                    <label class="sr-only" for="name">Prazo</label>
-                    <input type="date" id="name" class="input-forms2" placeholder="">   
-                    <label class="sr-only" for="name">Prazo</label>
-                    <input type="date" id="name" class="input-forms2" placeholder=""> 
+                    <h1>Prazo Final</h1>
+                    <label class="sr-only" for="prazoF">Prazo Final</label>
+                    <input type="date" id="prazoF" name="prazoF" class="input-forms2" placeholder=""> 
                     
-                    <label class="sr-only" for="tel">Restrições</label>
-                    <input type="tel" id="tel" class="input-forms3" placeholder="Restrições">
+                    <h1>Restrições</h1>
+                    <label class="sr-only" for="restrictions">Restrições</label>
+                    <input type="text" id="restrictions" name="restrictions" class="input-forms3" placeholder="Restrições" value="<%= RESTRICAO %>"> 
                     
+                    <h1>Descrição</h1>
+                    <label class="sr-only" for="description">Descrição</label>
+                    <input type="text" id="description" name="description" class="input-forms4" placeholder="Descrição" value="<%= DESCRICAO %>">
                     
-                    <label class="sr-only" for="Descrição">Descrição</label>
-                    <input type="cep" id="descricao" class="input-forms4" placeholder="Descrição">
+                    <input type="hidden" name="ID" value=<%= ID %>>
                     
                     <div class="carrodoleite">
                         <button class="aBotao">Salvar</button>

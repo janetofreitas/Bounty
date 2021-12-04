@@ -59,10 +59,12 @@
                     <p> <%= bountyDescricao %> </p>
                 </div>
     
-                <div class="eBotao">
-                    <a href=''>Editar</a>
-                </div>
-                        
+                 
+                <form action="/editarBounty" method="POST">
+                    <input type="hidden" name="ID" value=<%= ID %>>
+                    <button type="submit" class="eBotao">Editar</button>
+                </form>
+
                 <form action="/excluiBounty" method="POST">
                     <input type="hidden" name="ID" value=<%= ID %>>
                     <button type="submit" class="xBotao">Excluir</button>
