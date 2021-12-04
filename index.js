@@ -471,10 +471,25 @@ app.get('/bounty1', async (req,res) => {
   const email  = usermail;
   const user = await User.findOne({ email: email });
   const bountyP = await Bounty.find({status: 'andamento'});
+
+  var favorito = 'aBotaoVERMELHO';
+  try {
+    bountyP[0].favoritos.forEach((el)=>{
+      console.log(el);
+      console.log(email);
+      if(el == email){
+        favorito = 'aBotaoVERDE';
+      }
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+
   try{
 
     try{
-      return res.render('bounty.ejs', {name: user.name, EMAIL: user.email, bountyName: bountyP[0].name, bountyPrazoFinal: bountyP[0].dataFinal, bountyRestricoes: bountyP[0].restrictions, bountyDescricao: bountyP[0].description, ID: bountyP[0]._id.toHexString(), comentarios: bountyP[0].comments});
+      return res.render('bounty.ejs', {name: user.name, EMAIL: user.email, favorito: favorito, bountyName: bountyP[0].name, bountyPrazoFinal: bountyP[0].dataFinal, bountyRestricoes: bountyP[0].restrictions, bountyDescricao: bountyP[0].description, ID: bountyP[0]._id.toHexString(), comentarios: bountyP[0].comments});
     }catch(err){
       console.log(err);
     }
@@ -485,12 +500,26 @@ app.get('/bounty1', async (req,res) => {
 app.get('/bounty2', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  
   const bountyP = await Bounty.find({status: 'andamento'});
+  
+  var favorito = 'aBotaoVERMELHO';
+  try {
+    bountyP[0].favoritos.forEach((el)=>{
+      console.log(el);
+      console.log(email);
+      if(el == email){
+        favorito = 'aBotaoVERDE';
+      }
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+
   try{
 
     try{
-      return res.render('bounty.ejs', {name: user.name, bountyName: bountyP[1].name, bountyPrazoFinal: bountyP[1].dataFinal, bountyRestricoes: bountyP[1].restrictions, bountyDescricao: bountyP[1].description, ID: bountyP[1]._id.toHexString(), comentarios: bountyP[1].comments});
+      return res.render('bounty.ejs', {name: user.name, EMAIL: user.email, favorito: favorito, bountyName: bountyP[1].name, bountyPrazoFinal: bountyP[1].dataFinal, bountyRestricoes: bountyP[1].restrictions, bountyDescricao: bountyP[1].description, ID: bountyP[1]._id.toHexString(), comentarios: bountyP[1].comments});
     }catch(err){
       console.log(err);
     }
@@ -502,12 +531,26 @@ app.get('/bounty2', async (req,res) => {
 app.get('/bounty3', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  
   const bountyP = await Bounty.find({status: 'andamento'});
+  
+  var favorito = 'aBotaoVERMELHO';
+  try {
+    bountyP[0].favoritos.forEach((el)=>{
+      console.log(el);
+      console.log(email);
+      if(el == email){
+        favorito = 'aBotaoVERDE';
+      }
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+  
   try{
 
     try{
-      return res.render('bounty.ejs', {name: user.name, bountyName: bountyP[2].name, bountyPrazoFinal: bountyP[2].dataFinal, bountyRestricoes: bountyP[2].restrictions, bountyDescricao: bountyP[2].description, ID: bountyP[2]._id.toHexString(), comentarios: bountyP[2].comments});
+      return res.render('bounty.ejs', {name: user.name, EMAIL: user.email, favorito: favorito, bountyName: bountyP[2].name, bountyPrazoFinal: bountyP[2].dataFinal, bountyRestricoes: bountyP[2].restrictions, bountyDescricao: bountyP[2].description, ID: bountyP[2]._id.toHexString(), comentarios: bountyP[2].comments});
     }catch(err){
       console.log(err);
     }
@@ -519,12 +562,26 @@ app.get('/bounty3', async (req,res) => {
 app.get('/bounty4', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  
   const bountyP = await Bounty.find({status: 'andamento'});
+  
+  var favorito = 'aBotaoVERMELHO';
+  try {
+    bountyP[0].favoritos.forEach((el)=>{
+      console.log(el);
+      console.log(email);
+      if(el == email){
+        favorito = 'aBotaoVERDE';
+      }
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+  
   try{
 
     try{
-      return res.render('bounty.ejs', {name: user.name, bountyName: bountyP[3].name, bountyPrazoFinal: bountyP[3].dataFinal, bountyRestricoes: bountyP[3].restrictions, bountyDescricao: bountyP[3].description, ID: bountyP[3]._id.toHexString(), comentarios: bountyP[3].comments});
+      return res.render('bounty.ejs', {name: user.name, EMAIL: user.email, favorito: favorito, bountyName: bountyP[3].name, bountyPrazoFinal: bountyP[3].dataFinal, bountyRestricoes: bountyP[3].restrictions, bountyDescricao: bountyP[3].description, ID: bountyP[3]._id.toHexString(), comentarios: bountyP[3].comments});
     }catch(err){
       console.log(err);
     }
@@ -616,8 +673,9 @@ app.post('/comentarBountyPerfil', async (req,res) => {
 });
 
 app.post('/favoritarBounty', async (req,res) => {
-  //const email  = req.body.EMAIL;
-  //const user = await User.findOne({ email: email });
+  console.log('Entrou no /favortarBounty');
+  const email  = req.body.EMAIL;
+  const user = await User.findOne({ email: email });
   
   var preencher = [];
   var vaiDESFavoritar = false;
@@ -649,7 +707,29 @@ app.post('/favoritarBounty', async (req,res) => {
   
   const bountyP = await Bounty.findOne({_id: req.body.ID });
   
-  res.render('bounty.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, ID: bountyP._id.toHexString(), comentarios: bountyP.comments});
+  var favorito = 'aBotaoVERMELHO';
+  try {
+    bountyP.favoritos.forEach((el)=>{
+      console.log(el);
+      console.log(email);
+      if(el == email){
+        favorito = 'aBotaoVERDE';
+      }
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+  
+  try{
+
+    try{
+      return res.render('bounty.ejs', {name: user.name, EMAIL: user.email, favorito: favorito, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, ID: bountyP._id.toHexString(), comentarios: bountyP.comments});
+    }catch(err){
+      console.log(err);
+    }
+  }catch(err){console.log('finally')}
+
 });
 
 app.post('/upload', upload.single('image'), (req, res) => {

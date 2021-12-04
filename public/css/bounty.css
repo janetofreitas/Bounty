@@ -117,12 +117,14 @@ h1{
     
 }
 
-.aBotao{
+.aBotaoVERDE{
   position: relative;
-  background-color: rgb(72, 75, 75);
+  /* background-color: rgb(72, 75, 75); */
+  background-color: green;
   border: none;
   font-size: 28px;
-  color: #FFFFFF;
+  /* color: #FFFFFF; */
+  color: red;
   width: 20%;
   text-align: center;
   transition-duration: 0.4s;
@@ -130,7 +132,7 @@ h1{
   overflow: hidden;
   cursor: pointer;
 }
-.aBotao:after {
+.aBotaoVERDE:after {
     content: "";
     background: #e3ee48;
     display: block;
@@ -142,9 +144,44 @@ h1{
     opacity: 0;
     transition: all 1s
   }
-  .aBotao:active:after {
+  .aBotaoVERDE:active:after {
     padding: 0;
     margin: 0;
     opacity: 1;
     transition: 0s
   }
+
+
+  .aBotaoVERMELHO{
+    position: relative;
+    /* background-color: rgb(72, 75, 75); */
+    background-color: red;
+    border: none;
+    font-size: 28px;
+    /* color: #FFFFFF; */
+    color: blue;
+    width: 20%;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .aBotaoVERMELHO:after {
+      content: "";
+      background: #e3ee48;
+      display: block;
+      position: absolute;
+      padding-top: 300%;
+      padding-left: 350%;
+      margin-left: -20px !important;
+      margin-top: -120%;
+      opacity: 0;
+      transition: all 1s
+    }
+    .aBotaoVERMELHO:active:after {
+      padding: 0;
+      margin: 0;
+      opacity: 1;
+      transition: 0s
+    }
