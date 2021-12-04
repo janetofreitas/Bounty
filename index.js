@@ -411,7 +411,7 @@ app.get('/home', async (req,res) => {
           bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions, bounty1: '/bounty1',
           bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,bountyRestrictions2: bounty[1].restrictions, bounty2: '/bounty2',
           bountyName3: bounty[2].name,bountyDescription3: bounty[2].description,bountyRestrictions3: bounty[2].restrictions, bounty3: '/bounty3',
-          bountyName4: bounty[3].name,bountyDescription4: bounty[3].description,bountyRestrictions4: bounty[3].restrictions, bounty4: '/bounty4'});
+          bountyName4: bounty[3].name,bountyDescription4: bounty[3].description,bountyRestrictions4: bounty[3].restrictions, bounty4: '/bounty4', ID1: bounty[0]._id.toHexString(), ID2: bounty[1]._id.toHexString(), ID3: bounty[2]._id.toHexString(), ID4: bounty[3]._id.toHexString()});
       }catch(err){
         console.log('primeiro try');
       }
@@ -421,7 +421,7 @@ app.get('/home', async (req,res) => {
           bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions, bounty1: '/bounty1',
           bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,bountyRestrictions2: bounty[1].restrictions, bounty2: '/bounty2',
           bountyName3: bounty[2].name,bountyDescription3: bounty[2].description,bountyRestrictions3: bounty[2].restrictions, bounty3: '/bounty3',
-          bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: ''});
+          bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: '', ID1: bounty[0]._id.toHexString(), ID2: bounty[1]._id.toHexString(), ID3: bounty[2]._id.toHexString(), ID4: 'vazia'});
       }catch(err){
         console.log('segundo try');
       }
@@ -431,7 +431,7 @@ app.get('/home', async (req,res) => {
           bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions, bounty1: '/bounty1',
           bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,bountyRestrictions2: bounty[1].restrictions, bounty2: '/bounty2',
           bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bounty3: '',
-          bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: ''});
+          bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: '', ID1: bounty[0]._id.toHexString(), ID2: bounty[1]._id.toHexString(), ID3: 'vazia', ID4: 'vazia'});
       }catch(err){
         console.log('terceiro try');
       } 
@@ -441,7 +441,7 @@ app.get('/home', async (req,res) => {
           bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions, bounty1: '/bounty1',
           bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bounty2: '',
           bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bounty3: '',
-          bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: ''});
+          bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: '', ID1: bounty[0]._id.toHexString(), ID2: 'vazia', ID3: 'vazia', ID4: 'vazia'});
       }catch(err){
         console.log('quarto try');
       }
@@ -451,7 +451,7 @@ app.get('/home', async (req,res) => {
           bountyName: '',bountyDescription: '',bountyRestrictions: '', bounty1: '',
           bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bounty2: '',
           bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bounty3: '',
-          bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: ''});
+          bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: '', ID1: 'vazia', ID2: 'vazia', ID3: 'vazia', ID4: 'vazia'});
       }catch(err){
         console.log('quinto try');
       }
