@@ -75,30 +75,32 @@
                     <button type="submit" class="fBotao">Finalizar</button>
                 </form>
             
-                <h2>COMENTÁRIOS</h2>
-                <label class="sr-only" for="comments">Comentário</label>
-                <div class="boxBounty">
-                    <ul>
-                        <% for(var i=0; i<comentarios.length; i++) { %>
-                            <li>
-                                <%= comentarios[i] %>
-                            </li>
-                        <% } %>
-                    </ul>
-                </div>
                 
-                <form action="/comentarBountyPerfil" method="POST">
-                    <input type="hidden" name="ID" value=<%= ID %>>
-                    <input type="text" id="comments" class="input-forms" placeholder="Comentário" name="comments">
-                    <button type="submit" class="fBotao">Enviar</button>
-                </form>
-
+                
+               
             </div>
         
         </aside>
     
         <main class="o-form">
+            <h2 class="tituloComentario">COMENTÁRIOS</h2>
+            <label class="sr-only" for="comments">Comentário</label>
+            <div class="boxComentario">
+                <ul>
+                    <% for(var i=0; i<comentarios.length; i++) { %>
+                        <li>
+                            <%= comentarios[i] %>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
             
+            <form action="/comentarBounty" method="POST">
+                <input type="hidden" name="ID" value=<%= ID %>>
+                <input type="text" id="comments" class="inputComentario" placeholder="Comentário" name="comments">
+                <button type="submit" class="iBotao">Enviar</button>
+            </form>
+      </div>
         </main>
         
     <footer class="o-footer footer-dark">
