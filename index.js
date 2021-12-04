@@ -201,7 +201,43 @@ app.get('/bountyPerfil4', async (req,res) => {
     }
   }catch(err){console.log('finally')}
 
+});
+
+app.post('/editarBounty', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
   
+  const bountyP = await Bounty.findOne({_id: req.body.ID });
+
+  try{
+    try{
+      return res.render('editarBounty.ejs', {name: user.name, ID: req.body.ID, NOME: bountyP.name, RESTRICAO: bountyP.restrictions, DESCRICAO: bountyP.description});
+    }catch(err){
+      console.log(err);
+    }
+  }catch(err){console.log('finally')}
+
+});
+
+app.post('/editarBountyF', async (req,res) => {
+  
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  
+  try {
+    await Bounty.updateOne({ _id: req.body.ID }, {
+      name: req.body.name,  
+      dataFinal: req.body.prazoF,
+      restrictions: req.body.restrictions,
+      description: req.body.description,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  
+  const bountyP = await Bounty.findOne({_id: req.body.ID });
+  
+  res.render('bountyPerfil.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, ID: bountyP._id.toHexString(), comentarios: bountyP.comments});
 });
 
 app.get('/historico', async (req,res) => {
