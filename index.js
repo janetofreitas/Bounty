@@ -644,7 +644,7 @@ app.post('/comentarBounty', async (req,res) => {
   
   const bountyP = await Bounty.findOne({_id: req.body.ID });
   
-  res.render('bounty.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, ID: bountyP._id.toHexString(), comentarios: bountyP.comments});
+  res.render('bounty.ejs', {name: user.name, EMAIL: user.email, favorito: favorito, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, ID: bountyP._id.toHexString(), comentarios: bountyP.comments});
 });
 
 app.post('/comentarBountyPerfil', async (req,res) => {
