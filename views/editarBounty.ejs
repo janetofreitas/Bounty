@@ -41,11 +41,17 @@
         </header>
         <aside class="o-logo">
          <div class="fcontainer">
+
+                <img src="Images/<%=ID%>.png" alt="Bounty sem imagem">
+                <form action="/uploadBountyImg" method="POST" enctype="multipart/form-data">
+                <input class="form-control-file" type="file"  name="image"/> 
+                <button  type="submit">Salvar</button>
+                </form>
+
                 <form action="/editarBountyF" method="post">
 
-                    <div class="fotoPerfil" >
-                        <img src="https://source.unsplash.com/150x155/?face" alt="">
-                    </div>
+                    
+
                     <div class="carrodoovo">
                         <input class="alterarFoto" type="file" name="myImage" accept="image/*" />   
                     </div>

@@ -18,7 +18,7 @@ const storageBounty = multer.diskStorage({
   },
   filename: (req, file, cb) => {
     console.log(file);
-    cb(null, 'bountyImg' + usermail + path.extname(file.originalname))
+    cb(null, idB + path.extname(file.originalname))
   }
 })
 
@@ -208,6 +208,7 @@ app.post('/editarBounty', async (req,res) => {
   const user = await User.findOne({ email: email });
   
   const bountyP = await Bounty.findOne({_id: req.body.ID });
+  idB = bountyP._id;
 
   try{
     try{
@@ -614,7 +615,7 @@ app.post('/upload', upload.single('image'), (req, res) => {
 });
 
 app.post('/uploadBountyImg', uploadBounty.single('image'), (req, res) => {
-  res.redirect('/editarBounty');
+  res.redirect('/home');
 });
 
 app.listen(3000);
