@@ -146,7 +146,7 @@ app.get('/bountyPerfil1', async (req,res) => {
   try{
 
     try{
-      return res.render('bountyPerfil.ejs', {name: user.name, EMAIL: user.email, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, ID: bountyC[0]._id.toHexString(), comentarios: bountyC[0].comments});
+      return res.render('bountyPerfil.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, ID: bountyC[0]._id.toHexString(), comentarios: bountyC[0].comments});
     }catch(err){
       console.log(err);
     }
@@ -474,7 +474,7 @@ app.get('/bounty1', async (req,res) => {
   try{
 
     try{
-      return res.render('bounty.ejs', {name: user.name, bountyName: bountyP[0].name, bountyPrazoFinal: bountyP[0].dataFinal, bountyRestricoes: bountyP[0].restrictions, bountyDescricao: bountyP[0].description, ID: bountyP[0]._id.toHexString(), comentarios: bountyP[0].comments});
+      return res.render('bounty.ejs', {name: user.name, EMAIL: user.email, bountyName: bountyP[0].name, bountyPrazoFinal: bountyP[0].dataFinal, bountyRestricoes: bountyP[0].restrictions, bountyDescricao: bountyP[0].description, ID: bountyP[0]._id.toHexString(), comentarios: bountyP[0].comments});
     }catch(err){
       console.log(err);
     }
@@ -620,19 +620,31 @@ app.post('/favoritarBounty', async (req,res) => {
   //const user = await User.findOne({ email: email });
   
   var preencher = [];
+  var vaiDESFavoritar = false;
   const bountyC = await Bounty.findOne({_id: req.body.ID });
   
   try {
-    bountyC.comments.forEach((el)=>{
-      preencher.push(el);
+    bountyC.favoritos.forEach((el)=>{
+      if(el == req.body.EMAIL){
+        vaiDESFavoritar = true;
+      }
+      else{
+        preencher.push(el);
+      }
+      
     });
-    preencher.push( user.name + ': ' + req.body.comments);
+    
+    if(vaiDESFavoritar){}
+    else{
+      preencher.push(req.body.EMAIL);
+    }
+    
   } catch (error) {
     console.log(error);
   }
 
   await Bounty.updateOne({_id: req.body.ID }, {
-    comments: preencher
+    favoritos: preencher
   });
   
   const bountyP = await Bounty.findOne({_id: req.body.ID });
