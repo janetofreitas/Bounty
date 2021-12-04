@@ -258,7 +258,8 @@ app.get('/historico', async (req,res) => {
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyHistorico1: '/bountyHistorico1',
         bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bountyHistorico2: '/bountyHistorico2',
         bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bountyHistorico3: '/bountyHistorico3',
-        bountyName4: bountyP[3].name,bountyDescription4: bountyP[3].description,bountyRestrictions4: bountyP[3].restrictions, bountyHistorico4: '/bountyHistorico4'});
+        bountyName4: bountyP[3].name,bountyDescription4: bountyP[3].description,bountyRestrictions4: bountyP[3].restrictions, bountyHistorico4: '/bountyHistorico4',
+        ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: bountyP[2]._id.toHexString(), ID4: bountyP[3]._id.toHexString()});
     }catch(err){
       console.log('primeiro try');
     }
@@ -268,7 +269,8 @@ app.get('/historico', async (req,res) => {
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyHistorico1: '/bountyHistorico1',
         bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bountyHistorico2: '/bountyHistorico2',
         bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bountyHistorico3: '/bountyHistorico3',
-        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: ''});
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: '',
+        ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: bountyP[2]._id.toHexString(), ID4: ''});
     }catch(err){
       console.log('segundo try');
     }
@@ -278,7 +280,8 @@ app.get('/historico', async (req,res) => {
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyHistorico1: '/bountyHistorico1',
         bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bountyHistorico2: '/bountyHistorico2',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyHistorico3: '',
-        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: ''});
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: '',
+        ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: '', ID4: ''});
     }catch(err){
       console.log('terceiro try');
     }
@@ -288,7 +291,8 @@ app.get('/historico', async (req,res) => {
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyHistorico1: '/bountyHistorico1',
         bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bountyHistorico2: '',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyHistorico3: '',
-        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: ''});
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: '',
+        ID1: bountyP[0]._id.toHexString(), ID2: '', ID3: '', ID4: ''});
     }catch(err){
       console.log('quarto try');
     }
@@ -298,7 +302,8 @@ app.get('/historico', async (req,res) => {
         bountyName: '',bountyDescription: '',bountyRestrictions: '', bountyHistorico1: '',
         bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bountyHistorico2: '',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyHistorico3: '',
-        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: ''});
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: '',
+        ID1: '', ID2: '', ID3: '', ID4: ''});
     }catch(err){
       console.log('quinto try');
     }
@@ -318,7 +323,7 @@ app.get('/bountyHistorico1', async (req,res) => {
 
     try{
       
-      return res.render('bountyHistorico.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, comentarios: bountyP.comments});
+      return res.render('bountyHistorico.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, comentarios: bountyP.comments, ID: bountyP._id.toHexString()});
     }catch(err){
       console.log(err);
     }
@@ -335,7 +340,7 @@ app.get('/bountyHistorico2', async (req,res) => {
 
     try{
       
-      return res.render('bountyHistorico.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, comentarios: bountyP.comments});
+      return res.render('bountyHistorico.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, comentarios: bountyP.comments, ID: bountyP._id.toHexString()});
     }catch(err){
       console.log(err);
     }
@@ -352,7 +357,7 @@ app.get('/bountyHistorico3', async (req,res) => {
 
     try{
       
-      return res.render('bountyHistorico.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, comentarios: bountyP.comments});
+      return res.render('bountyHistorico.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, comentarios: bountyP.comments, ID: bountyP._id.toHexString()});
     }catch(err){
       console.log(err);
     }
@@ -369,7 +374,7 @@ app.get('/bountyHistorico4', async (req,res) => {
 
     try{
       
-      return res.render('bountyHistorico.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, comentarios: bountyP.comments});
+      return res.render('bountyHistorico.ejs', {name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, comentarios: bountyP.comments, ID: bountyP._id.toHexString()});
     }catch(err){
       console.log(err);
     }
