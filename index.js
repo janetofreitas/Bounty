@@ -380,7 +380,245 @@ app.get('/bountyHistorico4', async (req,res) => {
 app.get('/favoritos', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  res.render('favoritos.ejs', {name: user.name, genero: user.genero, bio: user.bio});
+
+  var bounty = await Bounty.find({status: 'andamento'});
+  var bountyFiltrada = [];
+  try {
+    bounty.forEach((b)=>{
+      b.favoritos.forEach((f)=>{
+        if(f == email){
+          bountyFiltrada.push(b);
+        }
+      });
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+
+  try{
+    try{
+      return res.render('favoritos.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: bountyFiltrada[0].name,bountyDescription: bountyFiltrada[0].description,bountyRestrictions: bountyFiltrada[0].restrictions, bounty1: '/bounty1',
+        bountyName2: bountyFiltrada[1].name,bountyDescription2: bountyFiltrada[1].description,bountyRestrictions2: bountyFiltrada[1].restrictions, bounty2: '/bounty2',
+        bountyName3: bountyFiltrada[2].name,bountyDescription3: bountyFiltrada[2].description,bountyRestrictions3: bountyFiltrada[2].restrictions, bounty3: '/bounty3',
+        bountyName4: bountyFiltrada[3].name,bountyDescription4: bountyFiltrada[3].description,bountyRestrictions4: bountyFiltrada[3].restrictions, bounty4: '/bounty4', ID1: bountyFiltrada[0]._id.toHexString(), ID2: bountyFiltrada[1]._id.toHexString(), ID3: bountyFiltrada[2]._id.toHexString(), ID4: bountyFiltrada[3]._id.toHexString()});
+    }catch(err){
+      console.log('primeiro try');
+    }
+
+    try{
+      return res.render('favoritos.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: bountyFiltrada[0].name,bountyDescription: bountyFiltrada[0].description,bountyRestrictions: bountyFiltrada[0].restrictions, favorito1: '/favorito1',
+        bountyName2: bountyFiltrada[1].name,bountyDescription2: bountyFiltrada[1].description,bountyRestrictions2: bountyFiltrada[1].restrictions, favorito2: '/favorito2',
+        bountyName3: bountyFiltrada[2].name,bountyDescription3: bountyFiltrada[2].description,bountyRestrictions3: bountyFiltrada[2].restrictions, favorito3: '/favorito3',
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', favorito4: '', ID1: bountyFiltrada[0]._id.toHexString(), ID2: bountyFiltrada[1]._id.toHexString(), ID3: bountyFiltrada[2]._id.toHexString(), ID4: 'vazia'});
+    }catch(err){
+      console.log('segundo try');
+    }
+
+    try{
+      return res.render('favoritos.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: bountyFiltrada[0].name,bountyDescription: bountyFiltrada[0].description,bountyRestrictions: bountyFiltrada[0].restrictions, favorito1: '/favorito1',
+        bountyName2: bountyFiltrada[1].name,bountyDescription2: bountyFiltrada[1].description,bountyRestrictions2: bountyFiltrada[1].restrictions, favorito2: '/favorito2',
+        bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', favorito3: '',
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', favorito4: '', ID1: bountyFiltrada[0]._id.toHexString(), ID2: bountyFiltrada[1]._id.toHexString(), ID3: 'vazia', ID4: 'vazia'});
+    }catch(err){
+      console.log('terceiro try');
+    } 
+
+    try{
+      return res.render('favoritos.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: bountyFiltrada[0].name,bountyDescription: bountyFiltrada[0].description,bountyRestrictions: bountyFiltrada[0].restrictions, favorito1: '/favorito1',
+        bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', favorito2: '',
+        bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', favorito3: '',
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', favorito4: '', ID1: bountyFiltrada[0]._id.toHexString(), ID2: 'vazia', ID3: 'vazia', ID4: 'vazia'});
+    }catch(err){
+      console.log('quarto try');
+    }
+    
+    try{
+      return res.render('favoritos.ejs', {name: user.name, genero: user.genero, bio: user.bio,
+        bountyName: '',bountyDescription: '',bountyRestrictions: '', favorito1: '',
+        bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', favorito2: '',
+        bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', favorito3: '',
+        bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', favorito4: '', ID1: 'vazia', ID2: 'vazia', ID3: 'vazia', ID4: 'vazia'});
+    }catch(err){
+      console.log('quinto try');
+    }
+
+  }catch(err){
+    console.log('erro try maior ');
+   }
+   
+});
+
+app.get('/favorito1', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+
+  var bounty = await Bounty.find({status: 'andamento'});
+  var bountyFiltrada = [];
+  try {
+    bounty.forEach((b)=>{
+      b.favoritos.forEach((f)=>{
+        if(f == email){
+          bountyFiltrada.push(b);
+        }
+      });
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+  
+  var favorito = 'aBotaoVERMELHO';
+  try {
+    bountyFiltrada[0].favoritos.forEach((el)=>{
+      if(el == email){
+        favorito = 'aBotaoVERDE';
+      }
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+
+  try{
+
+    try{
+      return res.render('bounty.ejs', {name: user.name, EMAIL: user.email, favorito: favorito, bountyName: bountyFiltrada[0].name, bountyPrazoFinal: bountyFiltrada[0].dataFinal, bountyRestricoes: bountyFiltrada[0].restrictions, bountyDescricao: bountyFiltrada[0].description, ID: bountyFiltrada[0]._id.toHexString(), comentarios: bountyFiltrada[0].comments});
+    }catch(err){
+      console.log(err);
+    }
+  }catch(err){console.log('finally')}
+
+});
+
+app.get('/favorito2', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  var index = 1;
+  var bounty = await Bounty.find({status: 'andamento'});
+  var bountyFiltrada = [];
+  try {
+    bounty.forEach((b)=>{
+      b.favoritos.forEach((f)=>{
+        if(f == email){
+          bountyFiltrada.push(b);
+        }
+      });
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+  
+  var favorito = 'aBotaoVERMELHO';
+  try {
+    bountyFiltrada[index].favoritos.forEach((el)=>{
+      if(el == email){
+        favorito = 'aBotaoVERDE';
+      }
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+
+  try{
+
+    try{
+      return res.render('bounty.ejs', {name: user.name, EMAIL: user.email, favorito: favorito, bountyName: bountyFiltrada[index].name, bountyPrazoFinal: bountyFiltrada[index].dataFinal, bountyRestricoes: bountyFiltrada[index].restrictions, bountyDescricao: bountyFiltrada[index].description, ID: bountyFiltrada[index]._id.toHexString(), comentarios: bountyFiltrada[index].comments});
+    }catch(err){
+      console.log(err);
+    }
+  }catch(err){console.log('finally')}
+
+});
+
+app.get('/favorito3', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  var index = 2;
+  var bounty = await Bounty.find({status: 'andamento'});
+  var bountyFiltrada = [];
+  try {
+    bounty.forEach((b)=>{
+      b.favoritos.forEach((f)=>{
+        if(f == email){
+          bountyFiltrada.push(b);
+        }
+      });
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+  
+  var favorito = 'aBotaoVERMELHO';
+  try {
+    bountyFiltrada[index].favoritos.forEach((el)=>{
+      if(el == email){
+        favorito = 'aBotaoVERDE';
+      }
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+
+  try{
+
+    try{
+      return res.render('bounty.ejs', {name: user.name, EMAIL: user.email, favorito: favorito, bountyName: bountyFiltrada[index].name, bountyPrazoFinal: bountyFiltrada[index].dataFinal, bountyRestricoes: bountyFiltrada[index].restrictions, bountyDescricao: bountyFiltrada[index].description, ID: bountyFiltrada[index]._id.toHexString(), comentarios: bountyFiltrada[index].comments});
+    }catch(err){
+      console.log(err);
+    }
+  }catch(err){console.log('finally')}
+
+});
+
+app.get('/favorito4', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  var index = 3;
+  var bounty = await Bounty.find({status: 'andamento'});
+  var bountyFiltrada = [];
+  try {
+    bounty.forEach((b)=>{
+      b.favoritos.forEach((f)=>{
+        if(f == email){
+          bountyFiltrada.push(b);
+        }
+      });
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+  
+  var favorito = 'aBotaoVERMELHO';
+  try {
+    bountyFiltrada[index].favoritos.forEach((el)=>{
+      if(el == email){
+        favorito = 'aBotaoVERDE';
+      }
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+
+  try{
+
+    try{
+      return res.render('bounty.ejs', {name: user.name, EMAIL: user.email, favorito: favorito, bountyName: bountyFiltrada[index].name, bountyPrazoFinal: bountyFiltrada[index].dataFinal, bountyRestricoes: bountyFiltrada[index].restrictions, bountyDescricao: bountyFiltrada[index].description, ID: bountyFiltrada[index]._id.toHexString(), comentarios: bountyFiltrada[index].comments});
+    }catch(err){
+      console.log(err);
+    }
+  }catch(err){console.log('finally')}
+
 });
 
 app.get('/faq', async (req,res) => {
@@ -391,24 +629,8 @@ app.get('/faq', async (req,res) => {
 
 app.get('/home', async (req,res) => {
   const  email  = usermail;
-  var status;
   const user = await User.findOne({ email: email });
   var bounty = await Bounty.find({status: 'andamento'});
-  // var bountyC = [];
-  // try {
-    
-  //   bounty.forEach((el)=>{
-  //     let temp = [];
-  //     temp.push(el._id.toHexString());
-  //     temp.push(el.name);
-  //     temp.push(el.description);
-  //     temp.push(el.restrictions);
-  //     bountyC.push(temp);
-  //   });
-  // } catch (error) {
-  //   console.log(error);
-  // }
-  
   
   try{
       try{
