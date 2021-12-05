@@ -117,7 +117,7 @@ app.get('/perfil', async (req,res) => {
 app.get('/editarPerfil', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  res.render('editarPerfil.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio});
+  res.render('editarPerfil.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio, NOME: user.name, BIO: user.bio, CEP: user.cep, ENDERECO: user.endereco, TELEFONE: user.telefone});
 });
 
 app.post('/editarPerfil', async (req,res) => {
@@ -128,7 +128,8 @@ app.post('/editarPerfil', async (req,res) => {
       cep: req.body.cep,
       endereco: req.body.endereco,
       name: req.body.name,
-      email: req.body.email 
+      email: req.body.email,
+      telefone: req.body.tel
   });
   
   // console.log(`req: ${JSON.stringify(req.body)}`);
