@@ -68,6 +68,13 @@ a {
 
 
 }
+.fotoHeader {
+    height: auto; 
+    width: auto; 
+    max-width: 90px; 
+    max-height: 60px;
+
+}
 .input-forms{
     border: .2rem solid black;
     padding: 1%;

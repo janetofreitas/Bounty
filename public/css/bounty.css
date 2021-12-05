@@ -89,6 +89,13 @@ h1{
     display: flex;
     margin-right: 33.5rem;
 }
+.fotoHeader {
+    height: auto; 
+    width: auto; 
+    max-width: 90px; 
+    max-height: 60px;
+
+}
 
 
 .fotoBounty {
