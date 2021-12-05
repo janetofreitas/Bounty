@@ -113,7 +113,7 @@ h2{
 .aBotao{
     border-radius: .8rem;
     height: 15%;
-    font-size: large;
+    font-size: medium;
 }
 .sBotao{
     width: 10%;
@@ -130,18 +130,18 @@ h2{
 }
 .sBotao{
     border-radius: .8rem;
-    font-size: large;
+    font-size: medium;
 }
 input{
     border-radius: .8rem;
     height: 15%;
-    font-size: large;
+    font-size: medium;
 
 }
 .form-control-file{
     border-radius: .8rem;
     height: 3.5rem;
-    font-size: large;
+    font-size: medium;
 }
 .fotoPerfil {
     height: auto; 
