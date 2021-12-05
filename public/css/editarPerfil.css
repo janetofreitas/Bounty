@@ -71,14 +71,20 @@ a {
 .input-forms{
     border: .2rem solid black;
     padding: 1%;
-    width: 75%;
+    width: 40rem;
     position: relative;
-    left: 12%;
-    top: 1%;
+    left: 4%;
 }
 h2{
     position: relative;
     top: 1rem;
+}
+.tituloCriar{
+    position: relative;
+    justify-content: center;
+    font-size: small;
+    display: flex;
+
 }
 
   .aBotao{
@@ -116,7 +122,7 @@ h2{
     color: black;
     text-align: center;
     position: relative;
-    margin-bottom: -.1rem;
+    /* margin-bottom: -.1rem; */
     width: 15rem;
     margin-left: 30%;
 
