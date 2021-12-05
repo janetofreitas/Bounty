@@ -7,7 +7,6 @@ const storage = multer.diskStorage({
     cb(null, 'public/Images');
   },
   filename: (req, file, cb) => {
-    console.log(file);
     cb(null, usermail + path.extname(file.originalname))
   }
 })
@@ -17,7 +16,6 @@ const storageBounty = multer.diskStorage({
     cb(null, 'public/Images');
   },
   filename: (req, file, cb) => {
-    console.log(file);
     cb(null, idB + path.extname(file.originalname))
   }
 })
@@ -133,7 +131,7 @@ app.post('/editarPerfil', async (req,res) => {
       email: req.body.email 
   });
   
-  console.log(`req: ${JSON.stringify(req.body)}`);
+  // console.log(`req: ${JSON.stringify(req.body)}`);
   res.redirect('/perfil')
 });
 
@@ -702,8 +700,6 @@ app.get('/bounty1', async (req,res) => {
   var favorito = 'aBotaoVERMELHO';
   try {
     bountyP[0].favoritos.forEach((el)=>{
-      console.log(el);
-      console.log(email);
       if(el == email){
         favorito = 'aBotaoVERDE';
       }
@@ -732,8 +728,6 @@ app.get('/bounty2', async (req,res) => {
   var favorito = 'aBotaoVERMELHO';
   try {
     bountyP[1].favoritos.forEach((el)=>{
-      console.log(el);
-      console.log(email);
       if(el == email){
         favorito = 'aBotaoVERDE';
       }
@@ -763,8 +757,6 @@ app.get('/bounty3', async (req,res) => {
   var favorito = 'aBotaoVERMELHO';
   try {
     bountyP[2].favoritos.forEach((el)=>{
-      console.log(el);
-      console.log(email);
       if(el == email){
         favorito = 'aBotaoVERDE';
       }
@@ -794,8 +786,6 @@ app.get('/bounty4', async (req,res) => {
   var favorito = 'aBotaoVERMELHO';
   try {
     bountyP[3].favoritos.forEach((el)=>{
-      console.log(el);
-      console.log(email);
       if(el == email){
         favorito = 'aBotaoVERDE';
       }
@@ -874,8 +864,6 @@ app.post('/comentarBounty', async (req,res) => {
   var favorito = 'aBotaoVERMELHO';
   try {
     bountyP.favoritos.forEach((el)=>{
-      console.log(el);
-      console.log(email);
       if(el == email){
         favorito = 'aBotaoVERDE';
       }
@@ -914,7 +902,6 @@ app.post('/comentarBountyPerfil', async (req,res) => {
 });
 
 app.post('/favoritarBounty', async (req,res) => {
-  console.log('Entrou no /favortarBounty');
   const email  = req.body.EMAIL;
   const user = await User.findOne({ email: email });
   
@@ -951,8 +938,6 @@ app.post('/favoritarBounty', async (req,res) => {
   var favorito = 'aBotaoVERMELHO';
   try {
     bountyP.favoritos.forEach((el)=>{
-      console.log(el);
-      console.log(email);
       if(el == email){
         favorito = 'aBotaoVERDE';
       }
