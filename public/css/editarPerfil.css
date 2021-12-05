@@ -71,10 +71,12 @@ a {
 .input-forms{
     border: .2rem solid black;
     padding: 1%;
-    width: 40rem;
+    width: 200%;
     height: 12%;
     position: relative;
-    left: 4%;
+    display: flex;
+    right: 40%;
+
 }
 h2{
     position: relative;
