@@ -74,7 +74,7 @@ a {
     width: 30rem;
     position: relative;
     top: 1%;
-    height: 5rem;
+    height: 15%;
     font-size: medium;
     display: flex;
 }
@@ -84,7 +84,7 @@ a {
     width: 20rem;
     position: relative;
     top: 1%;
-    height: 5rem;
+    height: 15%;
     left: 20%;
     display: flex;
     font-size: medium;
@@ -94,7 +94,7 @@ a {
     border: .2rem solid black;
     padding: 1%;
     width: 30rem;
-    height: 5rem;
+    height: 18%;
     position: relative;
     top: 1%;  
     display: flex; 
@@ -104,7 +104,7 @@ a {
     border: .2rem solid black;
     padding: 1%;
     width: 30rem;
-    height: 5rem;
+    height: 18%;
     position: relative;
     top: 1%;  
     display: flex; 
