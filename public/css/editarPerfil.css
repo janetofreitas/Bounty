@@ -6,7 +6,7 @@ body {
     "footer footer footer";
     /* gap: 1rem; */
     grid-template-columns: 15% 0% 85%;
-    grid-template-rows: auto 85% auto;
+    grid-template-rows: auto auto auto;
 }
 
 .o-header {
@@ -15,12 +15,12 @@ body {
     
 } 
 
- .o-logo { 
+.o-logo { 
     grid-area: logo;
     color: #FDFDFD;
     background: #2d2d2d;
     border: 1px solid black;
-    display: flex;
+    display: inline-table;
     min-width: 800px;
     max-width: auto;
 }
@@ -71,12 +71,10 @@ a {
 .input-forms{
     border: .2rem solid black;
     padding: 1%;
-    width: 200%;
+    width: 40rem;
     height: 12%;
     position: relative;
-    display: flex;
-    right: 40%;
-
+    left: 4%;
 }
 h2{
     position: relative;
