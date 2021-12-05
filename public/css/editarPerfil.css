@@ -105,7 +105,7 @@ h2{
 
 .aBotao{
     border-radius: .8rem;
-    height: 6rem;
+    height: 15%;
     font-size: large;
 }
 .sBotao{
@@ -127,15 +127,20 @@ h2{
 }
 input{
     border-radius: .8rem;
-    height: 5rem;
+    height: 15%;
     font-size: large;
 
+}
+.form-control-file{
+    border-radius: .8rem;
+    height: 4rem;
+    font-size: large;
 }
 .fotoPerfil {
     height: auto; 
     width: auto; 
-    max-width: 150px; 
-    max-height: 150px;
+    max-width: 120px; 
+    max-height: 120px;
     
 }
 .alterarFoto{
