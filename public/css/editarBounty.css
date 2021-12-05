@@ -185,6 +185,13 @@ input{
     height: auto;
     
 }
+.fotoHeader {
+    height: auto; 
+    width: auto; 
+    max-width: 90px; 
+    max-height: 60px;
+
+}
 .tituloBT{
     display: flex;
     justify-content: center;

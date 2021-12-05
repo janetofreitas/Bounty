@@ -26,10 +26,8 @@
                   <button type="submit" ><img src="../assets/searchIcon.png" alt=""></button>
                 </form>
                 
-                <div class="mangue"><h4 class="h1nav">Olá  <%= name %>! <br>
-                    <form action="/logout?_method=DELETE" method="POST">
-                        <button type="submit">Log Out</button>
-                    </form>
+                <div class="mangue">
+                    <h4 class="h1nav">Olá <%= name %> <br> <a href="/" id="navlogout">Logout</a></h4>
                 </div>
         
                 <div class="userarea">
@@ -45,23 +43,17 @@
                     
                     
                     
-
+                     <h4 class="tituloCriar">Nome da Bounty</h4>
                     <label class="sr-only" for="name">Nome da Bounty</label>
-                    
                     <input type="text" id="name" class="input-forms" placeholder="Nome da Bounty" name="name"> 
-                    
                     <label class="sr-only" for="name">Prazo</label>
-                    
                     <input type="date" id="name" class="input-forms2" placeholder="" name="dataInicial">   
-                    
                     <label class="sr-only" for="name">Prazo</label>
-                    
                     <input type="date" id="name" class="input-forms2" placeholder="" name="dataFinal"> 
-                    
+                    <h4 class="tituloCriar">Restrições</h4>
                     <label class="sr-only" for="tel">Restrições</label>
-                    
                     <input type="tel" id="tel" class="input-forms3" placeholder="Restrições" name="restrictions">
-                    
+                    <h4 class="tituloCriar">Descrição</h4>
                     <label class="sr-only" for="Descrição">Descrição</label>
                     
                     <input type="cep" id="descricao" class="input-forms4" placeholder="Descrição" name="description">

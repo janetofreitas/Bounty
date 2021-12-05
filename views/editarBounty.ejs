@@ -22,20 +22,21 @@
     <body>
         <header class="o-header">
             <nav> 
-                <div class="logo"><a href="/home" class="logoHeader"><img src="../assets/logoP.png" alt=""></a></div>
-          
+                <div class="logo">
+                    <a href="/home" class="logoHeader"><img src="../assets/logoP.png"         alt=""></a>
+                </div>
+                
                 <form action="#">
                   <input type="search" class="search-data" placeholder="Pesquisar" required>
                   <button type="submit" ><img src="../assets/searchIcon.png" alt=""></button>
                 </form>
                 
-                <div class="mangue"><h4 class="h1nav">Olá  <%= name %>! <br>
-                    <form action="/logout?_method=DELETE" method="POST">
-                        <button type="submit">Log Out</button>
-                      </form></div>
+                <div class="mangue">
+                    <h4 class="h1nav">Olá <%= name %> <br> <a href="/" id="navlogout">Logout</a></h4>
+                </div>
         
                 <div class="userarea">
-                    <a href="" class="logoHeader"><img src="https://source.unsplash.com/90x60/?face" alt=""></a>  
+                    <a href="/perfil" class="logoHeader"><img class="fotoHeader" src="Images/<%=mail%>.png" alt=""></a>  
                 </div>
               </nav> 
         </header>

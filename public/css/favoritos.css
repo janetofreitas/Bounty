@@ -58,6 +58,20 @@ a {
     max-height: 60px;
 
 }
+.bBotao{
+    width: 8.5%;
+    height: 25%;
+    background-color: #0e0d0db0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    text-align: center;
+    position: relative;
+    margin-top: 1%;
+    margin-bottom: -.1rem;
+    border-radius: .8rem;
+    display: flex;
+    align-items: center;
+}
 
 
 .o-form {

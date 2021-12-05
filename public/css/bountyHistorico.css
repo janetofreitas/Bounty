@@ -2,11 +2,11 @@ body {
     display: grid;
     grid-template-areas:
     "header header header"
-    'logo logo logo'
+    'logo logo form'
     "footer footer footer";
     /* gap: 1rem; */
-    grid-template-columns: 15% 0% 85%;
-    grid-template-rows: auto 85% auto;
+    grid-template-columns: 5% 65% 30%;
+    grid-template-rows: auto auto auto;
 }
 
 .o-header {
@@ -19,7 +19,7 @@ body {
     grid-area: logo;
     color: #FDFDFD;
     background: #2d2d2d;
-    border: 1px solid black;
+    
     display: flex;
     min-width: 800px;
     max-width: auto;
@@ -35,8 +35,12 @@ a {
 
 .o-form {
     grid-area: form;
-    background: #2d2d2d;
-    color: #ababab;
+        background: #2d2d2d;
+        color: #ababab;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     
 }
  .o-footer {
@@ -45,10 +49,9 @@ a {
 }
 .fcontainer {
     width: 45%;
-    height: 95%;
+    height: 98%;
     margin:  auto;
     position: relative;
-    right: 3.5rem;
     border: .3rem solid #ababab;
     border-radius: .8rem;
     display: flex;
@@ -74,27 +77,44 @@ h1{
     display: flex;
     justify-content: center;
 }
+.tituloComentario{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-right: 35rem;
+}
 
 .fotoBounty {
-    display:flex;
-    justify-content: center;
-    margin-bottom: .5rem;   
+    height: auto; 
+    width: auto; 
+    max-width: 150px; 
+    max-height: 150px;  
+    display: flex;
+    margin-left: 12%;
+}
+.fotoHeader {
+    height: auto; 
+    width: auto; 
+    max-width: 90px; 
+    max-height: 60px;
+
 }
 .boxBounty{
-        width: 100%;
-        border-radius: .8rem;
-        padding: 5%;
-        margin: 1%;
-        background-color: rgb(72, 75, 75);
-}
-.boxBounty2{
-    width: 15%;
+    width: 100%;
     border-radius: .8rem;
-    padding: 1%;
+    padding: 5%;
     margin: 1%;
     background-color: rgb(72, 75, 75);
+}
+.boxBounty2{
+    width: 30%;
+    border-radius: .8rem;
+    padding: 1%;
+    /* margin: 1%; */
+    background-color: rgb(72, 75, 75);
     display: flex;
-    margin-left: 43%;
+    text-align: center;
+    margin-left: 35%;
 }
 .boxBounty3{
     width: 100%;
@@ -102,4 +122,15 @@ h1{
     padding: 4%;
     margin: 1%;
     background-color: rgb(72, 75, 75);
+}
+.boxComentario{
+    width: 80%;
+    height: 40%;
+    border-radius: .8rem;
+    padding: 5%;
+    margin: 1%;
+    background-color: rgb(72, 75, 75);
+    font-size: medium;
+    margin-right: 60%;
+    
 }
