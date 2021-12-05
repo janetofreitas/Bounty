@@ -40,6 +40,17 @@ a {
     color: #fff;
     transform: translateY(-10px);
   }
+  .linha_vertical{
+    transform: rotate(270deg);
+    width: 15%;
+    justify-content: last baseline;
+    margin-top: 4%;
+}
+.imgBounty{
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+}
 
 
 .o-form {

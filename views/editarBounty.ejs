@@ -14,7 +14,7 @@
         <script src="https://kit.fontawesome.com/9ff781d0d0.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/global.css">
-        <link rel="stylesheet" href="../css/criarBounty.css">
+        <link rel="stylesheet" href="../css/editarBounty.css">
         <title>Bounty</title>
     
     </head>
@@ -42,32 +42,30 @@
         <aside class="o-logo">
          <div class="fcontainer">
 
-                <img src="Images/<%=ID%>.png" alt="Bounty sem imagem">
+                <img class="fotoBounty" src="Images/<%=ID%>.png" alt="Bounty sem imagem">
                 <form action="/uploadBountyImg" method="POST" enctype="multipart/form-data">
                 <input class="form-control-file" type="file"  name="image"/> 
-                <button  type="submit">Salvar</button>
+                <button class="sBotao"  type="submit">Salvar</button>
                 </form>
 
                 <form action="/editarBountyF" method="post">
 
                     
 
-                    <div class="carrodoovo">
-                        <input class="alterarFoto" type="file" name="myImage" accept="image/*" />   
-                    </div>
-                    <h1>Nome da Bounty</h1>
+                    
+                    <h4 class="tituloBT">Nome da Bounty</h4>
                     <label class="sr-only" for="name">Nome da Bounty</label>
                     <input type="text" id="name" name="name" class="input-forms" placeholder="Nome da Bounty" value="<%= NOME %>">
                     
-                    <h1>Prazo Final</h1>
+                    <h4 class="tituloBT">Prazo Final</h4>
                     <label class="sr-only" for="prazoF">Prazo Final</label>
                     <input type="date" id="prazoF" name="prazoF" class="input-forms2" placeholder=""> 
                     
-                    <h1>Restrições</h1>
+                    <h4 class="tituloBT">Restrições</h4>
                     <label class="sr-only" for="restrictions">Restrições</label>
                     <input type="text" id="restrictions" name="restrictions" class="input-forms3" placeholder="Restrições" value="<%= RESTRICAO %>"> 
                     
-                    <h1>Descrição</h1>
+                    <h4 class="tituloBT">Descrição</h4>
                     <label class="sr-only" for="description">Descrição</label>
                     <input type="text" id="description" name="description" class="input-forms4" placeholder="Descrição" value="<%= DESCRICAO %>">
                     
