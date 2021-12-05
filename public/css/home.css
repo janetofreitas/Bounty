@@ -2,7 +2,6 @@
 .o-header {
     grid-area: header;
     background: #2d2d2d;
-    
 } 
 
 .o-logo { 
@@ -88,7 +87,8 @@ body {
     width: auto; 
     max-width: 90px; 
     max-height: 60px;
-
+    background-image: url("../assets/perfil.png");
+    
 }
 .bBotao{
     width: 8.5%;
