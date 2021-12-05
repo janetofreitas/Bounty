@@ -161,3 +161,11 @@ input{
     max-height: 60px;
 
 }
+
+.tituloCriar{
+    position: relative;
+    justify-content: center;
+    font-size: small;
+    display: flex;
+
+}

@@ -70,7 +70,7 @@ app.get('/perfil', async (req,res) => {
         bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bountyPerfil2: '/bountyPerfil2',
         bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bountyPerfil3: '/bountyPerfil3',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: '',
-        ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: bountyP[2]._id.toHexString(), ID4: ''});
+        ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: bountyP[2]._id.toHexString(), ID4: 'vazia'});
     }catch(err){
       console.log('segundo try');
     }
@@ -81,7 +81,7 @@ app.get('/perfil', async (req,res) => {
         bountyName2: bountyP[1].name,bountyDescription2: bountyP[1].description,bountyRestrictions2: bountyP[1].restrictions, bountyPerfil2: '/bountyPerfil2',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyPerfil3: '',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: '',
-        ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: '', ID4: ''});
+        ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: 'vazia', ID4: 'vazia'});
     }catch(err){
       console.log('terceiro try');
     }
@@ -92,7 +92,7 @@ app.get('/perfil', async (req,res) => {
         bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bountyPerfil2: '',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyPerfil3: '',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: '',
-        ID1: bountyP[0]._id.toHexString(), ID2: '', ID3: '', ID4: ''});
+        ID1: bountyP[0]._id.toHexString(), ID2: 'vazia', ID3: 'vazia', ID4: 'vazia'});
     }catch(err){
       console.log('quarto try');
     }
@@ -103,7 +103,7 @@ app.get('/perfil', async (req,res) => {
         bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bountyPerfil2: '',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyPerfil3: '',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: '',
-        ID1: '', ID2:'', ID3: '', ID4: ''});
+        ID1: 'vazia', ID2: 'vazia', ID3: 'vazia', ID4: 'vazia'});
     }catch(err){
       console.log('quinto try');
     }
@@ -117,7 +117,7 @@ app.get('/perfil', async (req,res) => {
 app.get('/editarPerfil', async (req,res) => {
   const  email  = usermail;
   const user = await User.findOne({ email: email });
-  res.render('editarPerfil.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio});
+  res.render('editarPerfil.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio, NOME: user.name, BIO: user.bio, CEP: user.cep, ENDERECO: user.endereco, TELEFONE: user.telefone});
 });
 
 app.post('/editarPerfil', async (req,res) => {
@@ -128,7 +128,8 @@ app.post('/editarPerfil', async (req,res) => {
       cep: req.body.cep,
       endereco: req.body.endereco,
       name: req.body.name,
-      email: req.body.email 
+      email: req.body.email,
+      telefone: req.body.tel
   });
   
   // console.log(`req: ${JSON.stringify(req.body)}`);
@@ -402,10 +403,10 @@ app.get('/favoritos', async (req,res) => {
   try{
     try{
       return res.render('favoritos.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
-        bountyName: bountyFiltrada[0].name,bountyDescription: bountyFiltrada[0].description,bountyRestrictions: bountyFiltrada[0].restrictions, bounty1: '/bounty1',
-        bountyName2: bountyFiltrada[1].name,bountyDescription2: bountyFiltrada[1].description,bountyRestrictions2: bountyFiltrada[1].restrictions, bounty2: '/bounty2',
-        bountyName3: bountyFiltrada[2].name,bountyDescription3: bountyFiltrada[2].description,bountyRestrictions3: bountyFiltrada[2].restrictions, bounty3: '/bounty3',
-        bountyName4: bountyFiltrada[3].name,bountyDescription4: bountyFiltrada[3].description,bountyRestrictions4: bountyFiltrada[3].restrictions, bounty4: '/bounty4', ID1: bountyFiltrada[0]._id.toHexString(), ID2: bountyFiltrada[1]._id.toHexString(), ID3: bountyFiltrada[2]._id.toHexString(), ID4: bountyFiltrada[3]._id.toHexString()});
+        bountyName: bountyFiltrada[0].name,bountyDescription: bountyFiltrada[0].description,bountyRestrictions: bountyFiltrada[0].restrictions, favorito1: '/favorito1',
+        bountyName2: bountyFiltrada[1].name,bountyDescription2: bountyFiltrada[1].description,bountyRestrictions2: bountyFiltrada[1].restrictions, favorito2: '/favorito2',
+        bountyName3: bountyFiltrada[2].name,bountyDescription3: bountyFiltrada[2].description,bountyRestrictions3: bountyFiltrada[2].restrictions, favorito3: '/favorito3',
+        bountyName4: bountyFiltrada[3].name,bountyDescription4: bountyFiltrada[3].description,bountyRestrictions4: bountyFiltrada[3].restrictions, favorito4: '/favorito4', ID1: bountyFiltrada[0]._id.toHexString(), ID2: bountyFiltrada[1]._id.toHexString(), ID3: bountyFiltrada[2]._id.toHexString(), ID4: bountyFiltrada[3]._id.toHexString()});
     }catch(err){
       console.log('primeiro try');
     }

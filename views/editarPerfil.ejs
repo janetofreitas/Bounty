@@ -54,28 +54,25 @@
 
                 <form action="/editarPerfil" method="POST" >
                     
-                       
-
-                    
-                    
-                  
-
-
+                    <h4 class="tituloCriar">Nome</h4>
                     <label class="sr-only" for="name">Nome</label>
-                    <input type="text" id="name" class="input-forms" placeholder="Nome" name="name" required> 
+                    <input type="text" id="name" class="input-forms" placeholder="Nome" name="name" required value="<%= NOME %>"> 
                     
-                    <label class="sr-only" for="email">Email</label>
-                    <input type="email" id="e-mail" class="input-forms" placeholder="E-mail"name="e-mail" required>    
-                    
+                    <h4 class="tituloCriar">Bio</h4>
                     <label class="sr-only" for="bio">Bio</label>
-                    <input type="text" id="bio" class="input-forms" placeholder="Bio"name="bio" required>
+                    <input type="text" id="bio" class="input-forms" placeholder="Bio"name="bio" required value="<%= BIO %>">
                     
-                    
+                    <h4 class="tituloCriar">Telefone</h4>
+                    <label class="sr-only" for="tel">Telefone</label>
+                    <input type="tel" id="tel" class="input-forms" placeholder="Telefone" name="tel" required value="<%= TELEFONE %>">
+
+                    <h4 class="tituloCriar">CEP</h4>
                     <label class="sr-only" for="cep">CEP</label>
-                    <input type="cep" id="cep" class="input-forms" placeholder="CEP"name="cep" required>
+                    <input type="cep" id="cep" class="input-forms" placeholder="CEP"name="cep" required value="<%= CEP %>">
                     
+                    <h4 class="tituloCriar">Endereço</h4>
                     <label class="sr-only" for="endereco">Endereço</label>
-                    <input type="text" id="endereco" class="input-forms" placeholder="Endereço" name="endereco" required>
+                    <input type="text" id="endereco" class="input-forms" placeholder="Endereço" name="endereco" required value="<%= ENDERECO %>">
                     <br><br>
                     
                     <div class="carrodoleite">
