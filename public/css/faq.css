@@ -43,6 +43,13 @@ a {
     grid-area: footer;
     padding: 1rem; 
 }
+.fotoHeader {
+    height: auto; 
+    width: auto; 
+    max-width: 90px; 
+    max-height: 60px;
+
+}
 .h1faq{
     
     margin-left: auto;
@@ -51,6 +58,7 @@ a {
     width: 2.6%;
     
 }
+
 
 
 .h2faq{
