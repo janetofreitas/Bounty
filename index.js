@@ -967,4 +967,45 @@ app.post('/uploadBountyImg', uploadBounty.single('image'), (req, res) => {
   res.redirect('/home');
 });
 
+app.get('/searchResult', async (req,res) => {
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  res.render('searchResult.ejs',{mail: email,name: user.name, genero: user.genero, bio: user.bio})
+})
+
+app.post('/pesquisar', async (req,res)=>{
+  const  email  = usermail;
+  const user = await User.findOne({ email: email });
+  const bountyS = await Bounty.find({name: req.body.pesquisa});
+  
+    try{
+      try{
+        return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: bountyS[0].name, Bdescription: bountyS[0].description,
+        Bname1: bountyS[1].name, Bdescription1: bountyS[1].description,
+        Bname2: bountyS[2].name, Bdescription2: bountyS[2].description});
+      }catch(err){}
+
+      try{
+        return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: bountyS[0].name, Bdescription: bountyS[0].description,
+          Bname1: bountyS[1].name, Bdescription1: bountyS[1].description,
+          Bname2: '', Bdescription2: ''});
+      }catch(err){}
+
+      try{
+        return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: bountyS[0].name, Bdescription: bountyS[0].description,
+          Bname1: '', Bdescription1: '',
+          Bname2: '', Bdescription2: ''});
+      }catch(err){}
+
+      try{
+        return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: 'Nenhuma bounty corresponde ao termo pesquisado.', Bdescription: '',
+          Bname1: '', Bdescription1: '',
+          Bname2: '', Bdescription2: ''});
+      }catch(err){}
+
+    }catch(err){
+      console.log(err);
+    }
+})
+
 app.listen(3000);
