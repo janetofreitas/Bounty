@@ -906,19 +906,19 @@ app.post('/pesquisar', async (req,res)=>{
       try{
         return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: bountyS[0].name, Bdescription: bountyS[0].description, ID1: bountyS[0]._id.toHexString(), pesquisa1: '/pesquisa1',
           Bname1: bountyS[1].name, Bdescription1: bountyS[1].description, ID2: bountyS[1]._id.toHexString(), pesquisa2: '/pesquisa2',
-          Bname2: '', Bdescription2: '', ID3: 'vazia', pesquisa3: '', nomeP: req.body.pesquisa});
+          Bname2: '', Bdescription2: '', ID3: 'vazia', pesquisa3: '/pesquisar', nomeP: req.body.pesquisa});
       }catch(err){}
 
       try{
         return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: bountyS[0].name, Bdescription: bountyS[0].description, ID1: bountyS[0]._id.toHexString(), pesquisa1: '/pesquisa1',
-          Bname1: '', Bdescription1: '', ID2: 'vazia', pesquisa2: '',
-          Bname2: '', Bdescription2: '', ID3: 'vazia', pesquisa3: '', nomeP: req.body.pesquisa});
+          Bname1: '', Bdescription1: '', ID2: 'vazia', pesquisa2: '/pesquisar',
+          Bname2: '', Bdescription2: '', ID3: 'vazia', pesquisa3: '/pesquisar', nomeP: req.body.pesquisa});
       }catch(err){}
 
       try{
-        return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: 'Nenhuma bounty corresponde ao termo pesquisado.', Bdescription: '', ID1: 'vazia', pesquisa1: '',
-          Bname1: '', Bdescription1: '', ID2: 'vazia', pesquisa2: '',
-          Bname2: '', Bdescription2: '', ID3: 'vazia', pesquisa3: '', nomeP: req.body.pesquisa});
+        return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: 'Nenhuma bounty corresponde ao termo pesquisado.', Bdescription: '', ID1: 'vazia', pesquisa1: '/pesquisar',
+          Bname1: '', Bdescription1: '', ID2: 'vazia', pesquisa2: '/pesquisar',
+          Bname2: '', Bdescription2: '', ID3: 'vazia', pesquisa3: '/pesquisar', nomeP: req.body.pesquisa});
       }catch(err){}
 
     }catch(err){
