@@ -51,11 +51,12 @@
                     <hr class="linha_vertical"/>
                     <h4>Restrições: <br></h4>
                     <hr class="linha_vertical"/>
-                    <img class="imgBounty" src="" alt="Bounty sem imagem">
+                    <img class="imgBounty" src="Images/<%=ID1%>.png" alt="Bounty sem imagem">
                     <hr class="linha_vertical"/>
-                    <div class="bBotao">
-                        <a class="" href=>Acessar</a>
-                    </div>
+                    <form action=<%= pesquisa1 %> method="POST">
+                        <input type="hidden" name="nomeP" value=<%= nomeP %>>
+                        <button type="submit" class="">Acessar</button>
+                    </form>
             </div>
             <div class="boxB">
                 <h2>Nome da Bounty: <br><%= Bname1 %></h2>
@@ -64,11 +65,12 @@
                     <hr class="linha_vertical"/>
                     <h4>Restrições: <br></h4>
                     <hr class="linha_vertical"/>
-                    <img class="imgBounty" src="" alt="Bounty sem imagem">
+                    <img class="imgBounty" src="Images/<%=ID2%>.png" alt="Bounty sem imagem">
                     <hr class="linha_vertical"/>
-                    <div class="bBotao">
-                        <a class="" href=>Acessar</a>
-                    </div>
+                    <form action=<%= pesquisa2 %> method="POST">
+                        <input type="hidden" name="nomeP" value=<%= nomeP %>>
+                        <button type="submit" class="">Acessar</button>
+                    </form>
             </div>
             <div class="boxB">
                 <h2>Nome da Bounty: <br><%= Bname2 %></h2>
@@ -77,24 +79,12 @@
                     <hr class="linha_vertical"/>
                     <h4>Restrições: <br></h4>
                     <hr class="linha_vertical"/>
-                    <img class="imgBounty" src="" alt="Bounty sem imagem">
+                    <img class="imgBounty" src="Images/<%=ID3%>.png" alt="Bounty sem imagem">
                     <hr class="linha_vertical"/>
-                    <div class="bBotao">
-                        <a class="" href=>Acessar</a>
-                    </div>
-            </div>
-            <div class="boxB">
-                <h2>Nome da Bounty: <br><%= Bname %></h2>
-                    <hr class="linha_vertical"/>
-                    <h4>Descrição: <br><%= Bdescription %></h4>
-                    <hr class="linha_vertical"/>
-                    <h4>Restrições: </h4>
-                    <hr class="linha_vertical"/>
-                    <img class="imgBounty" src="" alt="Bounty sem imagem">
-                    <hr class="linha_vertical"/>
-                    <div class="bBotao">
-                        <a class="" href=>Acessar</a>
-                    </div>
+                    <form action=<%= pesquisa3 %> method="POST">
+                        <input type="hidden" name="nomeP" value=<%= nomeP %>>
+                        <button type="submit" class="">Acessar</button>
+                    </form>
             </div>
             
             

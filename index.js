@@ -977,35 +977,123 @@ app.post('/pesquisar', async (req,res)=>{
   const  email  = usermail;
   const user = await User.findOne({ email: email });
   const bountyS = await Bounty.find({name: req.body.pesquisa});
-  
+  console.log(req.body.pesquisa);
     try{
       try{
-        return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: bountyS[0].name, Bdescription: bountyS[0].description,
-        Bname1: bountyS[1].name, Bdescription1: bountyS[1].description,
-        Bname2: bountyS[2].name, Bdescription2: bountyS[2].description});
+        return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: bountyS[0].name, Bdescription: bountyS[0].description, ID1: bountyS[0]._id.toHexString(), pesquisa1: '/pesquisa1',
+        Bname1: bountyS[1].name, Bdescription1: bountyS[1].description, ID2: bountyS[1]._id.toHexString(), pesquisa2: '/pesquisa2',
+        Bname2: bountyS[2].name, Bdescription2: bountyS[2].description, ID3: bountyS[2]._id.toHexString(), pesquisa3: '/pesquisa3', nomeP: req.body.pesquisa});
       }catch(err){}
 
       try{
-        return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: bountyS[0].name, Bdescription: bountyS[0].description,
-          Bname1: bountyS[1].name, Bdescription1: bountyS[1].description,
-          Bname2: '', Bdescription2: ''});
+        return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: bountyS[0].name, Bdescription: bountyS[0].description, ID1: bountyS[0]._id.toHexString(), pesquisa1: '/pesquisa1',
+          Bname1: bountyS[1].name, Bdescription1: bountyS[1].description, ID2: bountyS[1]._id.toHexString(), pesquisa2: '/pesquisa2',
+          Bname2: '', Bdescription2: '', ID3: 'vazia', pesquisa3: '', nomeP: req.body.pesquisa});
       }catch(err){}
 
       try{
-        return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: bountyS[0].name, Bdescription: bountyS[0].description,
-          Bname1: '', Bdescription1: '',
-          Bname2: '', Bdescription2: ''});
+        return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: bountyS[0].name, Bdescription: bountyS[0].description, ID1: bountyS[0]._id.toHexString(), pesquisa1: '/pesquisa1',
+          Bname1: '', Bdescription1: '', ID2: 'vazia', pesquisa2: '',
+          Bname2: '', Bdescription2: '', ID3: 'vazia', pesquisa3: '', nomeP: req.body.pesquisa});
       }catch(err){}
 
       try{
-        return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: 'Nenhuma bounty corresponde ao termo pesquisado.', Bdescription: '',
-          Bname1: '', Bdescription1: '',
-          Bname2: '', Bdescription2: ''});
+        return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: 'Nenhuma bounty corresponde ao termo pesquisado.', Bdescription: '', ID1: 'vazia', pesquisa1: '',
+          Bname1: '', Bdescription1: '', ID2: 'vazia', pesquisa2: '',
+          Bname2: '', Bdescription2: '', ID3: 'vazia', pesquisa3: '', nomeP: req.body.pesquisa});
       }catch(err){}
 
     }catch(err){
       console.log(err);
     }
 })
+
+app.post('/pesquisa1', async (req,res) => {
+  const email  = usermail;
+  const user = await User.findOne({ email: email });
+  const bountyP = await Bounty.find({name: req.body.nomeP});
+  var index = 0;
+  
+  var favorito = 'aBotaoVERMELHO';
+  try {
+    bountyP[0].favoritos.forEach((el)=>{
+      if(el == email){
+        favorito = 'aBotaoVERDE';
+      }
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+
+  try{
+
+    try{
+      return res.render('bounty.ejs', {mail: email, name: user.name, EMAIL: user.email, favorito: favorito, bountyName: bountyP[index].name, bountyPrazoFinal: bountyP[index].dataFinal, bountyRestricoes: bountyP[index].restrictions, bountyDescricao: bountyP[index].description, ID: bountyP[index]._id.toHexString(), comentarios: bountyP[index].comments});
+    }catch(err){
+      console.log(err);
+    }
+  }catch(err){console.log('finally')}
+
+});
+
+app.post('/pesquisa2', async (req,res) => {
+  const email  = usermail;
+  const user = await User.findOne({ email: email });
+  const bountyP = await Bounty.find({name: req.body.nomeP});
+  var index = 1;
+  
+  var favorito = 'aBotaoVERMELHO';
+  try {
+    bountyP[0].favoritos.forEach((el)=>{
+      if(el == email){
+        favorito = 'aBotaoVERDE';
+      }
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+
+  try{
+
+    try{
+      return res.render('bounty.ejs', {mail: email, name: user.name, EMAIL: user.email, favorito: favorito, bountyName: bountyP[index].name, bountyPrazoFinal: bountyP[index].dataFinal, bountyRestricoes: bountyP[index].restrictions, bountyDescricao: bountyP[index].description, ID: bountyP[index]._id.toHexString(), comentarios: bountyP[index].comments});
+    }catch(err){
+      console.log(err);
+    }
+  }catch(err){console.log('finally')}
+
+});
+
+app.post('/pesquisa3', async (req,res) => {
+  const email  = usermail;
+  const user = await User.findOne({ email: email });
+  const bountyP = await Bounty.find({name: req.body.nomeP});
+  var index = 2;
+  
+  var favorito = 'aBotaoVERMELHO';
+  try {
+    bountyP[0].favoritos.forEach((el)=>{
+      if(el == email){
+        favorito = 'aBotaoVERDE';
+      }
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+
+  try{
+
+    try{
+      return res.render('bounty.ejs', {mail: email, name: user.name, EMAIL: user.email, favorito: favorito, bountyName: bountyP[index].name, bountyPrazoFinal: bountyP[index].dataFinal, bountyRestricoes: bountyP[index].restrictions, bountyDescricao: bountyP[index].description, ID: bountyP[index]._id.toHexString(), comentarios: bountyP[index].comments});
+    }catch(err){
+      console.log(err);
+    }
+  }catch(err){console.log('finally')}
+
+});
+
 
 app.listen(3000);
