@@ -42,8 +42,21 @@
 
         <main class="o-form">
             <h1 class="h1titulo">Home</h1>
-            <!-- <button class="createBounty">Criar Bounty</button> -->
-            <a href="/criarBounty" class="createBounty"> Criar Bounty</a>
+            
+
+            <div class="createBounty">
+                <div class="center">
+                  <button class="btn">
+                    <a href="/criarBounty">
+                    <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                      <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                      <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                    </svg>
+                    </a>
+                    <span>CRIAR BOUNTY</span>
+                  </button>
+                </div>
+              </div>
             
             <div class="rectangleInfo"> 
                 <h2>Nome: <br> <%= bountyName %></h2>
