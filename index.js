@@ -60,10 +60,7 @@ app.get('/perfil', async (req,res) => {
         bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bountyPerfil3: '/bountyPerfil3',
         bountyName4: bountyP[3].name,bountyDescription4: bountyP[3].description,bountyRestrictions4: bountyP[3].restrictions, bountyPerfil4: '/bountyPerfil4',
         ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: bountyP[2]._id.toHexString(), ID4: bountyP[3]._id.toHexString()});
-    }catch(err){
-      console.log('primeiro try');
-    }
-
+    }catch(err){}
     try{
       return res.render('perfil.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyPerfil1: '/bountyPerfil1',
@@ -71,9 +68,7 @@ app.get('/perfil', async (req,res) => {
         bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bountyPerfil3: '/bountyPerfil3',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: '',
         ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: bountyP[2]._id.toHexString(), ID4: 'vazia'});
-    }catch(err){
-      console.log('segundo try');
-    }
+    }catch(err){}
 
     try{
       return res.render('perfil.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
@@ -82,10 +77,7 @@ app.get('/perfil', async (req,res) => {
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyPerfil3: '',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: '',
         ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: 'vazia', ID4: 'vazia'});
-    }catch(err){
-      console.log('terceiro try');
-    }
-
+    }catch(err){}
     try{
       return res.render('perfil.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyPerfil1: '/bountyPerfil1',
@@ -93,10 +85,7 @@ app.get('/perfil', async (req,res) => {
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyPerfil3: '',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: '',
         ID1: bountyP[0]._id.toHexString(), ID2: 'vazia', ID3: 'vazia', ID4: 'vazia'});
-    }catch(err){
-      console.log('quarto try');
-    }
-
+    }catch(err){}
     try{
       return res.render('perfil.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: '',bountyDescription: '',bountyRestrictions: '', bountyPerfil1: '',
@@ -104,14 +93,10 @@ app.get('/perfil', async (req,res) => {
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyPerfil3: '',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyPerfil4: '',
         ID1: 'vazia', ID2: 'vazia', ID3: 'vazia', ID4: 'vazia'});
-    }catch(err){
-      console.log('quinto try');
-    }
-     
+    }catch(err){}
   }catch(err){
-    console.log('finally')
-  }
-    
+    console.log(err);
+  }   
 });
 
 app.get('/editarPerfil', async (req,res) => {
@@ -131,8 +116,6 @@ app.post('/editarPerfil', async (req,res) => {
       email: req.body.email,
       telefone: req.body.tel
   });
-  
-  // console.log(`req: ${JSON.stringify(req.body)}`);
   res.redirect('/perfil')
 });
 
@@ -149,9 +132,8 @@ app.get('/bountyPerfil1', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
+  }catch(err){}
 
-  
 });
 
 app.get('/bountyPerfil2', async (req,res) => {
@@ -167,8 +149,7 @@ app.get('/bountyPerfil2', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
-
+  }catch(err){}
   
 });
 
@@ -185,8 +166,7 @@ app.get('/bountyPerfil3', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
-
+  }catch(err){}
   
 });
 
@@ -203,7 +183,7 @@ app.get('/bountyPerfil4', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
+  }catch(err){}
 
 });
 
@@ -220,7 +200,7 @@ app.post('/editarBounty', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
+  }catch(err){}
 
 });
 
@@ -259,10 +239,7 @@ app.get('/historico', async (req,res) => {
         bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bountyHistorico3: '/bountyHistorico3',
         bountyName4: bountyP[3].name,bountyDescription4: bountyP[3].description,bountyRestrictions4: bountyP[3].restrictions, bountyHistorico4: '/bountyHistorico4',
         ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: bountyP[2]._id.toHexString(), ID4: bountyP[3]._id.toHexString()});
-    }catch(err){
-      console.log('primeiro try');
-    }
-
+    }catch(err){}
     try{
       return res.render('historico.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyHistorico1: '/bountyHistorico1',
@@ -270,10 +247,7 @@ app.get('/historico', async (req,res) => {
         bountyName3: bountyP[2].name,bountyDescription3: bountyP[2].description,bountyRestrictions3: bountyP[2].restrictions, bountyHistorico3: '/bountyHistorico3',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: '',
         ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: bountyP[2]._id.toHexString(), ID4: 'vazia'});
-    }catch(err){
-      console.log('segundo try');
-    }
-
+    }catch(err){}
     try{
       return res.render('historico.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyHistorico1: '/bountyHistorico1',
@@ -281,10 +255,7 @@ app.get('/historico', async (req,res) => {
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyHistorico3: '',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: '',
         ID1: bountyP[0]._id.toHexString(), ID2: bountyP[1]._id.toHexString(), ID3: 'vazia', ID4: 'vazia'});
-    }catch(err){
-      console.log('terceiro try');
-    }
-
+    }catch(err){}
     try{
       return res.render('historico.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: bountyP[0].name,bountyDescription: bountyP[0].description,bountyRestrictions: bountyP[0].restrictions, bountyHistorico1: '/bountyHistorico1',
@@ -292,10 +263,7 @@ app.get('/historico', async (req,res) => {
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyHistorico3: '',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: '',
         ID1: bountyP[0]._id.toHexString(), ID2: 'vazia', ID3: 'vazia', ID4: 'vazia'});
-    }catch(err){
-      console.log('quarto try');
-    }
-
+    }catch(err){}
     try{
       return res.render('historico.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: '',bountyDescription: '',bountyRestrictions: '', bountyHistorico1: '',
@@ -303,14 +271,9 @@ app.get('/historico', async (req,res) => {
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bountyHistorico3: '',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bountyHistorico4: '',
         ID1: 'vazia', ID2: 'vazia', ID3: 'vazia', ID4: 'vazia'});
-    }catch(err){
-      console.log('quinto try');
-    }
-     
-  }catch(err){
-    console.log('finally')
-  }
-
+    }catch(err){}
+  
+  }catch(err){}
 });
 
 app.get('/bountyHistorico1', async (req,res) => {
@@ -320,14 +283,12 @@ app.get('/bountyHistorico1', async (req,res) => {
   const bountyP = await Bounty.findOne({ _id: bountyC[0]._id.toHexString()});
   try{
 
-    try{
-      
+    try{ 
       return res.render('bountyHistorico.ejs', {mail: email, name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, comentarios: bountyP.comments, ID: bountyP._id.toHexString()});
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
-
+  }catch(err){}
 });
 
 app.get('/bountyHistorico2', async (req,res) => {
@@ -337,14 +298,12 @@ app.get('/bountyHistorico2', async (req,res) => {
   const bountyP = await Bounty.findOne({ _id: bountyC[1]._id.toHexString()});
   try{
 
-    try{
-      
+    try{ 
       return res.render('bountyHistorico.ejs', {mail: email, name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, comentarios: bountyP.comments, ID: bountyP._id.toHexString()});
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
-
+  }catch(err){}
 });
 
 app.get('/bountyHistorico3', async (req,res) => {
@@ -355,13 +314,11 @@ app.get('/bountyHistorico3', async (req,res) => {
   try{
 
     try{
-      
       return res.render('bountyHistorico.ejs', {mail: email, name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, comentarios: bountyP.comments, ID: bountyP._id.toHexString()});
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
-
+  }catch(err){}
 });
 
 app.get('/bountyHistorico4', async (req,res) => {
@@ -371,14 +328,12 @@ app.get('/bountyHistorico4', async (req,res) => {
   const bountyP = await Bounty.findOne({ _id: bountyC[3]._id.toHexString()});
   try{
 
-    try{
-      
+    try{ 
       return res.render('bountyHistorico.ejs', {mail: email, name: user.name, bountyName: bountyP.name, bountyPrazoFinal: bountyP.dataFinal, bountyRestricoes: bountyP.restrictions, bountyDescricao: bountyP.description, comentarios: bountyP.comments, ID: bountyP._id.toHexString()});
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
-
+  }catch(err){}
 });
 
 app.get('/favoritos', async (req,res) => {
@@ -407,54 +362,38 @@ app.get('/favoritos', async (req,res) => {
         bountyName2: bountyFiltrada[1].name,bountyDescription2: bountyFiltrada[1].description,bountyRestrictions2: bountyFiltrada[1].restrictions, favorito2: '/favorito2',
         bountyName3: bountyFiltrada[2].name,bountyDescription3: bountyFiltrada[2].description,bountyRestrictions3: bountyFiltrada[2].restrictions, favorito3: '/favorito3',
         bountyName4: bountyFiltrada[3].name,bountyDescription4: bountyFiltrada[3].description,bountyRestrictions4: bountyFiltrada[3].restrictions, favorito4: '/favorito4', ID1: bountyFiltrada[0]._id.toHexString(), ID2: bountyFiltrada[1]._id.toHexString(), ID3: bountyFiltrada[2]._id.toHexString(), ID4: bountyFiltrada[3]._id.toHexString()});
-    }catch(err){
-      console.log('primeiro try');
-    }
-
+    }catch(err){}
     try{
       return res.render('favoritos.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: bountyFiltrada[0].name,bountyDescription: bountyFiltrada[0].description,bountyRestrictions: bountyFiltrada[0].restrictions, favorito1: '/favorito1',
         bountyName2: bountyFiltrada[1].name,bountyDescription2: bountyFiltrada[1].description,bountyRestrictions2: bountyFiltrada[1].restrictions, favorito2: '/favorito2',
         bountyName3: bountyFiltrada[2].name,bountyDescription3: bountyFiltrada[2].description,bountyRestrictions3: bountyFiltrada[2].restrictions, favorito3: '/favorito3',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', favorito4: '', ID1: bountyFiltrada[0]._id.toHexString(), ID2: bountyFiltrada[1]._id.toHexString(), ID3: bountyFiltrada[2]._id.toHexString(), ID4: 'vazia'});
-    }catch(err){
-      console.log('segundo try');
-    }
-
+    }catch(err){}
     try{
       return res.render('favoritos.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: bountyFiltrada[0].name,bountyDescription: bountyFiltrada[0].description,bountyRestrictions: bountyFiltrada[0].restrictions, favorito1: '/favorito1',
         bountyName2: bountyFiltrada[1].name,bountyDescription2: bountyFiltrada[1].description,bountyRestrictions2: bountyFiltrada[1].restrictions, favorito2: '/favorito2',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', favorito3: '',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', favorito4: '', ID1: bountyFiltrada[0]._id.toHexString(), ID2: bountyFiltrada[1]._id.toHexString(), ID3: 'vazia', ID4: 'vazia'});
-    }catch(err){
-      console.log('terceiro try');
-    } 
-
+    }catch(err){} 
     try{
       return res.render('favoritos.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: bountyFiltrada[0].name,bountyDescription: bountyFiltrada[0].description,bountyRestrictions: bountyFiltrada[0].restrictions, favorito1: '/favorito1',
         bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', favorito2: '',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', favorito3: '',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', favorito4: '', ID1: bountyFiltrada[0]._id.toHexString(), ID2: 'vazia', ID3: 'vazia', ID4: 'vazia'});
-    }catch(err){
-      console.log('quarto try');
-    }
-    
+    }catch(err){}
     try{
       return res.render('favoritos.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
         bountyName: '',bountyDescription: '',bountyRestrictions: '', favorito1: '',
         bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', favorito2: '',
         bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', favorito3: '',
         bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', favorito4: '', ID1: 'vazia', ID2: 'vazia', ID3: 'vazia', ID4: 'vazia'});
-    }catch(err){
-      console.log('quinto try');
-    }
-
+    }catch(err){}
   }catch(err){
-    console.log('erro try maior ');
+    console.log(err);
    }
-   
 });
 
 app.get('/favorito1', async (req,res) => {
@@ -489,13 +428,12 @@ app.get('/favorito1', async (req,res) => {
   }
 
   try{
-
     try{
       return res.render('bounty.ejs', {mail: email, name: user.name, EMAIL: user.email, favorito: favorito, bountyName: bountyFiltrada[0].name, bountyPrazoFinal: bountyFiltrada[0].dataFinal, bountyRestricoes: bountyFiltrada[0].restrictions, bountyDescricao: bountyFiltrada[0].description, ID: bountyFiltrada[0]._id.toHexString(), comentarios: bountyFiltrada[0].comments});
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
+  }catch(err){console.log(err)}
 
 });
 
@@ -537,7 +475,7 @@ app.get('/favorito2', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
+  }catch(err){console.log(err)}
 
 });
 
@@ -579,7 +517,7 @@ app.get('/favorito3', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
+  }catch(err){console.log(err);}
 
 });
 
@@ -621,7 +559,7 @@ app.get('/favorito4', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
+  }catch(err){console.log(err);}
 
 });
 
@@ -643,54 +581,38 @@ app.get('/home', async (req,res) => {
           bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,bountyRestrictions2: bounty[1].restrictions, bounty2: '/bounty2',
           bountyName3: bounty[2].name,bountyDescription3: bounty[2].description,bountyRestrictions3: bounty[2].restrictions, bounty3: '/bounty3',
           bountyName4: bounty[3].name,bountyDescription4: bounty[3].description,bountyRestrictions4: bounty[3].restrictions, bounty4: '/bounty4', ID1: bounty[0]._id.toHexString(), ID2: bounty[1]._id.toHexString(), ID3: bounty[2]._id.toHexString(), ID4: bounty[3]._id.toHexString()});
-      }catch(err){
-        console.log('primeiro try');
-      }
-
+      }catch(err){}
       try{
         return res.render('home.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
           bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions, bounty1: '/bounty1',
           bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,bountyRestrictions2: bounty[1].restrictions, bounty2: '/bounty2',
           bountyName3: bounty[2].name,bountyDescription3: bounty[2].description,bountyRestrictions3: bounty[2].restrictions, bounty3: '/bounty3',
           bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: '', ID1: bounty[0]._id.toHexString(), ID2: bounty[1]._id.toHexString(), ID3: bounty[2]._id.toHexString(), ID4: 'vazia'});
-      }catch(err){
-        console.log('segundo try');
-      }
-
+      }catch(err){}
       try{
         return res.render('home.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
           bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions, bounty1: '/bounty1',
           bountyName2: bounty[1].name,bountyDescription2: bounty[1].description,bountyRestrictions2: bounty[1].restrictions, bounty2: '/bounty2',
           bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bounty3: '',
           bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: '', ID1: bounty[0]._id.toHexString(), ID2: bounty[1]._id.toHexString(), ID3: 'vazia', ID4: 'vazia'});
-      }catch(err){
-        console.log('terceiro try');
-      } 
-
+      }catch(err){} 
       try{
         return res.render('home.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
           bountyName: bounty[0].name,bountyDescription: bounty[0].description,bountyRestrictions: bounty[0].restrictions, bounty1: '/bounty1',
           bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bounty2: '',
           bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bounty3: '',
           bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: '', ID1: bounty[0]._id.toHexString(), ID2: 'vazia', ID3: 'vazia', ID4: 'vazia'});
-      }catch(err){
-        console.log('quarto try');
-      }
-      
+      }catch(err){}
       try{
         return res.render('home.ejs', {mail: email, name: user.name, genero: user.genero, bio: user.bio,
           bountyName: '',bountyDescription: '',bountyRestrictions: '', bounty1: '',
           bountyName2: '',bountyDescription2: '',bountyRestrictions2: '', bounty2: '',
           bountyName3: '',bountyDescription3: '',bountyRestrictions3: '', bounty3: '',
           bountyName4: '',bountyDescription4: '',bountyRestrictions4: '', bounty4: '', ID1: 'vazia', ID2: 'vazia', ID3: 'vazia', ID4: 'vazia'});
-      }catch(err){
-        console.log('quinto try');
-      }
-
+      }catch(err){}
     }catch(err){
-      console.log('erro try maior ');
+      console.log(err);
      }
-     
 });
 
 app.get('/bounty1', async (req,res) => {
@@ -717,7 +639,7 @@ app.get('/bounty1', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
+  }catch(err){console.log(err);}
 
 });
 
@@ -745,8 +667,7 @@ app.get('/bounty2', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
-
+  }catch(err){console.log(err);}
   
 });
 
@@ -774,9 +695,8 @@ app.get('/bounty3', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
+  }catch(err){console.log(err);}
 
-  
 });
 
 app.get('/bounty4', async (req,res) => {
@@ -803,8 +723,7 @@ app.get('/bounty4', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
-
+  }catch(err){console.log(err);}
   
 });
 
@@ -955,7 +874,7 @@ app.post('/favoritarBounty', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
+  }catch(err){console.log(err)}
 
 });
 
@@ -977,7 +896,6 @@ app.post('/pesquisar', async (req,res)=>{
   const  email  = usermail;
   const user = await User.findOne({ email: email });
   const bountyS = await Bounty.find({name: req.body.pesquisa});
-  console.log(req.body.pesquisa);
     try{
       try{
         return res.render('searchResult.ejs',{mail: email,name: user.name, Bname: bountyS[0].name, Bdescription: bountyS[0].description, ID1: bountyS[0]._id.toHexString(), pesquisa1: '/pesquisa1',
@@ -1033,7 +951,7 @@ app.post('/pesquisa1', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
+  }catch(err){}
 
 });
 
@@ -1062,7 +980,7 @@ app.post('/pesquisa2', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
+  }catch(err){}
 
 });
 
@@ -1091,9 +1009,8 @@ app.post('/pesquisa3', async (req,res) => {
     }catch(err){
       console.log(err);
     }
-  }catch(err){console.log('finally')}
+  }catch(err){console.log(err);}
 
 });
-
 
 app.listen(3000);
