@@ -106,64 +106,83 @@ a {
 
 /* -------------------------------------- */
 
-
-
-.buttonStyle {
+.btn {
+	border: none;
+	font-family: 'Lato';
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 1px 2px;
 	display: inline-block;
-	padding: .75rem 1.25rem;
-	border-radius: 10rem;
-	color: #fff;
+	margin-left: 10px;
 	text-transform: uppercase;
-	font-size: 1rem;
-	letter-spacing: .15rem;
-	transition: all .3s;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
 	position: relative;
-	overflow: hidden;
-	z-index: 1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
 }
 
-	.buttonStyle:after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #0cf;
-		border-radius: 10rem;
-		z-index: -2;
-	}
-	.buttonStyle:before {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 0%;
-		height: 100%;
-		background-color: darken(#0cf, 15%);
-		transition: all .3s;
-		border-radius: 10rem;
-		z-index: -1;
-	}
-	.buttonStyle:hover {
-		color: #fff;
-    }
-    .buttonStyle:before {
-			width: 100%;
-		}
-	
-
-
-/* optional reset for presentation */
-* {
-  font-family: Arial;
-  text-decoration: none;
-  font-size: 20px;
-}
-.buttonStyle {
-  padding-top: 50px;
-  margin: 0 auto;
-  width: 100%;
-  text-align: center;
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
 }
 
+/* Pseudo elements for icons */
+.btn:before {
+	font-family: 'FontAwesome';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/* Icon separator */
+.btn-sep {
+	padding: 12.5px 30px 12.5px 80px;
+}
+
+.btn-sep:before {
+	background: rgba(0,0,0,0.15);
+}
+
+/* Button 4 */
+.btn-4 {
+	background: #34495e;
+	color: #fff;
+}
+
+.btn-4:hover {
+	background: #6aa7e4;
+}
+
+.btn-4:active {
+	background: #2c3e50;
+	top: 1px;
+}
+
+.btn-4:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 3;
+	font-size: 140%;
+	width: 60px;
+}
+
+.icon-send:before {
+	content: "\f1d8";
+}
