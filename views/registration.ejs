@@ -2,91 +2,91 @@
 
 <html lang="pt-BR">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link type="text/css" href="css/global.css" rel="stylesheet">
-    <link type="text/css" href="css/registration.css" rel="stylesheet">
-    <title>Bounty</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link type="text/css" href="css/global.css" rel="stylesheet">
+        <link type="text/css" href="css/registration.css" rel="stylesheet">
+        <title>Bounty</title>
+    </head>
 
-<body>
+    <body>
 
-    <aside class="o-logo">
-        <div id="logo">
-            <img src="../assets/logoMT.png" alt="logo bounty" class="responsive">
-        </div>
-    </aside>
-    <main class="o-form">
-        
-        <div class="container">
-            <div class="h2log">
-                <h2>Cadastro</h2>
+        <aside class="o-logo">
+            <div id="logo">
+                <img src="../assets/logoMT.png" alt="logo bounty" class="responsive">
             </div>
-            <div class="formLog">
-                <form action="/auth/register" method="POST">
-                    <label class="sr-only" for="name">Digite seu nome completo</label>
-                    <input type="text" id="name" class="input-forms" placeholder="Digite seu nome completo" name="name" required> 
-                    
-                    <label class="sr-only" for="email">Digite seu e-mail</label>
-                    <input type="email" id="email" class="input-forms" placeholder="Digite seu e-mail" name="email" required>    
-                    
-                     <label class="sr-only" for="tel">Digite seu telefone</label>
-                    <input type="tel" id="tel" class="input-forms" placeholder="Digite seu telefone" name="telefone" required>
-                    
-                    <label class="sr-only" for="data">Digite sua data de nascimento</label>
-                    <input type="date" id="data" class="input-forms" name="dataNascimento" required>
-                    
-                    <label class="sr-only" for="cep">Digite seu CEP</label>
-                    <input type="number" id="cep" class="input-forms" placeholder="Digite seu CEP" name="cep" required>
-                    
-                    <label class="sr-only" for="nac">Digite sua nacionalidade</label>
-                    <input type="text" id="nac" class="input-forms" placeholder="Digite sua nacionalidade" name="nacionalidade" required>
-                    
-                    <label class="sr-only" for="endereco">Digite seu endereço</label>
-                    <input type="text" id="endereco" class="input-forms" placeholder="Digite seu endereço" name="endereco" required>
-                    
-                    <label class="sr-only" for="cep">Informe seu gênero</label>
-                    <select name="genero" id="genero" class="input-forms" required>
-                        <option value="masculino" disabled selected>Informe seu gênero</option>
-                        <option value="masculino">masculino</option>
-                        <option value="feminino">feminino</option>
-                        <option value="não-bínario">não-bínario</option>
-                        <option value="não informado">não informado</option>
-                    </select> 
-                    
-                    <label class="sr-only" for="password">Digite sua senaha</label>
-                    <input type="password" id="password" class="input-forms" placeholder="Digite sua senha" name="password" required>
-                    
-                    <label class="sr-only" for="repassword">Digite sua senha novamente</label>
-                    <input type="password" id="repassword" class="input-forms" placeholder="Digite sua senha novamente" name="repassword" oninput="check(this)" required>
+        </aside>
+        <main class="o-form">
+            
+            <div class="container">
+                <div class="h2log">
+                    <h2>Cadastro</h2>
+                </div>
+                <div class="formLog">
+                    <form action="/auth/register" method="POST">
+                        <label class="sr-only" for="name">Digite seu nome completo</label>
+                        <input type="text" id="name" class="input-forms" placeholder="Digite seu nome completo" name="name" required> 
+                        
+                        <label class="sr-only" for="email">Digite seu e-mail</label>
+                        <input type="email" id="email" class="input-forms" placeholder="Digite seu e-mail" name="email" required>    
+                        
+                        <label class="sr-only" for="tel">Digite seu telefone</label>
+                        <input type="tel" id="tel" class="input-forms" placeholder="Digite seu telefone" name="telefone" required>
+                        
+                        <label class="sr-only" for="data">Digite sua data de nascimento</label>
+                        <input type="date" id="data" class="input-forms" name="dataNascimento" required>
+                        
+                        <label class="sr-only" for="cep">Digite seu CEP</label>
+                        <input type="number" id="cep" class="input-forms" placeholder="Digite seu CEP" name="cep" required>
+                        
+                        <label class="sr-only" for="nac">Digite sua nacionalidade</label>
+                        <input type="text" id="nac" class="input-forms" placeholder="Digite sua nacionalidade" name="nacionalidade" required>
+                        
+                        <label class="sr-only" for="endereco">Digite seu endereço</label>
+                        <input type="text" id="endereco" class="input-forms" placeholder="Digite seu endereço" name="endereco" required>
+                        
+                        <label class="sr-only" for="cep">Informe seu gênero</label>
+                        <select name="genero" id="genero" class="input-forms" required>
+                            <option value="masculino" disabled selected>Informe seu gênero</option>
+                            <option value="masculino">masculino</option>
+                            <option value="feminino">feminino</option>
+                            <option value="não-bínario">não-bínario</option>
+                            <option value="não informado">não informado</option>
+                        </select> 
+                        
+                        <label class="sr-only" for="password">Digite sua senaha</label>
+                        <input type="password" id="password" class="input-forms" placeholder="Digite sua senha" name="password" required>
+                        
+                        <label class="sr-only" for="repassword">Digite sua senha novamente</label>
+                        <input type="password" id="repassword" class="input-forms" placeholder="Digite sua senha novamente" name="repassword" oninput="check(this)" required>
 
-                    <script language='javascript' type='text/javascript'>
-                        function check(input) {
-                            if (input.value != document.getElementById('password').value) {
-                                input.setCustomValidity('As senhas precisam ser iguais');
-                            } else {
-                                input.setCustomValidity('');
+                        <script language='javascript' type='text/javascript'>
+                            function check(input) {
+                                if (input.value != document.getElementById('password').value) {
+                                    input.setCustomValidity('As senhas precisam ser iguais');
+                                } else {
+                                    input.setCustomValidity('');
+                                }
                             }
-                        }
-                    </script>
-                    
-                    
-                    <div class="checkelembrar">
-                        <input type="checkbox" name="lembrar-user?" id="lembrar-user">
-                        <label for="lembrar-user" id="label-lembrar-user"> Lembrar usuario? </label>
-                        <a href="" id="esqueceu">Esqueceu sua senha?</a>
-                    </div>
-                    
-                    <button class="regButton" type="submit">Cadastrar</button> 
-                </form>
+                        </script>
+                        
+                        
+                        <div class="checkelembrar">
+                            <input type="checkbox" name="lembrar-user?" id="lembrar-user">
+                            <label for="lembrar-user" id="label-lembrar-user"> Lembrar usuario? </label>
+                            <a href="" id="esqueceu">Esqueceu sua senha?</a>
+                        </div>
+                        
+                        <button class="regButton" type="submit">Cadastrar</button> 
+                    </form>
+                </div>
+                
             </div>
             
-        </div>
-        
-    </main>
+        </main>
 
-</body>
+    </body>
 
 </html>

@@ -2,55 +2,55 @@
 
 <html lang="pt-BR">
 
-<head>
+    <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link type="text/css" href="css/global.css" rel="stylesheet">
-    <link type="text/css" href="css/login.css" rel="stylesheet">
-    <title>Bounty</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link type="text/css" href="css/global.css" rel="stylesheet">
+        <link type="text/css" href="css/login.css" rel="stylesheet">
+        <title>Bounty</title>
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-    <aside class="o-logo">
-        <div id="logo">
-            <img src="../assets/logoMT.png" alt="logo bounty" class="responsive">
-        </div>
-    </aside>
-    <main class="o-form">
-        <div class="container">
-            <div class="h2log">
-                <h2>Login</h2>
+        <aside class="o-logo">
+            <div id="logo">
+                <img src="../assets/logoMT.png" alt="logo bounty" class="responsive">
             </div>
-            <div class="formLog">
-                <form action="/auth/authenticate" method="POST">
-                    <label class="sr-only" for="email">Digite seu email registrado</label>
-                    <input type="email" id="email" placeholder="Digite seu email registrado" name="email"> 
-                    <br>
-                    <label class="sr-only" for="password">Digite sua senha</label>
-                    <input type="password" id="password" placeholder="Digite sua senha" name="password"> 
-                    <br>
+        </aside>
+        <main class="o-form">
+            <div class="container">
+                <div class="h2log">
+                    <h2>Login</h2>
+                </div>
+                <div class="formLog">
+                    <form action="/auth/authenticate" method="POST">
+                        <label class="sr-only" for="email">Digite seu email registrado</label>
+                        <input type="email" id="email" placeholder="Digite seu email registrado" name="email"> 
+                        <br>
+                        <label class="sr-only" for="password">Digite sua senha</label>
+                        <input type="password" id="password" placeholder="Digite sua senha" name="password"> 
+                        <br>
+                        
+                        <div class="checkelembrar">
+                            <input type="checkbox" name="lembrar-user?" id="lembrar-user">
+                            <label for="lembrar-user"> Lembrar usuario? </label>
+                            <a href="/forgotPassword" id="esqueceu">Esqueceu sua senha?</a>
+                        </div>
+                        
+                        <br>
+                        
+                        <button type="submit">Login</button>
+                        <a href="/registration" id="redCad">Cadastre-se aqui!</a>
+                    </form>
                     
-                    <div class="checkelembrar">
-                        <input type="checkbox" name="lembrar-user?" id="lembrar-user">
-                        <label for="lembrar-user"> Lembrar usuario? </label>
-                        <a href="/forgotPassword" id="esqueceu">Esqueceu sua senha?</a>
-                    </div>
-                    
-                    <br>
-                    
-                    <button type="submit">Login</button>
-                    <a href="/registration" id="redCad">Cadastre-se aqui!</a>
-                </form>
+                </div>
                 
             </div>
-            
-        </div>
-    </main>
+        </main>
 
-</body>
+    </body>
 
 </html>
