@@ -54,10 +54,14 @@
                     <hr class="linha_vertical"/>
                     <img class="imgBounty" src="Images/<%=ID1%>.png" alt="">
                     <hr class="linha_vertical"/>
-                    <form action=<%= pesquisa1 %> method="POST">
-                        <input type="hidden" name="nomeP" value=<%= nomeP %>>
-                        <button type="submit" class="">Acessar</button>
-                    </form>
+                    <% if(pesquisa1 == ''){ %>
+
+                        <% }else{ %>
+                            <form action=<%= pesquisa1 %> method="POST">
+                                <input type="hidden" name="nomeP" value=<%= nomeP %>>
+                                <button type="submit" class="">Acessar</button>
+                            </form>
+                        <% } %>
             </div>
             <div class="boxB">
                 <h2><b class="srch"> Nome da Bounty:</b><br><%= Bname1 %></h2>
@@ -68,10 +72,14 @@
                     <hr class="linha_vertical"/>
                     <img class="imgBounty" src="Images/<%=ID2%>.png" alt="">
                     <hr class="linha_vertical"/>
-                    <form action=<%= pesquisa2 %> method="POST">
-                        <input type="hidden" name="nomeP" value=<%= nomeP %>>
-                        <button type="submit" class="">Acessar</button>
-                    </form>
+                    <% if(pesquisa2 == ''){ %>
+
+                        <% }else{ %>
+                            <form action=<%= pesquisa2 %> method="POST">
+                                <input type="hidden" name="nomeP" value=<%= nomeP %>>
+                                <button type="submit" class="">Acessar</button>
+                            </form>
+                        <% } %>
             </div>
             <div class="boxB">
                 <h2><b class="srch"> Nome da Bounty:</b><br><%= Bname2 %></h2>
@@ -82,10 +90,14 @@
                     <hr class="linha_vertical"/>
                     <img class="imgBounty" src="Images/<%=ID3%>.png" alt="">
                     <hr class="linha_vertical"/>
-                    <form action=<%= pesquisa3 %> method="POST">
-                        <input type="hidden" name="nomeP" value=<%= nomeP %>>
-                        <button type="submit" class="">Acessar</button>
-                    </form>
+                    <% if(pesquisa3 == ''){ %>
+
+                        <% }else{ %>
+                            <form action=<%= pesquisa3 %> method="POST">
+                                <input type="hidden" name="nomeP" value=<%= nomeP %>>
+                                <button type="submit" class="">Acessar</button>
+                            </form>
+                        <% } %>
             </div>
             
             
