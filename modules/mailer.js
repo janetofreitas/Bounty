@@ -20,7 +20,3 @@ transport.use('compile', hbs({
   }));
 
 module.exports = transport;
-
-
-
-//
