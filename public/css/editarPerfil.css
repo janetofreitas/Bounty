@@ -99,13 +99,13 @@ h2{
     width: 15rem;
     
 }
-.carrodoovo{
+.cdo{
     display: flex;
     justify-content: space-around;
     background-color: blue;
 }
 
-.carrodoleite{
+.cdl{
     display: flex;
     justify-content: space-around;
 }
