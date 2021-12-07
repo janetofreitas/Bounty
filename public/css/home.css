@@ -31,22 +31,68 @@ body {
     grid-template-rows: auto auto auto;
 }
 
-.createBounty{
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    display: flex;
-    right: 30px;
-    justify-content: center;
-    margin: auto;
-    margin-top: 1%;
 
+/* -------------------------------------------------Botão Create Bounty CSS--------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+
+.createBounty {
+  width: 100px;
+  height: 100px;
+  /* left: 50%;
+  top: 50%;  */
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 3%;
 }
+
+.center {
+  width: 70px;
+  height: 30px;
+  position: absolute;
+}
+
+.btn {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #91C9FF;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+.btn:hover {
+  transition: 1s ease-in-out;
+  background: #4F95DA;
+}
+
+.btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.btn span {
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+
+/* --------------------------------------------------------------------------------------------*/
 
 
 .o-form {
