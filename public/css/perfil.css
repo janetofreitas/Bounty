@@ -68,8 +68,7 @@ a {
     grid-area: form;
     background: #2d2d2d;
     color: #ababab;
-    display: flex;
-    justify-content: center;
+    
     
 }
 .tituloMBT{
@@ -88,7 +87,7 @@ a {
     margin: 1rem;
     background-color: rgb(72, 75, 75);
     display: flex;
-    justify-content: center;
+    margin-left: 20%;
 }
 .boxBio{
     width: 90%;
