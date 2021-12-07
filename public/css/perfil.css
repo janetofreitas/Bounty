@@ -135,3 +135,7 @@ a {
     display: flex;
     align-items: center;
 }
+
+.bBotao:hover {
+	background: #6aa7e4;
+}
